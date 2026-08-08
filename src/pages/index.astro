@@ -1,9 +1,21 @@
 ---
-import StubPage from "@/components/site/StubPage.astro";
+export const prerender = true;
+
+import CtaBand from "@/components/sections/CtaBand.astro";
+import Hero from "@/components/sections/Hero.astro";
+import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getPageEntry } from "@/lib/content/pages";
 import { brandName } from "@/lib/site-nav";
+
+const { entry, Content } = await getPageEntry("home");
+const { title, heroTitle, heroSubtitle, heroImage, cta } = entry.data;
 ---
 
-<Layout title={brandName}>
-  <StubPage title={brandName} />
+<Layout title={title || brandName}>
+  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} image={heroImage} />
+  <ProseSection>
+    <Content />
+  </ProseSection>
+  {cta && <CtaBand label={cta.label} href={cta.href} />}
 </Layout>
