@@ -235,8 +235,8 @@ N/A — no runtime or data migration. When a direction is later locked, S-01+ sh
 
 #### Automated
 
-- [x] 2.1 Three files exist: `direction-young-drivers.md`, `direction-business.md`, `direction-broad.md`
-- [x] 2.2 Each file contains the shared section headings from the card schema
+- [x] 2.1 Three files exist: `direction-young-drivers.md`, `direction-business.md`, `direction-broad.md` — a0125d1
+- [x] 2.2 Each file contains the shared section headings from the card schema — a0125d1
 
 #### Manual
 
@@ -248,8 +248,8 @@ N/A — no runtime or data migration. When a direction is later locked, S-01+ sh
 
 #### Automated
 
-- [ ] 3.1 README references all three direction files by path
-- [ ] 3.2 `audience-brief.md` + three direction files still present
+- [x] 3.1 README references all three direction files by path
+- [x] 3.2 `audience-brief.md` + three direction files still present
 
 #### Manual
 

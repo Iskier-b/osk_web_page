@@ -17,3 +17,7 @@ Planning decisions (2026-08-09):
 - Audiences = page_mvp examples: young drivers / business / broad universal
 - Clean redesign — do not carry source-site palette into proposals
 - Done bar: three proposal cards exist; user choice deferred (lock recorded before S-01)
+
+### Phase 3 (2026-08-09)
+
+Proposal artifacts are complete (`audience-brief.md` + three direction cards). Choice remains open — no `locked-direction` (or equivalent lock artifact) claimed in this change. Status stays `implementing` until Automated gates + epilogue flip it.
