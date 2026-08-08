@@ -1,10 +1,10 @@
 ---
 change_id: visual-style-lock
 title: Propose audience-based visual directions for style gate
-status: implemented
+status: archived
 created: 2026-08-09
 updated: 2026-08-09
-archived_at: null
+archived_at: 2026-08-08T23:07:25Z
 ---
 
 ## Notes
