@@ -1,0 +1,13 @@
+﻿CONFLICT: .vscode -> .vscode.scaffold
+CONFLICT: public -> public.scaffold
+CONFLICT: src -> src.scaffold
+MERGE: .gitignore append-merged
+CONFLICT: AGENTS.md -> AGENTS.md.scaffold
+CONFLICT: astro.config.mjs -> astro.config.mjs.scaffold
+CONFLICT: CLAUDE.md -> CLAUDE.md.scaffold
+CONFLICT: package.json -> package.json.scaffold
+CONFLICT: README.md -> README.md.scaffold
+CONFLICT: tsconfig.json -> tsconfig.json.scaffold
+MOVED=0
+CONFLICTS=.vscode,public,src,AGENTS.md,astro.config.mjs,CLAUDE.md,package.json,README.md,tsconfig.json
+GITIGNORE=append-merged
