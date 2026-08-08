@@ -1,7 +1,7 @@
 ## OSK nowa strona dla ośrodka szkolenia kierowców
 
 ### Główny cel MVP
-- Przedstawienie podtencjalnemu klientowi (biznesowemu) strony która będzie modernizowała aktualną stronę wizytówkę firmy klienta
+- Przedstawienie podtencjalnemu klientowi (biznesowemu) strony która będzie modernizowała aktualną stronę firmy klienta
 - Pokazanie na podstawie autentycznych danych skopiowanych z jego aktualnej strony nowej wizji na prezentację oferty klienta
 - 
 
