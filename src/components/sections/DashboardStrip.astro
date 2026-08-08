@@ -1,0 +1,37 @@
+---
+import { cn } from "@/lib/utils";
+
+interface DashboardItem {
+  title: string;
+  body: string;
+  href?: string;
+  linkLabel?: string;
+}
+
+interface Props {
+  items: DashboardItem[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+---
+
+{
+  items.length > 0 && (
+    <section class:list={cn("border-border/60 bg-secondary/40 border-b", className)} aria-label="Informacje skrótowe">
+      <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-3 sm:gap-6 sm:px-6 sm:py-12">
+        {items.map((item) => (
+          <div class="min-w-0">
+            <h2 class="text-foreground text-sm font-semibold tracking-wide uppercase">{item.title}</h2>
+            <p class="text-foreground mt-2 text-base leading-relaxed whitespace-pre-line">{item.body}</p>
+            {item.href && item.linkLabel && (
+              <a href={item.href} class="text-primary mt-3 inline-block text-sm font-medium hover:underline">
+                {item.linkLabel}
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}

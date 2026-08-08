@@ -1,0 +1,17 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  class?: string;
+}
+
+const { src, alt, caption, class: className } = Astro.props;
+---
+
+<figure class:list={cn("min-w-0", className)}>
+  <img src={src} alt={alt} class="h-auto w-full object-cover" loading="lazy" decoding="async" />
+  {caption && <figcaption class="text-muted-foreground mt-2 text-sm">{caption}</figcaption>}
+</figure>

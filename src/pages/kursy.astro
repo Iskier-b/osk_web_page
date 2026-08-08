@@ -1,11 +1,28 @@
 ---
-import StubPage from "@/components/site/StubPage.astro";
+export const prerender = true;
+
+import CtaBand from "@/components/sections/CtaBand.astro";
+import Hero from "@/components/sections/Hero.astro";
+import HubChildLinks from "@/components/sections/HubChildLinks.astro";
+import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getPageEntry } from "@/lib/content/pages";
 import { brandName, ofertaChildren } from "@/lib/site-nav";
 
-const title = "Oferta";
+const { entry, Content } = await getPageEntry("kursy");
+const { title, heroTitle, heroSubtitle, cta } = entry.data;
 ---
 
 <Layout title={`${title} | ${brandName}`}>
-  <StubPage title={title} childrenLinks={ofertaChildren} />
+  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} />
+  <ProseSection>
+    <Content />
+  </ProseSection>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6" aria-labelledby="oferta-links-heading">
+    <h2 id="oferta-links-heading" class="text-foreground mb-4 text-xl font-bold tracking-tight sm:text-2xl">
+      Więcej z oferty
+    </h2>
+  </section>
+  <HubChildLinks links={ofertaChildren} ariaLabel="Oferta — podstrony" />
+  {cta && <CtaBand label={cta.label} href={cta.href} />}
 </Layout>

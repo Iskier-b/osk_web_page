@@ -1,11 +1,33 @@
 ---
-import StubPage from "@/components/site/StubPage.astro";
+export const prerender = true;
+
+import CtaBand from "@/components/sections/CtaBand.astro";
+import Hero from "@/components/sections/Hero.astro";
+import MediaFigure from "@/components/sections/MediaFigure.astro";
+import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getPageEntry } from "@/lib/content/pages";
 import { brandName } from "@/lib/site-nav";
 
-const title = "O nas";
+const { entry, Content } = await getPageEntry("nasza-auto-szkola");
+const { title, heroTitle, heroSubtitle, heroImage, cta } = entry.data;
 ---
 
 <Layout title={`${title} | ${brandName}`}>
-  <StubPage title={title} />
+  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} image={heroImage} />
+  {
+    heroImage && (
+      <div class="mx-auto max-w-6xl px-4 pt-8 sm:px-6 sm:pt-10">
+        <MediaFigure
+          src="/images/osk/fleet-03.webp"
+          alt="Samochód nauki jazdy Auto Szkoły Juszczak"
+          caption="Szkolenie na pojazdach zgodnych z egzaminem WORD Łódź"
+        />
+      </div>
+    )
+  }
+  <ProseSection>
+    <Content />
+  </ProseSection>
+  {cta && <CtaBand label={cta.label} href={cta.href} />}
 </Layout>

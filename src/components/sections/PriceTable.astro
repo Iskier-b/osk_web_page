@@ -1,0 +1,68 @@
+---
+import { cn } from "@/lib/utils";
+
+interface PriceRow {
+  label: string;
+  price?: string;
+  note?: string;
+}
+
+interface Props {
+  rows: PriceRow[];
+  caption?: string;
+  class?: string;
+}
+
+const { rows, caption, class: className } = Astro.props;
+---
+
+{
+  rows.length > 0 && (
+    <section
+      class:list={cn("mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10", className)}
+      aria-label={caption ?? "Cennik"}
+    >
+      {caption && <h2 class="text-foreground mb-6 text-2xl font-bold tracking-tight sm:text-3xl">{caption}</h2>}
+
+      {/* Narrow: stacked rows */}
+      <ul class="divide-border border-border divide-y border sm:hidden">
+        {rows.map((row) => (
+          <li class="px-4 py-4">
+            <p class="text-foreground text-base font-medium">{row.label}</p>
+            {row.price && <p class="text-foreground mt-1 text-lg font-semibold tabular-nums">{row.price}</p>}
+            {row.note && <p class="text-muted-foreground mt-1 text-sm">{row.note}</p>}
+          </li>
+        ))}
+      </ul>
+
+      {/* Tablet+ : table */}
+      <div class="border-border hidden overflow-x-auto border sm:block">
+        <table class="w-full min-w-[28rem] text-left text-base">
+          <thead class="bg-secondary/70">
+            <tr>
+              <th class="text-foreground px-4 py-3 font-semibold" scope="col">
+                Usługa
+              </th>
+              <th class="text-foreground px-4 py-3 font-semibold" scope="col">
+                Cena
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-border divide-y">
+            {rows.map((row) => (
+              <tr>
+                <td class="text-foreground px-4 py-3 align-top">
+                  <span class="font-medium">{row.label}</span>
+                  {row.note && <span class="text-muted-foreground mt-1 block text-sm">{row.note}</span>}
+                </td>
+                <td class="text-foreground px-4 py-3 align-top font-semibold whitespace-nowrap tabular-nums">
+                  {row.price ?? "—"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )
+}

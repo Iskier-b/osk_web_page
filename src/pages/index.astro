@@ -2,20 +2,125 @@
 export const prerender = true;
 
 import CtaBand from "@/components/sections/CtaBand.astro";
+import DashboardStrip from "@/components/sections/DashboardStrip.astro";
 import Hero from "@/components/sections/Hero.astro";
+import MediaFigure from "@/components/sections/MediaFigure.astro";
 import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
 import { getPageEntry } from "@/lib/content/pages";
 import { brandName } from "@/lib/site-nav";
 
 const { entry, Content } = await getPageEntry("home");
-const { title, heroTitle, heroSubtitle, heroImage, cta } = entry.data;
+const {
+  title,
+  heroTitle,
+  heroSubtitle,
+  heroImage,
+  heroPitches,
+  cta,
+  secondaryCta,
+  dashboardItems,
+  newsTeasers,
+  teaserImages,
+  reviewQuotes,
+} = entry.data;
 ---
 
 <Layout title={title || brandName}>
-  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} image={heroImage} />
+  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} pitches={heroPitches} image={heroImage} />
+
+  {dashboardItems && dashboardItems.length > 0 && <DashboardStrip items={dashboardItems} />}
+
+  {cta && <CtaBand label={cta.label} href={cta.href} />}
+
   <ProseSection>
     <Content />
+    {
+      secondaryCta && (
+        <p class="mt-6">
+          <a href={secondaryCta.href}>{secondaryCta.label}</a>
+          {" · "}
+          <a href="/artykuly">Aktualności</a>
+        </p>
+      )
+    }
   </ProseSection>
-  {cta && <CtaBand label={cta.label} href={cta.href} />}
+
+  {
+    newsTeasers && newsTeasers.length > 0 && (
+      <section class="border-border/60 border-t" aria-labelledby="home-news-heading">
+        <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+          <h2 id="home-news-heading" class="text-foreground text-2xl font-bold tracking-tight sm:text-3xl">
+            Z życia Auto Szkoły Juszczak
+          </h2>
+          <p class="text-muted-foreground mt-2 max-w-2xl text-base">
+            Wybrane aktualności ze strony szkoły — pełna lista w dziale Aktualności.
+          </p>
+          <ul class="mt-8 max-w-3xl space-y-6">
+            {newsTeasers.map((item) => (
+              <li>
+                <h3 class="text-foreground text-lg font-semibold">{item.title}</h3>
+                {item.summary && <p class="text-muted-foreground mt-1 text-base">{item.summary}</p>}
+              </li>
+            ))}
+          </ul>
+          <p class="mt-8">
+            <a href="/artykuly" class="text-primary font-medium hover:underline">
+              Przejdź do aktualności
+            </a>
+          </p>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    teaserImages && teaserImages.length > 0 && (
+      <section class="border-border/60 bg-secondary/30 border-t" aria-labelledby="home-gallery-heading">
+        <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+          <h2 id="home-gallery-heading" class="text-foreground text-2xl font-bold tracking-tight sm:text-3xl">
+            Galeria
+          </h2>
+          <p class="text-muted-foreground mt-2 max-w-2xl text-base">
+            Fragment floty i szkolenia — więcej zdjęć w galerii.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            {teaserImages.map((img) => (
+              <MediaFigure src={img.src} alt={img.alt} />
+            ))}
+          </div>
+          <p class="mt-8">
+            <a href="/galeria" class="text-primary font-medium hover:underline">
+              Zobacz galerię
+            </a>
+          </p>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    reviewQuotes && reviewQuotes.length > 0 && (
+      <section class="border-border/60 border-t" aria-labelledby="home-reviews-heading">
+        <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+          <h2 id="home-reviews-heading" class="text-foreground text-2xl font-bold tracking-tight sm:text-3xl">
+            Opinie kursantów
+          </h2>
+          <ul class="mt-8 max-w-3xl space-y-8">
+            {reviewQuotes.map((item) => (
+              <li>
+                <blockquote class="text-foreground text-base leading-relaxed">„{item.quote}”</blockquote>
+                <p class="text-muted-foreground mt-2 text-sm">{item.author}</p>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-8">
+            <a href="/referencje" class="text-primary font-medium hover:underline">
+              Więcej opinii
+            </a>
+          </p>
+        </div>
+      </section>
+    )
+  }
 </Layout>

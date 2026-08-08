@@ -9,11 +9,12 @@ interface HeroImage {
 interface Props {
   title: string;
   subtitle?: string;
+  pitches?: string[];
   image?: HeroImage;
   class?: string;
 }
 
-const { title, subtitle, image, class: className } = Astro.props;
+const { title, subtitle, pitches = [], image, class: className } = Astro.props;
 ---
 
 <section class:list={cn("relative overflow-hidden", className)}>
@@ -31,6 +32,13 @@ const { title, subtitle, image, class: className } = Astro.props;
         <div class="relative mx-auto flex min-h-[min(70vh,36rem)] max-w-6xl flex-col justify-end px-4 py-16 sm:px-6 sm:py-20">
           <h1 class="text-foreground max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
           {subtitle && <p class="text-foreground/90 mt-4 max-w-2xl text-lg sm:text-xl">{subtitle}</p>}
+          {pitches.length > 0 && (
+            <ul class="text-foreground/90 mt-6 max-w-2xl space-y-2 text-base sm:text-lg">
+              {pitches.map((pitch) => (
+                <li>{pitch}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     ) : (
@@ -38,6 +46,13 @@ const { title, subtitle, image, class: className } = Astro.props;
         <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
           <h1 class="text-foreground max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
           {subtitle && <p class="text-muted-foreground mt-4 max-w-2xl text-lg sm:text-xl">{subtitle}</p>}
+          {pitches.length > 0 && (
+            <ul class="text-muted-foreground mt-6 max-w-2xl space-y-2 text-base sm:text-lg">
+              {pitches.map((pitch) => (
+                <li>{pitch}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     )

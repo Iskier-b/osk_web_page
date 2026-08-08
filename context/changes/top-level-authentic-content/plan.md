@@ -353,11 +353,11 @@ No database migration. Content moves from live source HTML into repo Markdown/as
 
 #### Automated
 
-- [x] 1.1 `src/content.config.ts` exists and `npx astro sync` succeeds
-- [x] 1.2 Seven MD entry files exist under `src/content/pages/`
-- [x] 1.3 At least three section components exist under `src/components/sections/`
-- [x] 1.4 `npm run lint` passes
-- [x] 1.5 `npm run build` passes
+- [x] 1.1 `src/content.config.ts` exists and `npx astro sync` succeeds — e72f735
+- [x] 1.2 Seven MD entry files exist under `src/content/pages/` — e72f735
+- [x] 1.3 At least three section components exist under `src/components/sections/` — e72f735
+- [x] 1.4 `npm run lint` passes — e72f735
+- [x] 1.5 `npm run build` passes — e72f735
 
 #### Manual
 
@@ -368,9 +368,9 @@ No database migration. Content moves from live source HTML into repo Markdown/as
 
 #### Automated
 
-- [ ] 2.1 Routes `/`, `/nasza-auto-szkola`, `/kursy`, `/cennik` no longer render stub meta `Treść w przygotowaniu`
-- [ ] 2.2 `npm run lint` passes
-- [ ] 2.3 `npm run build` passes
+- [x] 2.1 Routes `/`, `/nasza-auto-szkola`, `/kursy`, `/cennik` no longer render stub meta `Treść w przygotowaniu`
+- [x] 2.2 `npm run lint` passes
+- [x] 2.3 `npm run build` passes
 
 #### Manual
 

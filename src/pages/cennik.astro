@@ -1,11 +1,23 @@
 ---
-import StubPage from "@/components/site/StubPage.astro";
+export const prerender = true;
+
+import CtaBand from "@/components/sections/CtaBand.astro";
+import Hero from "@/components/sections/Hero.astro";
+import PriceTable from "@/components/sections/PriceTable.astro";
+import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getPageEntry } from "@/lib/content/pages";
 import { brandName } from "@/lib/site-nav";
 
-const title = "Cennik";
+const { entry, Content } = await getPageEntry("cennik");
+const { title, heroTitle, heroSubtitle, cta, priceRows } = entry.data;
 ---
 
 <Layout title={`${title} | ${brandName}`}>
-  <StubPage title={title} />
+  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} />
+  {priceRows && priceRows.length > 0 && <PriceTable rows={priceRows} caption="Ceny kursów i jazd" />}
+  <ProseSection>
+    <Content />
+  </ProseSection>
+  {cta && <CtaBand label={cta.label} href={cta.href} />}
 </Layout>
