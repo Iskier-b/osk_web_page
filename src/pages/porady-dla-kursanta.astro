@@ -1,0 +1,11 @@
+---
+import StubPage from "@/components/site/StubPage.astro";
+import Layout from "@/layouts/Layout.astro";
+import { brandName, strefaChildren } from "@/lib/site-nav";
+
+const title = "Strefa kursanta";
+---
+
+<Layout title={`${title} | ${brandName}`}>
+  <StubPage title={title} childrenLinks={strefaChildren} />
+</Layout>

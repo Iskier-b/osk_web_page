@@ -1,0 +1,11 @@
+---
+import StubPage from "@/components/site/StubPage.astro";
+import Layout from "@/layouts/Layout.astro";
+import { brandName, ofertaChildren } from "@/lib/site-nav";
+
+const title = "Oferta";
+---
+
+<Layout title={`${title} | ${brandName}`}>
+  <StubPage title={title} childrenLinks={ofertaChildren} />
+</Layout>

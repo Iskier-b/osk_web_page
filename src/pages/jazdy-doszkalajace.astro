@@ -2,8 +2,10 @@
 import StubPage from "@/components/site/StubPage.astro";
 import Layout from "@/layouts/Layout.astro";
 import { brandName } from "@/lib/site-nav";
+
+const title = "Jazdy doszkalające";
 ---
 
-<Layout title={brandName}>
-  <StubPage title={brandName} />
+<Layout title={`${title} | ${brandName}`}>
+  <StubPage title={title} />
 </Layout>

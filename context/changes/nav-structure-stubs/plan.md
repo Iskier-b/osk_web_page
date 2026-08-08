@@ -282,9 +282,9 @@ No data migration. Starter home/auth remain in repo; public IA supersedes Welcom
 
 #### Automated
 
-- [x] 2.1 site-nav module exists and lists all primary + depth-2 hrefs from MVP-in structure
-- [x] 2.2 npm run lint passes
-- [x] 2.3 npm run build passes
+- [x] 2.1 site-nav module exists and lists all primary + depth-2 hrefs from MVP-in structure — c6da124
+- [x] 2.2 npm run lint passes — c6da124
+- [x] 2.3 npm run build passes — c6da124
 
 #### Manual
 
@@ -296,9 +296,9 @@ No data migration. Starter home/auth remain in repo; public IA supersedes Welcom
 
 #### Automated
 
-- [ ] 3.1 All MVP-in structure paths have corresponding src/pages files
-- [ ] 3.2 npm run lint passes
-- [ ] 3.3 npm run build passes
+- [x] 3.1 All MVP-in structure paths have corresponding src/pages files
+- [x] 3.2 npm run lint passes
+- [x] 3.3 npm run build passes
 
 #### Manual
 
