@@ -1,7 +1,7 @@
 ---
 change_id: visual-style-lock
 title: Propose audience-based visual directions for style gate
-status: implementing
+status: implemented
 created: 2026-08-09
 updated: 2026-08-09
 archived_at: null
@@ -20,4 +20,4 @@ Planning decisions (2026-08-09):
 
 ### Phase 3 (2026-08-09)
 
-Proposal artifacts are complete (`audience-brief.md` + three direction cards). Choice remains open — no `locked-direction` (or equivalent lock artifact) claimed in this change. Status stays `implementing` until Automated gates + epilogue flip it.
+Proposal artifacts are complete (`audience-brief.md` + three direction cards). Choice remains open — no `locked-direction` (or equivalent lock artifact) claimed in this change. Status flipped to `implemented` after Automated gates + epilogue; Manual checklist rows remain for human review.

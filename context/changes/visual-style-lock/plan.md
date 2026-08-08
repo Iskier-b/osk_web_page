@@ -248,8 +248,8 @@ N/A — no runtime or data migration. When a direction is later locked, S-01+ sh
 
 #### Automated
 
-- [x] 3.1 README references all three direction files by path
-- [x] 3.2 `audience-brief.md` + three direction files still present
+- [x] 3.1 README references all three direction files by path — 49fc72f
+- [x] 3.2 `audience-brief.md` + three direction files still present — 49fc72f
 
 #### Manual
 
