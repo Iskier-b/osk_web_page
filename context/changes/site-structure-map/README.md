@@ -17,13 +17,13 @@ This change is documentation only — no Astro routes or `src/` UI.
 
 ## Documents
 
-| File | Role | Status (Phase 1) |
-| ---- | ---- | ---------------- |
+| File | Role | Status |
+| ---- | ---- | ------ |
 | `change.md` | Change identity + planning notes | Present |
 | `README.md` | Pack index, language rule, FR-001 checklist, downstream consumers | Present (this file) |
 | `crawl-inventory.md` | URL fetch inventory seed (status / discovery source) | Present — working seed for later phases |
-| `sitemap.md` | Primary/footer/Strefa menus & hierarchy | Placeholder — filled in Phase 2 |
-| `sections.md` | Homepage sections + repeated components | Placeholder — filled in Phase 2 |
+| `sitemap.md` | Primary/footer/Strefa menus & hierarchy | Present — Phase 2 complete |
+| `sections.md` | Homepage sections + repeated components | Present — Phase 2 complete |
 | `forms-integrations.md` | Forms, interactive features, integrations, backend-needed | Placeholder — filled in Phase 3 |
 | `mvp-scope.md` | MVP-in / stubs / MVP-out + recommendations | Placeholder — filled in Phase 4 |
 | `plan.md` / `plan-brief.md` | Implementation plan (not pack deliverables) | Planning artifacts |
@@ -35,10 +35,10 @@ This change is documentation only — no Astro routes or `src/` UI.
 
 ## FR-001 completeness checklist
 
-Checklist topics from PRD FR-001 / `page_mvp.md` §2. Boxes are closed by later phases; Phase 1 only defines the contract.
+Checklist topics from PRD FR-001 / `page_mvp.md` §2. Structure topics closed in Phase 2; remaining boxes by later phases.
 
-- [ ] Sitemap / menus (`sitemap.md`)
-- [ ] Key sections and repeated components (`sections.md`)
+- [x] Sitemap / menus (`sitemap.md`)
+- [x] Key sections and repeated components (`sections.md`)
 - [ ] Forms and interactive features (`forms-integrations.md`)
 - [ ] External integrations (`forms-integrations.md`)
 - [ ] Backend-or-server-needed features (`forms-integrations.md`)

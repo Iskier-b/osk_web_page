@@ -287,10 +287,10 @@ N/A for app/data. When this change archives, keep the pack readable under `conte
 
 #### Automated
 
-- [x] 1.1 change.md exists with change_id site-structure-map
-- [x] 1.2 README.md exists with Purpose, Documents, FR-001 checklist headings
-- [x] 1.3 crawl-inventory.md table includes all primary-nav paths plus zapisy-na-kurs
-- [x] 1.4 Blog represented as listing-only (/artykuly); no per-post inventory required
+- [x] 1.1 change.md exists with change_id site-structure-map — 5e136c6
+- [x] 1.2 README.md exists with Purpose, Documents, FR-001 checklist headings — 5e136c6
+- [x] 1.3 crawl-inventory.md table includes all primary-nav paths plus zapisy-na-kurs — 5e136c6
+- [x] 1.4 Blog represented as listing-only (/artykuly); no per-post inventory required — 5e136c6
 
 #### Manual
 
@@ -300,9 +300,9 @@ N/A for app/data. When this change archives, keep the pack readable under `conte
 
 #### Automated
 
-- [ ] 2.1 sitemap.md has primary nav, footer/legal, and Strefa sections
-- [ ] 2.2 sections.md covers homepage sections and repeated components
-- [ ] 2.3 Primary nav PL labels appear verbatim in sitemap.md
+- [x] 2.1 sitemap.md has primary nav, footer/legal, and Strefa sections
+- [x] 2.2 sections.md covers homepage sections and repeated components
+- [x] 2.3 Primary nav PL labels appear verbatim in sitemap.md
 
 #### Manual
 
