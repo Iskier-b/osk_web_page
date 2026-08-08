@@ -1,10 +1,10 @@
 ---
 change_id: site-structure-map
 title: Map source OSK site into full analysis pack
-status: implemented
+status: archived
 created: 2026-08-09
-updated: 2026-08-09
-archived_at: null
+updated: 2026-08-08
+archived_at: 2026-08-08T22:49:22Z
 ---
 
 ## Notes
