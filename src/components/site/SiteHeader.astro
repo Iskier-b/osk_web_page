@@ -1,0 +1,15 @@
+---
+import SiteNav from "@/components/site/SiteNav";
+import { brandName, homeHref } from "@/lib/site-nav";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="border-border/80 bg-background/95 relative sticky top-0 z-40 border-b backdrop-blur-sm">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href={homeHref} class="text-foreground min-w-0 shrink font-sans text-lg font-bold tracking-tight sm:text-xl">
+      {brandName}
+    </a>
+    <SiteNav client:load currentPath={currentPath} />
+  </div>
+</header>

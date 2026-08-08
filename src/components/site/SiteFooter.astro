@@ -1,0 +1,40 @@
+---
+import { brandName, demoKontoHref, demoKontoLabel, footerLinks, phoneHref, phoneLabel } from "@/lib/site-nav";
+---
+
+<footer class="border-border bg-muted/40 mt-auto border-t">
+  <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6">
+    <div class="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+      <div class="space-y-2">
+        <p class="text-foreground text-base font-bold">{brandName}</p>
+        <a href={phoneHref} class="text-foreground/80 hover:text-primary text-sm transition-colors">
+          {phoneLabel}
+        </a>
+      </div>
+
+      <nav aria-label="Mapa strony">
+        <p class="text-foreground mb-3 text-sm font-semibold">Mapa strony</p>
+        <ul class="grid gap-2 sm:grid-cols-2">
+          {
+            footerLinks.map((link) => (
+              <li>
+                <a href={link.href} class="text-foreground/75 hover:text-primary text-sm transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+
+    <div
+      class="border-border text-muted-foreground flex flex-col gap-2 border-t pt-4 text-sm sm:flex-row sm:items-center sm:justify-between"
+    >
+      <a href={demoKontoHref} class="hover:text-primary transition-colors">
+        {demoKontoLabel}
+      </a>
+      <p>© {brandName}</p>
+    </div>
+  </div>
+</footer>

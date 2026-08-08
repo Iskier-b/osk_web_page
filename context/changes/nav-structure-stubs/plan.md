@@ -269,9 +269,9 @@ No data migration. Starter home/auth remain in repo; public IA supersedes Welcom
 
 #### Automated
 
-- [x] 1.1 Lock file exists at context/changes/nav-structure-stubs/locked-direction.md and names Broad
-- [x] 1.2 npm run lint passes
-- [x] 1.3 npm run build passes
+- [x] 1.1 Lock file exists at context/changes/nav-structure-stubs/locked-direction.md and names Broad — 29a6042
+- [x] 1.2 npm run lint passes — 29a6042
+- [x] 1.3 npm run build passes — 29a6042
 
 #### Manual
 
@@ -282,9 +282,9 @@ No data migration. Starter home/auth remain in repo; public IA supersedes Welcom
 
 #### Automated
 
-- [ ] 2.1 site-nav module exists and lists all primary + depth-2 hrefs from MVP-in structure
-- [ ] 2.2 npm run lint passes
-- [ ] 2.3 npm run build passes
+- [x] 2.1 site-nav module exists and lists all primary + depth-2 hrefs from MVP-in structure
+- [x] 2.2 npm run lint passes
+- [x] 2.3 npm run build passes
 
 #### Manual
 
