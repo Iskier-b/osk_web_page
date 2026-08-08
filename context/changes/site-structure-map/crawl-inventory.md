@@ -1,5 +1,7 @@
 # Crawl inventory seed
 
+Superseded for IA — see `sitemap.md` / `mvp-scope.md`; retained as raw crawl log.
+
 Working URL inventory from HTML crawl of https://www.autojuszczak.com.pl/ (2026-08-09). Seed for Phase 2+ structure docs — not a substitute for `sitemap.md`.
 
 **Rules applied:** seed from primary nav + footer Mapa strony + Strefa hub (`/porady-dla-kursanta`) + offer siblings linked from homepage/`/kursy`. Blog = listing `/artykuly` only (no per-post rows). PDFs = `asset-only`. Statuses from `curl.exe` HTTP codes (`ok` = HTTP 200 HTML page).

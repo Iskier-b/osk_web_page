@@ -6,6 +6,8 @@ Reusable FR-001 analysis pack for the source client site. Documents information 
 
 This change is documentation only — no Astro routes or `src/` UI.
 
+**Scope questions first:** open [`mvp-scope.md`](./mvp-scope.md) before planning stubs, copy, deep path, or inert forms.
+
 ## Source
 
 | Field | Value |
@@ -21,12 +23,14 @@ This change is documentation only — no Astro routes or `src/` UI.
 | ---- | ---- | ------ |
 | `change.md` | Change identity + planning notes | Present |
 | `README.md` | Pack index, language rule, FR-001 checklist, downstream consumers | Present (this file) |
-| `crawl-inventory.md` | URL fetch inventory seed (status / discovery source) | Present — working seed for later phases |
-| `sitemap.md` | Primary/footer/Strefa menus & hierarchy | Present — Phase 2 complete |
-| `sections.md` | Homepage sections + repeated components | Present — Phase 2 complete |
-| `forms-integrations.md` | Forms, interactive features, integrations, backend-needed | Present — Phase 3 complete |
-| `mvp-scope.md` | MVP-in / stubs / MVP-out + recommendations | Placeholder — filled in Phase 4 |
+| `sitemap.md` | Primary/footer/Strefa menus & hierarchy | Present |
+| `sections.md` | Homepage sections + repeated components | Present |
+| `forms-integrations.md` | Forms, interactive features, integrations, backend-needed | Present |
+| `mvp-scope.md` | MVP-in / stubs / MVP-out + recommendations | Present — start here for scope |
+| `crawl-inventory.md` | Raw crawl log (superseded for IA) | Present — appendix; see note in file |
 | `plan.md` / `plan-brief.md` | Implementation plan (not pack deliverables) | Planning artifacts |
+
+Pack deliverables (five): `README.md`, `sitemap.md`, `sections.md`, `forms-integrations.md`, `mvp-scope.md`.
 
 ## Language
 
@@ -35,14 +39,14 @@ This change is documentation only — no Astro routes or `src/` UI.
 
 ## FR-001 completeness checklist
 
-Checklist topics from PRD FR-001 / `page_mvp.md` §2. Structure topics closed in Phase 2; remaining boxes by later phases.
+Checklist topics from PRD FR-001 / `page_mvp.md` §2. All required topics complete.
 
 - [x] Sitemap / menus (`sitemap.md`)
 - [x] Key sections and repeated components (`sections.md`)
 - [x] Forms and interactive features (`forms-integrations.md`)
 - [x] External integrations (`forms-integrations.md`)
 - [x] Backend-or-server-needed features (`forms-integrations.md`)
-- [ ] Explicit MVP-in vs MVP-out classification (`mvp-scope.md`)
+- [x] Explicit MVP-in vs MVP-out classification (`mvp-scope.md`)
 
 Supporting seed (not a FR-001 topic by itself):
 

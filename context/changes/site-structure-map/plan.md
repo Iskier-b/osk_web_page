@@ -312,9 +312,9 @@ N/A for app/data. When this change archives, keep the pack readable under `conte
 
 #### Automated
 
-- [x] 3.1 forms-integrations.md covers forms, interactive, integrations, backend-needed
-- [x] 3.2 Zapisy, kontakt, and referencje/opinie form surfaces are listed
-- [x] 3.3 Maps, social, and analytics or reCAPTCHA appear under integrations
+- [x] 3.1 forms-integrations.md covers forms, interactive, integrations, backend-needed — 3a6bb46
+- [x] 3.2 Zapisy, kontakt, and referencje/opinie form surfaces are listed — 3a6bb46
+- [x] 3.3 Maps, social, and analytics or reCAPTCHA appear under integrations — 3a6bb46
 
 #### Manual
 
@@ -324,10 +324,10 @@ N/A for app/data. When this change archives, keep the pack readable under `conte
 
 #### Automated
 
-- [ ] 4.1 mvp-scope.md has structure-in, copy targets, out, recommendations, unreachable registry
-- [ ] 4.2 Copy targets include each primary nav path
-- [ ] 4.3 Recommendations name one deep path and a non-empty forms list
-- [ ] 4.4 README FR-001 checklist complete; all five pack files present
+- [x] 4.1 mvp-scope.md has structure-in, copy targets, out, recommendations, unreachable registry
+- [x] 4.2 Copy targets include each primary nav path
+- [x] 4.3 Recommendations name one deep path and a non-empty forms list
+- [x] 4.4 README FR-001 checklist complete; all five pack files present
 
 #### Manual
 
