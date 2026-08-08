@@ -223,8 +223,8 @@ N/A — no runtime or data migration. When a direction is later locked, S-01+ sh
 
 #### Automated
 
-- [x] 1.1 Files exist: `change.md`, `README.md`, `audience-brief.md` under `context/changes/visual-style-lock/`
-- [x] 1.2 README Documents table lists the three planned direction filenames
+- [x] 1.1 Files exist: `change.md`, `README.md`, `audience-brief.md` under `context/changes/visual-style-lock/` — 876916a
+- [x] 1.2 README Documents table lists the three planned direction filenames — 876916a
 
 #### Manual
 
@@ -235,8 +235,8 @@ N/A — no runtime or data migration. When a direction is later locked, S-01+ sh
 
 #### Automated
 
-- [ ] 2.1 Three files exist: `direction-young-drivers.md`, `direction-business.md`, `direction-broad.md`
-- [ ] 2.2 Each file contains the shared section headings from the card schema
+- [x] 2.1 Three files exist: `direction-young-drivers.md`, `direction-business.md`, `direction-broad.md`
+- [x] 2.2 Each file contains the shared section headings from the card schema
 
 #### Manual
 
