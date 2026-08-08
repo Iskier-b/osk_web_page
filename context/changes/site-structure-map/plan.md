@@ -300,9 +300,9 @@ N/A for app/data. When this change archives, keep the pack readable under `conte
 
 #### Automated
 
-- [x] 2.1 sitemap.md has primary nav, footer/legal, and Strefa sections
-- [x] 2.2 sections.md covers homepage sections and repeated components
-- [x] 2.3 Primary nav PL labels appear verbatim in sitemap.md
+- [x] 2.1 sitemap.md has primary nav, footer/legal, and Strefa sections — bd88999
+- [x] 2.2 sections.md covers homepage sections and repeated components — bd88999
+- [x] 2.3 Primary nav PL labels appear verbatim in sitemap.md — bd88999
 
 #### Manual
 
@@ -312,9 +312,9 @@ N/A for app/data. When this change archives, keep the pack readable under `conte
 
 #### Automated
 
-- [ ] 3.1 forms-integrations.md covers forms, interactive, integrations, backend-needed
-- [ ] 3.2 Zapisy, kontakt, and referencje/opinie form surfaces are listed
-- [ ] 3.3 Maps, social, and analytics or reCAPTCHA appear under integrations
+- [x] 3.1 forms-integrations.md covers forms, interactive, integrations, backend-needed
+- [x] 3.2 Zapisy, kontakt, and referencje/opinie form surfaces are listed
+- [x] 3.3 Maps, social, and analytics or reCAPTCHA appear under integrations
 
 #### Manual
 
