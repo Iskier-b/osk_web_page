@@ -296,9 +296,9 @@ No data migration. Starter home/auth remain in repo; public IA supersedes Welcom
 
 #### Automated
 
-- [x] 3.1 All MVP-in structure paths have corresponding src/pages files
-- [x] 3.2 npm run lint passes
-- [x] 3.3 npm run build passes
+- [x] 3.1 All MVP-in structure paths have corresponding src/pages files — b95a6f8
+- [x] 3.2 npm run lint passes — b95a6f8
+- [x] 3.3 npm run build passes — b95a6f8
 
 #### Manual
 
