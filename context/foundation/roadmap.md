@@ -14,14 +14,15 @@ top_blocker: capacity
 > Derived from `context/foundation/prd.md` (v1) + auto-researched codebase baseline.
 > Edit-in-place; archive when superseded.
 > Slices below are listed in dependency order. The "At a glance" table is the index.
+> Synced 2026-08-08 with refreshed `page_mvp.md` (broader F-01 analysis pack; F-02 user-chooses-style; FR-009 retained).
 
 ## Vision recap
 
-The OSK owner's current site looks outdated and does not drive candidate inflow; they lack a concrete modern presentation of their own offer to evaluate. The MVP proves a redesign with authentic content from https://www.autojuszczak.com.pl/ in a clearer information hierarchy — the owner commits only after seeing *their* content, not an abstract mockup.
+The OSK owner's current site looks outdated and does not drive candidate inflow; they lack a concrete modern presentation of their own offer to evaluate. The MVP proves a redesign with authentic content from https://www.autojuszczak.com.pl/ in a clearer information hierarchy — the owner commits only after seeing *their* content, not an abstract mockup. Character: demonstracyjny PoC, not production completeness.
 
 ## North star
 
-**F-01 + F-02: structure map documented and visual style locked** — chosen so authentic top-level content is never built against an unlocked hierarchy or style; this is the gate before the market-feedback moment (owner recognition on a public URL).
+**F-01 + F-02: analysis pack documented and visual style locked by user choice** — chosen so authentic top-level content is never built against an unlocked hierarchy or style; this is the gate before the market-feedback moment (owner recognition on a public URL).
 
 > Here, **north star** means the smallest end-to-end milestone whose successful delivery unlocks proving the core product hypothesis — placed as early as Prerequisites allow because later content and publish work only matter once structure and style are locked.
 
@@ -29,13 +30,13 @@ The OSK owner's current site looks outdated and does not drive candidate inflow;
 
 | ID | Change ID | Outcome (user can …) | Prerequisites | PRD refs | Status |
 |---|---|---|---|---|---|
-| F-01 | site-structure-map | (foundation) reusable source-site structure documentation exists | — | FR-001 | ready |
-| F-02 | visual-style-lock | (foundation) visual style locked after owner/PO conversation | — | FR-002 | ready |
-| S-01 | nav-structure-stubs | visitor can browse full nav; missing bodies are title-only stubs | F-01, F-02 | US-01, FR-003 | proposed |
+| F-01 | site-structure-map | (foundation) full source-site analysis pack exists (sitemap, sections, forms, integrations, backend-needed, MVP-in/out) | — | FR-001 | ready |
+| F-02 | visual-style-lock | (foundation) visual style locked by user choice from agent-proposed directions | — | FR-002 | ready |
+| S-01 | nav-structure-stubs | visitor can browse full nav; missing bodies are title-only / placeholder stubs | F-01, F-02 | US-01, FR-003 | proposed |
 | S-02 | top-level-authentic-content | visitor can read source-faithful top-level content in a clearer modern layout on mobile and desktop | S-01 | US-01, FR-004, FR-007, FR-008 | proposed |
 | S-03 | public-review-url | owner can open the modernized site at a public free-hosting URL | S-02 | US-01, FR-009 | proposed |
 | S-04 | representative-deep-path | visitor can follow one representative deeper path with real copied content | S-02 | US-01, FR-005 | proposed |
-| S-05 | inert-forms-ui | visitor can see forms as ready UI with submit clearly disabled (no data sent) | S-02 | US-01, FR-006 | proposed |
+| S-05 | inert-forms-ui | visitor can see forms as ready UI with submit clearly disabled (no data sent; demo-only) | S-02 | US-01, FR-006 | proposed |
 
 ## Streams
 
@@ -62,22 +63,22 @@ Foundations below assume these are present and do NOT re-scaffold them.
 
 ## Foundations
 
-### F-01: Site structure map
+### F-01: Site analysis pack
 
-- **Outcome:** (foundation) reusable structure documentation of the source client site exists and can drive navigation parity on the new site.
+- **Outcome:** (foundation) reusable analysis pack of the source client site exists — sitemap/menus, key sections and repeated components, forms/interactive features, external integrations, backend-or-server-needed features, and explicit MVP-in vs MVP-out — and can drive navigation parity plus scoped build decisions.
 - **Change ID:** site-structure-map
 - **PRD refs:** FR-001
-- **Unlocks:** S-01, S-02, S-04; reduces unknown “what is the full nav tree?”
+- **Unlocks:** S-01, S-02, S-04, S-05; reduces unknown “what is the full nav tree?” and “what is demo-only vs out of scope?”
 - **Prerequisites:** —
 - **Parallel with:** F-02
 - **Blockers:** —
 - **Unknowns:** —
-- **Risk:** Sequenced first (with F-02) because building content without a complete map recreates the overload problem the Vision rejects; incomplete mapping would force rework of stubs and deep-path choice.
+- **Risk:** Sequenced first (with F-02) because building content without a complete analysis recreates the overload problem the Vision rejects; incomplete mapping would force rework of stubs, deep-path choice, and inert-forms scope.
 - **Status:** ready
 
 ### F-02: Visual style lock
 
-- **Outcome:** (foundation) visual style is chosen and locked after a conversation with the site owner or project PO — before MVP page build starts.
+- **Outcome:** (foundation) visual style is locked before MVP page build starts — agent proposes audience-based directions with short pros; user chooses one; direction applied consistently.
 - **Change ID:** visual-style-lock
 - **PRD refs:** FR-002
 - **Unlocks:** S-01, S-02, S-04, S-05; verification path for layout consistency (FR-008)
@@ -85,15 +86,15 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Parallel with:** F-01
 - **Blockers:** —
 - **Unknowns:**
-  - Which style direction wins after the owner/PO conversation? — Owner: user. Block: no. (FR-002 allows PO proxy; lock can proceed once that talk happens.)
-- **Risk:** Part of the north-star gate; unlocking style before content avoids polishing the wrong look. Delay here blocks every visual slice — schedule the conversation early under capacity pressure.
+  - Which style direction does the user choose from the agent proposals? — Owner: user. Block: no. (Gate is the choice itself; proposals can be prepared in parallel with F-01.)
+- **Risk:** Part of the north-star gate; unlocking style before content avoids polishing the wrong look. Delay here blocks every visual slice — run the proposal→choice gate early under capacity pressure.
 - **Status:** ready
 
 ## Slices
 
 ### S-01: Navigation structure with title-only stubs
 
-- **Outcome:** visitor can browse the full navigation structure; where body content is not copied yet, subsections show title-only pages (no empty dead-end links).
+- **Outcome:** visitor can browse the full navigation structure; where body content is not copied yet, subsections show title-only / placeholder pages (no empty dead-end links; no invented body copy).
 - **Change ID:** nav-structure-stubs
 - **PRD refs:** US-01, FR-003
 - **Prerequisites:** F-01, F-02
@@ -105,7 +106,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 
 ### S-02: Top-level authentic content
 
-- **Outcome:** visitor can read source-faithful top-hierarchy content the owner will recognize, with light clarity/hierarchy edits only, in a readable mobile-first and consistent desktop layout.
+- **Outcome:** visitor can read source-faithful top-hierarchy content the owner will recognize, with light clarity/hierarchy edits only and no invented facts (no new copywriting), in a readable mobile-first and consistent desktop layout.
 - **Change ID:** top-level-authentic-content
 - **PRD refs:** US-01, FR-004, FR-007, FR-008
 - **Prerequisites:** S-01
@@ -117,7 +118,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 
 ### S-03: Public review URL
 
-- **Outcome:** owner can review the modernized site at a public URL on free static hosting (not only local preview).
+- **Outcome:** owner can review the modernized site at a public URL on free static hosting (not only local preview). Retained as must-have after page_mvp refresh (brief omitted hosting wording; plan keeps FR-009).
 - **Change ID:** public-review-url
 - **PRD refs:** US-01, FR-009
 - **Prerequisites:** S-02
@@ -136,37 +137,37 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Parallel with:** S-03, S-05
 - **Blockers:** —
 - **Unknowns:**
-  - Which single deeper path is the representative journey? — Owner: user. Block: no. (PRD allows developer choice; decide at plan time.)
+  - Which single deeper path is the representative journey? — Owner: user. Block: no. (PRD allows developer choice; decide at plan time; F-01 analysis pack informs the pick.)
 - **Risk:** Sequenced after top-level so the validation milestone is not delayed by deep copy; still must-have before calling US-01 fully done.
 - **Status:** proposed
 
 ### S-05: Inert forms UI
 
-- **Outcome:** visitor can see forms as ready UI elements that perform no send/submit and clearly communicate that submission is disabled in this version.
+- **Outcome:** visitor can see forms as ready UI elements that perform no send/submit and clearly communicate that submission is disabled in this version (demo-only; must not imply production-working).
 - **Change ID:** inert-forms-ui
 - **PRD refs:** US-01, FR-006
 - **Prerequisites:** S-02
 - **Parallel with:** S-03, S-04
 - **Blockers:** —
 - **Unknowns:** —
-- **Risk:** Trust-preserving forms without integrations (Non-Goals). Parallel with deep path under capacity so publish feedback is not blocked by form polish.
+- **Risk:** Trust-preserving forms without integrations (Non-Goals). Scope of which forms to show comes from F-01 MVP-in/out. Parallel with deep path under capacity so publish feedback is not blocked by form polish.
 - **Status:** proposed
 
 ## Backlog Handoff
 
 | Roadmap ID | Change ID | Suggested issue title | Ready for `/10x-plan` | Notes |
 |---|---|---|---|---|
-| F-01 | site-structure-map | Map source OSK site into reusable structure docs | yes | North-star gate (with F-02); run `/10x-plan site-structure-map` |
-| F-02 | visual-style-lock | Lock visual style after owner/PO conversation | yes | Parallel with F-01 |
-| S-01 | nav-structure-stubs | Full nav with title-only stubs | no | Needs F-01 + F-02 |
+| F-01 | site-structure-map | Map source OSK site into full analysis pack | yes | North-star gate (with F-02); run `/10x-plan site-structure-map` |
+| F-02 | visual-style-lock | Propose visual directions; user locks one | yes | Parallel with F-01 |
+| S-01 | nav-structure-stubs | Full nav with title-only / placeholder stubs | no | Needs F-01 + F-02 |
 | S-02 | top-level-authentic-content | Top-level authentic content + mobile/desktop bar | no | Needs S-01 |
-| S-03 | public-review-url | Publish public free-hosting review URL | no | Needs S-02 |
+| S-03 | public-review-url | Publish public free-hosting review URL | no | Needs S-02; FR-009 retained |
 | S-04 | representative-deep-path | One representative deep path with real copy | no | Needs S-02; parallel with S-03/S-05 |
-| S-05 | inert-forms-ui | Forms visible with submit disabled | no | Needs S-02; parallel with S-03/S-04 |
+| S-05 | inert-forms-ui | Forms visible with submit disabled (demo-only) | no | Needs S-02; parallel with S-03/S-04 |
 
 ## Open Roadmap Questions
 
-1. **Should the unused starter auth/Supabase paths be removed or ignored while building the public static prototype?** — Owner: user. Block: roadmap-wide (capacity only; does not block planning F-01/F-02). Slimming may free after-hours capacity; ignoring avoids a refactor detour.
+1. **Should the unused starter auth/Supabase paths be removed or ignored while building the public static prototype?** — Owner: user. Block: roadmap-wide (capacity only; does not block planning F-01/F-02). Slimming may free after-hours capacity; ignoring avoids a refactor detour. Also surfaces in F-01 as backend/auth out-of-MVP.
 2. **Which deeper path is the representative journey for FR-005?** — Owner: user. Block: S-04. Not required to start F-01/F-02/S-01/S-02.
 
 ## Parked
