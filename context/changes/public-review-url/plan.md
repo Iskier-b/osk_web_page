@@ -251,7 +251,7 @@ Cold starts on SSR stub routes are acceptable for a demo. No caching/CDN tuning 
 
 #### Automated
 
-- [x] 2.1 Local `npm run build` succeeds immediately before deploy
+- [x] 2.1 Local `npm run build` succeeds immediately before deploy — 6855e27
 
 #### Manual
 
@@ -265,7 +265,7 @@ Cold starts on SSR stub routes are acceptable for a demo. No caching/CDN tuning 
 
 #### Automated
 
-- [ ] 3.1 `change.md` Notes contain the public review URL
+- [x] 3.1 `change.md` Notes contain the public review URL
 
 #### Manual
 
