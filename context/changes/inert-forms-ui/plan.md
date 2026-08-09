@@ -301,9 +301,9 @@ Not applicable (no data/backends). If S-04 Kontakt prose is mid-flight on anothe
 
 #### Automated
 
-- [x] 3.1 `/kontakt` and `/referencje` build as prerendered routes
-- [x] 3.2 npm run lint passes
-- [x] 3.3 npm run build passes
+- [x] 3.1 `/kontakt` and `/referencje` build as prerendered routes — 0031a18
+- [x] 3.2 npm run lint passes — 0031a18
+- [x] 3.3 npm run build passes — 0031a18
 
 #### Manual
 
@@ -315,8 +315,8 @@ Not applicable (no data/backends). If S-04 Kontakt prose is mid-flight on anothe
 
 #### Automated
 
-- [ ] 4.1 npm run lint passes
-- [ ] 4.2 npm run build passes
+- [x] 4.1 npm run lint passes
+- [x] 4.2 npm run build passes
 
 #### Manual
 
