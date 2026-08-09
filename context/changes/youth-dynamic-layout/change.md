@@ -19,3 +19,6 @@ Planning decisions (2026-08-09):
 - Success: visual checklist + owner review
 - StubPage + forms get full youth polish (visual); S-05 disabled-submit behavior unchanged
 - No time-based scope cuts — ship full agreed scope
+
+Public review URL (from S-03): https://osk-juszczak.bartosz-iskierka.workers.dev  
+Redeploy required for the URL to reflect this FR-010 layout pass — see `owner-checklist.md`.

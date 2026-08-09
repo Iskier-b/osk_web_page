@@ -370,8 +370,8 @@ No data migration. If the public URL is behind CI-only deploy, Phase 5 must incl
 
 #### Automated
 
-- [x] 4.1 `npm run lint` passes
-- [x] 4.2 `npm run build` passes
+- [x] 4.1 `npm run lint` passes — cf5ce03
+- [x] 4.2 `npm run build` passes — cf5ce03
 
 #### Manual
 
@@ -382,9 +382,9 @@ No data migration. If the public URL is behind CI-only deploy, Phase 5 must incl
 
 #### Automated
 
-- [ ] 5.1 `npm run lint` passes
-- [ ] 5.2 `npm run build` passes
-- [ ] 5.3 Confirm `src/lib/site-nav.ts` still unchanged vs branch base
+- [x] 5.1 `npm run lint` passes
+- [x] 5.2 `npm run build` passes
+- [x] 5.3 Confirm `src/lib/site-nav.ts` still unchanged vs branch base
 
 #### Manual
 
