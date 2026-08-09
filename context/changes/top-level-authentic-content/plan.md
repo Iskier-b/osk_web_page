@@ -368,9 +368,9 @@ No database migration. Content moves from live source HTML into repo Markdown/as
 
 #### Automated
 
-- [x] 2.1 Routes `/`, `/nasza-auto-szkola`, `/kursy`, `/cennik` no longer render stub meta `Treść w przygotowaniu`
-- [x] 2.2 `npm run lint` passes
-- [x] 2.3 `npm run build` passes
+- [x] 2.1 Routes `/`, `/nasza-auto-szkola`, `/kursy`, `/cennik` no longer render stub meta `Treść w przygotowaniu` — 7da58e1
+- [x] 2.2 `npm run lint` passes — 7da58e1
+- [x] 2.3 `npm run build` passes — 7da58e1
 
 #### Manual
 
@@ -383,10 +383,10 @@ No database migration. Content moves from live source HTML into repo Markdown/as
 
 #### Automated
 
-- [ ] 3.1 `/porady-dla-kursanta`, `/galeria`, `/artykuly` no longer show stub meta `Treść w przygotowaniu`
-- [ ] 3.2 `/kontakt` and `/zapisy-na-kurs` still show stub meta `Treść w przygotowaniu`
-- [ ] 3.3 `npm run lint` passes
-- [ ] 3.4 `npm run build` passes
+- [x] 3.1 `/porady-dla-kursanta`, `/galeria`, `/artykuly` no longer show stub meta `Treść w przygotowaniu`
+- [x] 3.2 `/kontakt` and `/zapisy-na-kurs` still show stub meta `Treść w przygotowaniu`
+- [x] 3.3 `npm run lint` passes
+- [x] 3.4 `npm run build` passes
 
 #### Manual
 

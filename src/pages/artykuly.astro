@@ -1,11 +1,43 @@
 ---
-import StubPage from "@/components/site/StubPage.astro";
+export const prerender = true;
+
+import Hero from "@/components/sections/Hero.astro";
+import MediaFigure from "@/components/sections/MediaFigure.astro";
+import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getPageEntry } from "@/lib/content/pages";
 import { brandName } from "@/lib/site-nav";
 
-const title = "Aktualności";
+const { entry, Content } = await getPageEntry("artykuly");
+const { title, heroTitle, heroSubtitle, teaserImages, newsTeasers } = entry.data;
 ---
 
 <Layout title={`${title} | ${brandName}`}>
-  <StubPage title={title} />
+  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} />
+  {
+    teaserImages?.[0] && (
+      <div class="mx-auto max-w-6xl px-4 pt-8 sm:px-6 sm:pt-10">
+        <MediaFigure src={teaserImages[0].src} alt={teaserImages[0].alt} />
+      </div>
+    )
+  }
+  <ProseSection>
+    <Content />
+  </ProseSection>
+  {
+    newsTeasers && newsTeasers.length > 0 && (
+      <section class="border-border/60 border-t" aria-label="Lista aktualności">
+        <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+          <ul class="max-w-3xl space-y-6">
+            {newsTeasers.map((item) => (
+              <li>
+                <h2 class="text-foreground text-lg font-semibold">{item.title}</h2>
+                {item.summary && <p class="text-muted-foreground mt-1 text-base">{item.summary}</p>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
 </Layout>

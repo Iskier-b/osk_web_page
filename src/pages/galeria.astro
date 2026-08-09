@@ -1,11 +1,31 @@
 ---
-import StubPage from "@/components/site/StubPage.astro";
+export const prerender = true;
+
+import Hero from "@/components/sections/Hero.astro";
+import MediaFigure from "@/components/sections/MediaFigure.astro";
+import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getPageEntry } from "@/lib/content/pages";
 import { brandName } from "@/lib/site-nav";
 
-const title = "Galeria";
+const { entry, Content } = await getPageEntry("galeria");
+const { title, heroTitle, heroSubtitle, teaserImages } = entry.data;
 ---
 
 <Layout title={`${title} | ${brandName}`}>
-  <StubPage title={title} />
+  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} />
+  <ProseSection>
+    <Content />
+  </ProseSection>
+  {
+    teaserImages && teaserImages.length > 0 && (
+      <section class="mx-auto max-w-6xl px-4 pb-12 sm:px-6 sm:pb-16" aria-label="Podgląd galerii">
+        <div class="grid gap-4 sm:grid-cols-3">
+          {teaserImages.map((img) => (
+            <MediaFigure src={img.src} alt={img.alt} />
+          ))}
+        </div>
+      </section>
+    )
+  }
 </Layout>

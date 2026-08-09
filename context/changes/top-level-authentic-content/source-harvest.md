@@ -41,3 +41,39 @@ Also cross-checked against F-01 pack: `context/archive/2026-08-09-site-structure
 - Homepage about also mentions „Koszt 3550 zł” in a dense SEO block that contradicts cennik 3900 — left out of structured prices until owner clarifies.
 - Second landline `42 236 61 90` appears in footer chrome source; Phase 2 pages surface mobile `510 285 635` already in site nav + O nas body.
 - Hero on source is text-over-CSS background (no dedicated hero photo URL); used a gallery fleet image for recognition.
+
+---
+
+# Source harvest — Phase 3 hub + light media
+
+Harvest date: 2026-08-09. Live source: https://www.autojuszczak.com.pl/  
+Cross-checked against F-01: `sections.md` (Strefa hub tile grid), `sitemap.md` / `mvp-scope.md` (listing-only blog; light Galeria).
+
+## Source URL → target route
+
+| Source URL | Target route | Content used |
+| ---------- | ------------ | ------------ |
+| https://www.autojuszczak.com.pl/porady-dla-kursanta | `/porady-dla-kursanta` | Hub landing: Strefa tile titles → `strefaChildren`; „Doświadczenie poparte faktami!” blurb (1999, Łódź / Aleksandrów, Hyundai) |
+| https://www.autojuszczak.com.pl/galeria | `/galeria` | Headline „Zobacz naszą galerię firmową”; 1–3 fleet images from Phase 2 download (not full Lightbox album) |
+| https://www.autojuszczak.com.pl/artykuly | `/artykuly` | Listing shell: first-page article titles + short summaries only; no `/artykul-*` routes |
+
+## Images reused (Phase 2 assets)
+
+| Local file | Used on Phase 3 | Notes |
+| ---------- | --------------- | ----- |
+| `fleet-02.webp` … `fleet-04.webp` | `/galeria` preview strip | Same gallery-images sources as Phase 2; no new album download |
+| `news-teaser-01.jpg` | `/artykuly` teaser figure | Reserved in Phase 2 harvest; source `/simply/images/dynamic/articles/95.jpg` |
+
+## Clarity / hierarchy rewrites (no new facts)
+
+- Strefa hub: short intro sentence names the tile topics already present on source hub (no invented depth-2 body).
+- SCREAMING article titles normalized to sentence case (same approach as home news teasers).
+- Galeria page on source is mostly reviews + Lightbox; Phase 3 keeps **light blurb + 3 fleet stills** only — reviews left to Opinie/home teasers, not duplicated here.
+- Aktualności listing shows titles/summaries without per-post links (posts intentionally out of scope).
+
+## Gaps (not invented)
+
+- Full gallery Lightbox set / pagination not migrated.
+- Individual article bodies and `/artykul-*` routes not created.
+- Depth-2 Strefa children remain stubs.
+- `/kontakt` and `/zapisy-na-kurs` left on StubPage (`Treść w przygotowaniu`).
