@@ -329,9 +329,9 @@ No data migration. If the public URL is behind CI-only deploy, Phase 5 must incl
 
 #### Automated
 
-- [x] 1.1 `npm run lint` passes
-- [x] 1.2 `npm run build` passes
-- [x] 1.3 Grep confirms a `prefers-reduced-motion` rule exists under `src/`
+- [x] 1.1 `npm run lint` passes — d1e4d47
+- [x] 1.2 `npm run build` passes — d1e4d47
+- [x] 1.3 Grep confirms a `prefers-reduced-motion` rule exists under `src/` — d1e4d47
 
 #### Manual
 
@@ -342,9 +342,9 @@ No data migration. If the public URL is behind CI-only deploy, Phase 5 must incl
 
 #### Automated
 
-- [ ] 2.1 `npm run lint` passes
-- [ ] 2.2 `npm run build` passes
-- [ ] 2.3 `git diff -- src/lib/site-nav.ts` is empty (no IA file changes)
+- [x] 2.1 `npm run lint` passes
+- [x] 2.2 `npm run build` passes
+- [x] 2.3 `git diff -- src/lib/site-nav.ts` is empty (no IA file changes)
 
 #### Manual
 
