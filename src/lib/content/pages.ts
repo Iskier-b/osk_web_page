@@ -1,6 +1,14 @@
 import { getEntry, render, type CollectionEntry } from "astro:content";
 
-export type PageId = "home" | "nasza-auto-szkola" | "kursy" | "cennik" | "porady-dla-kursanta" | "galeria" | "artykuly";
+export type PageId =
+  | "home"
+  | "nasza-auto-szkola"
+  | "kursy"
+  | "cennik"
+  | "porady-dla-kursanta"
+  | "galeria"
+  | "artykuly"
+  | "prawo-jazdy-automat";
 
 export type PageEntry = CollectionEntry<"pages">;
 
