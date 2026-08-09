@@ -8,7 +8,8 @@ export type PageId =
   | "porady-dla-kursanta"
   | "galeria"
   | "artykuly"
-  | "prawo-jazdy-automat";
+  | "prawo-jazdy-automat"
+  | "kontakt";
 
 export type PageEntry = CollectionEntry<"pages">;
 

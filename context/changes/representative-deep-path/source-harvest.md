@@ -35,3 +35,43 @@ Target route: `/prawo-jazdy-automat`
 
 - No product-specific hero/fleet image required or added in this condensed scope.
 - No schedule times, instructor names, or claims beyond the kept points above.
+
+---
+
+# Source harvest — Phase 2 `/kontakt`
+
+Harvest date: 2026-08-09.  
+Source URL: https://www.autojuszczak.com.pl/kontakt  
+Target route: `/kontakt`
+
+## Kept (contact prose + details)
+
+| Source element | Used as |
+| -------------- | ------- |
+| Invite „Zapraszamy do kontaktu” / „Masz pytania?” | `heroTitle` / `heroSubtitle` |
+| School name Autoszkoła / Auto Szkoła Juszczak | Opening body line (brand spelling aligned to site — see clarity edits) |
+| Address `91-211 Łódź, ul. Rydzowa 2` | Body address (order normalized — see clarity edits) |
+| Hours Pon. – Pt. 10:00 – 18:00 | Body hours line |
+| Transit: autobusy 76, 78, 78A, 83, 96; tramwaje 2, 8, 13, 16 | Body dojazd lines |
+| Mobile **510 285 635** | Body phone |
+| Landline **42 236 61 90** | Body phone |
+| Właściciel Jacek Juszczak | Body owner line |
+
+## Intentionally omitted (out of this slice)
+
+- Contact form fields and submit (**Email** / **Telefon** / **Widomość** / **WYŚLIJ**) — S-05
+- Google Maps iframe / embed — S-05 / later
+- Google reCAPTCHA widget and scripts — S-05
+- Long review / testimonial list on the contact page
+- Bank account details (not part of condensed contact prose; not used on other filled pages)
+
+## Clarity-only edits (no new facts)
+
+- Address order: source `91-211 Łódź, ul. Rydzowa 2` → **ul. Rydzowa 2, 91-211 Łódź** (matches O nas / home).
+- Brand spelling: source “Autoszkoła Juszczak” → **Auto Szkoła Juszczak** (`brandName` / filled pages).
+- Hours already match filled-pages style (`Pon. – Pt. 10:00 – 18:00` as on home dashboard).
+
+## Gaps (not invented)
+
+- Email: live scrape showed mangled `infoautojuszczak.com.pl`; `info@autojuszczak.com.pl` not confirmed in repo content or `forms-integrations.md` as a published school address — **omitted**.
+- No form-like CTA on the page (default omit; `tel:` / mailto optional CTA not added).

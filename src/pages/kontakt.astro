@@ -1,11 +1,19 @@
 ---
-import StubPage from "@/components/site/StubPage.astro";
+export const prerender = true;
+
+import Hero from "@/components/sections/Hero.astro";
+import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getPageEntry } from "@/lib/content/pages";
 import { brandName } from "@/lib/site-nav";
 
-const title = "Kontakt";
+const { entry, Content } = await getPageEntry("kontakt");
+const { title, heroTitle, heroSubtitle } = entry.data;
 ---
 
 <Layout title={`${title} | ${brandName}`}>
-  <StubPage title={title} />
+  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} />
+  <ProseSection>
+    <Content />
+  </ProseSection>
 </Layout>

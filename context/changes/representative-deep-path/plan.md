@@ -228,10 +228,10 @@ Prerender both new pages like other marketing routes. No new carousels or heavy 
 
 #### Automated
 
-- [x] 1.1 `npm run lint` passes
-- [x] 1.2 `npm run build` passes
-- [x] 1.3 `prawo-jazdy-automat.astro` is not a StubPage
-- [x] 1.4 Product CTA href is `/zapisy-na-kurs`
+- [x] 1.1 `npm run lint` passes — 49f6c58
+- [x] 1.2 `npm run build` passes — 49f6c58
+- [x] 1.3 `prawo-jazdy-automat.astro` is not a StubPage — 49f6c58
+- [x] 1.4 Product CTA href is `/zapisy-na-kurs` — 49f6c58
 
 #### Manual
 
@@ -243,10 +243,10 @@ Prerender both new pages like other marketing routes. No new carousels or heavy 
 
 #### Automated
 
-- [ ] 2.1 `npm run lint` passes
-- [ ] 2.2 `npm run build` passes
-- [ ] 2.3 `kontakt.astro` is not a StubPage
-- [ ] 2.4 No form / reCAPTCHA / maps embed in Kontakt page or MD
+- [x] 2.1 `npm run lint` passes
+- [x] 2.2 `npm run build` passes
+- [x] 2.3 `kontakt.astro` is not a StubPage
+- [x] 2.4 No form / reCAPTCHA / maps embed in Kontakt page or MD
 
 #### Manual
 
