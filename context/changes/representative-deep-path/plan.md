@@ -243,10 +243,10 @@ Prerender both new pages like other marketing routes. No new carousels or heavy 
 
 #### Automated
 
-- [x] 2.1 `npm run lint` passes
-- [x] 2.2 `npm run build` passes
-- [x] 2.3 `kontakt.astro` is not a StubPage
-- [x] 2.4 No form / reCAPTCHA / maps embed in Kontakt page or MD
+- [x] 2.1 `npm run lint` passes — 34df6f9
+- [x] 2.2 `npm run build` passes — 34df6f9
+- [x] 2.3 `kontakt.astro` is not a StubPage — 34df6f9
+- [x] 2.4 No form / reCAPTCHA / maps embed in Kontakt page or MD — 34df6f9
 
 #### Manual
 
@@ -258,7 +258,7 @@ Prerender both new pages like other marketing routes. No new carousels or heavy 
 
 #### Automated
 
-- [ ] 3.1 `change.md` Notes contain the verification stamp
+- [x] 3.1 `change.md` Notes contain the verification stamp
 
 #### Manual
 

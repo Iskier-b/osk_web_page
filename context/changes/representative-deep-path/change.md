@@ -9,4 +9,4 @@ archived_at: null
 
 ## Notes
 
-<!-- Free-form notes for this change: links, ad-hoc context, decisions that don't belong in research/frame/plan. -->
+Verified deep path (375px) 2026-08-09: / → /kursy → /prawo-jazdy-automat → /kontakt; CTA → /zapisy-na-kurs (stub)
