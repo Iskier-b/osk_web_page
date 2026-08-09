@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 
+import ContactForm from "@/components/forms/ContactForm.astro";
 import Hero from "@/components/sections/Hero.astro";
 import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -16,4 +17,5 @@ const { title, heroTitle, heroSubtitle } = entry.data;
   <ProseSection>
     <Content />
   </ProseSection>
+  <ContactForm />
 </Layout>

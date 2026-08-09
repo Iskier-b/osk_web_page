@@ -1,11 +1,16 @@
 ---
-import StubPage from "@/components/site/StubPage.astro";
+export const prerender = true;
+
+import OpinionForm from "@/components/forms/OpinionForm.astro";
+import Hero from "@/components/sections/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
 import { brandName } from "@/lib/site-nav";
 
 const title = "Opinie";
+const lead = "Zobacz co mówią o nas kursanci";
 ---
 
 <Layout title={`${title} | ${brandName}`}>
-  <StubPage title={title} />
+  <Hero title={title} subtitle={lead} />
+  <OpinionForm />
 </Layout>
