@@ -13,12 +13,16 @@ const { label, href, title, class: className } = Astro.props;
 
 <section class:list={cn("border-border/80 bg-secondary/60 border-y", className)}>
   <div
-    class="mx-auto flex max-w-6xl flex-col items-start gap-4 px-4 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-14"
+    class="mx-auto flex w-full max-w-6xl flex-col items-stretch gap-4 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-12 lg:py-14"
   >
-    {title && <p class="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">{title}</p>}
+    {
+      title && (
+        <p class="text-foreground min-w-0 text-xl font-semibold tracking-tight break-words sm:text-2xl">{title}</p>
+      )
+    }
     <a
       href={href}
-      class="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold transition-colors"
+      class="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex w-full shrink-0 items-center justify-center rounded-md px-5 py-2.5 text-center text-sm font-semibold break-words transition-colors sm:w-auto"
     >
       {label}
     </a>

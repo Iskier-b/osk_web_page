@@ -20,20 +20,26 @@ const { title, subtitle, pitches = [], image, class: className } = Astro.props;
 <section class:list={cn("relative overflow-hidden", className)}>
   {
     image ? (
-      <div class="relative min-h-[min(70vh,36rem)] w-full">
+      <div class="relative min-h-[min(70vh,36rem)] w-full max-w-full">
         <img
           src={image.src}
           alt={image.alt}
-          class="absolute inset-0 h-full w-full object-cover"
+          class="absolute inset-0 h-full w-full max-w-full object-cover"
           loading="eager"
           decoding="async"
         />
         <div class="from-background via-background/70 to-background/20 absolute inset-0 bg-gradient-to-t" />
-        <div class="relative mx-auto flex min-h-[min(70vh,36rem)] max-w-6xl flex-col justify-end px-4 py-16 sm:px-6 sm:py-20">
-          <h1 class="text-foreground max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
-          {subtitle && <p class="text-foreground/90 mt-4 max-w-2xl text-lg sm:text-xl">{subtitle}</p>}
+        <div class="relative mx-auto flex min-h-[min(70vh,36rem)] w-full max-w-6xl flex-col justify-end px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+          <h1 class="text-foreground max-w-3xl text-3xl font-bold tracking-tight break-words sm:text-4xl lg:text-5xl">
+            {title}
+          </h1>
+          {subtitle && (
+            <p class="text-foreground/90 mt-3 max-w-2xl text-base break-words sm:mt-4 sm:text-lg lg:text-xl">
+              {subtitle}
+            </p>
+          )}
           {pitches.length > 0 && (
-            <ul class="text-foreground/90 mt-6 max-w-2xl space-y-2 text-base sm:text-lg">
+            <ul class="text-foreground/90 mt-5 max-w-2xl space-y-2 text-base break-words sm:mt-6 sm:text-lg">
               {pitches.map((pitch) => (
                 <li>{pitch}</li>
               ))}
@@ -43,11 +49,17 @@ const { title, subtitle, pitches = [], image, class: className } = Astro.props;
       </div>
     ) : (
       <div class="from-secondary via-background to-accent/40 bg-gradient-to-br">
-        <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-          <h1 class="text-foreground max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
-          {subtitle && <p class="text-muted-foreground mt-4 max-w-2xl text-lg sm:text-xl">{subtitle}</p>}
+        <div class="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+          <h1 class="text-foreground max-w-3xl text-3xl font-bold tracking-tight break-words sm:text-4xl lg:text-5xl">
+            {title}
+          </h1>
+          {subtitle && (
+            <p class="text-muted-foreground mt-3 max-w-2xl text-base break-words sm:mt-4 sm:text-lg lg:text-xl">
+              {subtitle}
+            </p>
+          )}
           {pitches.length > 0 && (
-            <ul class="text-muted-foreground mt-6 max-w-2xl space-y-2 text-base sm:text-lg">
+            <ul class="text-muted-foreground mt-5 max-w-2xl space-y-2 text-base break-words sm:mt-6 sm:text-lg">
               {pitches.map((pitch) => (
                 <li>{pitch}</li>
               ))}

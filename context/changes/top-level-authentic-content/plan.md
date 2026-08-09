@@ -383,10 +383,10 @@ No database migration. Content moves from live source HTML into repo Markdown/as
 
 #### Automated
 
-- [x] 3.1 `/porady-dla-kursanta`, `/galeria`, `/artykuly` no longer show stub meta `Treść w przygotowaniu`
-- [x] 3.2 `/kontakt` and `/zapisy-na-kurs` still show stub meta `Treść w przygotowaniu`
-- [x] 3.3 `npm run lint` passes
-- [x] 3.4 `npm run build` passes
+- [x] 3.1 `/porady-dla-kursanta`, `/galeria`, `/artykuly` no longer show stub meta `Treść w przygotowaniu` — ea85585
+- [x] 3.2 `/kontakt` and `/zapisy-na-kurs` still show stub meta `Treść w przygotowaniu` — ea85585
+- [x] 3.3 `npm run lint` passes — ea85585
+- [x] 3.4 `npm run build` passes — ea85585
 
 #### Manual
 
@@ -398,9 +398,9 @@ No database migration. Content moves from live source HTML into repo Markdown/as
 
 #### Automated
 
-- [ ] 4.1 `npm run lint` passes
-- [ ] 4.2 `npm run build` passes
-- [ ] 4.3 Stub meta remains on Kontakt, Zapisy, and depth-2 stubs; absent on seven filled targets
+- [x] 4.1 `npm run lint` passes
+- [x] 4.2 `npm run build` passes
+- [x] 4.3 Stub meta remains on Kontakt, Zapisy, and depth-2 stubs; absent on seven filled targets
 
 #### Manual
 

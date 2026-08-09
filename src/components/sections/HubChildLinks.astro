@@ -17,11 +17,14 @@ const { links, ariaLabel, class: className } = Astro.props;
 
 {
   links.length > 0 && (
-    <nav class:list={cn("mx-auto max-w-6xl px-4 pb-12 sm:px-6 sm:pb-16", className)} aria-label={ariaLabel}>
+    <nav
+      class:list={cn("mx-auto w-full max-w-6xl px-4 pb-10 sm:px-6 sm:pb-12 lg:pb-16", className)}
+      aria-label={ariaLabel}
+    >
       <ul class="flex flex-col gap-2">
         {links.map((link) => (
-          <li>
-            <a href={link.href} class="text-primary text-base hover:underline">
+          <li class="min-w-0">
+            <a href={link.href} class="text-primary text-base break-words hover:underline">
               {link.label}
             </a>
           </li>

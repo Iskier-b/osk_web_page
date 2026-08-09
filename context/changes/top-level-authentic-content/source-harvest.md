@@ -77,3 +77,29 @@ Cross-checked against F-01: `sections.md` (Strefa hub tile grid), `sitemap.md` /
 - Individual article bodies and `/artykul-*` routes not created.
 - Depth-2 Strefa children remain stubs.
 - `/kontakt` and `/zapisy-na-kurs` left on StubPage (`Treść w przygotowaniu`).
+
+---
+
+# Phase 4 — Fidelity checklist (2026-08-09)
+
+Cross-check against live https://www.autojuszczak.com.pl/ (home, `/nasza-auto-szkola`, `/kursy`, `/cennik`, `/porady-dla-kursanta`, `/galeria`, `/artykuly`). No content invention in this pass.
+
+| Claim type | Result | Notes |
+| ---------- | ------ | ----- |
+| Prices | OK | Cennik rows match source: 3900 / 3950 / 4900 / 135 / 1300 / 490 / 150 / 1450; intro **1350 zł** kept; dashboard **3900,00 PLN** kept. Ambiguous homepage **3550 zł** still omitted (Phase 2 gap). |
+| Phones | OK | Filled pages surface **510 285 635** (nav + O nas). Landline **42 236 61 90** still only in source footer — not added. |
+| Addresses / hours | OK | **ul. Rydzowa 2, 91-211 Łódź**; **Pon. – Pt. 10:00 – 18:00**; plac **ul. Maratońskiej (Retkinia)**; transit lines 78 / 6 on O nas. |
+| Ranking claims | OK | Home pitch „W rankingu zdawalności WORD Łódź zawsze na czołowych miejscach” is source text. Homepage „2. miejsce… 2018” not added to filled stack (still deferred). |
+| Course / offer names | OK | Kat. B, automat (kod 78 / Honda Jazz), ekspresowy, jazdy doszkalające, weekendowy / popołudniowy schedule cues match source. |
+| Review / news blurbs | OK | Authors + shortened quotes from live review list; article titles/summaries from listing — no invented post bodies. |
+
+## Clarity rewrites confirmed (no new facts)
+
+- Typo fix „pawa” → „prawa”; date spacing; sentence-case CTAs / news titles (Phases 2–3).
+- Cennik account number presented on its own line as monospace for narrow viewports (same digits as source).
+- No unverified claims found that required removal in Phase 4.
+
+## Regression (stubs)
+
+- `/kontakt`, `/zapisy-na-kurs`, and all depth-2 StubPage routes still title-only with meta **Treść w przygotowaniu**.
+- Oferta / Strefa hubs still link via `ofertaChildren` / `strefaChildren` only.

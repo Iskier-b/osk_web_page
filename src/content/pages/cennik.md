@@ -46,4 +46,5 @@ Doszkalamy również osoby z innych auto szkół oraz osoby mające prawo jazdy,
 
 ### Numer rachunku bankowego
 
-**mBank** 94 1140 2004 0000 3102 5056 7470
+**mBank**  
+`94 1140 2004 0000 3102 5056 7470`

@@ -19,13 +19,16 @@ const { items, class: className } = Astro.props;
 {
   items.length > 0 && (
     <section class:list={cn("border-border/60 bg-secondary/40 border-b", className)} aria-label="Informacje skrótowe">
-      <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-3 sm:gap-6 sm:px-6 sm:py-12">
+      <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 sm:gap-8 sm:px-6 sm:py-12 md:grid-cols-3 md:gap-6 lg:gap-10 lg:py-14">
         {items.map((item) => (
           <div class="min-w-0">
-            <h2 class="text-foreground text-sm font-semibold tracking-wide uppercase">{item.title}</h2>
-            <p class="text-foreground mt-2 text-base leading-relaxed whitespace-pre-line">{item.body}</p>
+            <h2 class="text-foreground text-sm font-semibold tracking-wide break-words uppercase">{item.title}</h2>
+            <p class="text-foreground mt-2 text-base leading-relaxed break-words whitespace-pre-line">{item.body}</p>
             {item.href && item.linkLabel && (
-              <a href={item.href} class="text-primary mt-3 inline-block text-sm font-medium hover:underline">
+              <a
+                href={item.href}
+                class="text-primary mt-3 inline-block text-sm font-medium break-words hover:underline"
+              >
                 {item.linkLabel}
               </a>
             )}

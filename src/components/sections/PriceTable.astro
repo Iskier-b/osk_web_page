@@ -19,25 +19,33 @@ const { rows, caption, class: className } = Astro.props;
 {
   rows.length > 0 && (
     <section
-      class:list={cn("mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10", className)}
+      class:list={cn("mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:py-16", className)}
       aria-label={caption ?? "Cennik"}
     >
-      {caption && <h2 class="text-foreground mb-6 text-2xl font-bold tracking-tight sm:text-3xl">{caption}</h2>}
+      {caption && (
+        <h2 class="text-foreground mb-6 text-2xl font-bold tracking-tight break-words sm:text-3xl">{caption}</h2>
+      )}
 
-      {/* Narrow: stacked rows */}
-      <ul class="divide-border border-border divide-y border sm:hidden">
+      {/* Narrow: stacked rows — avoids table overflow at 375px */}
+      <ul class="divide-border border-border divide-y border md:hidden">
         {rows.map((row) => (
-          <li class="px-4 py-4">
-            <p class="text-foreground text-base font-medium">{row.label}</p>
-            {row.price && <p class="text-foreground mt-1 text-lg font-semibold tabular-nums">{row.price}</p>}
-            {row.note && <p class="text-muted-foreground mt-1 text-sm">{row.note}</p>}
+          <li class="min-w-0 px-4 py-4">
+            <p class="text-foreground text-base font-medium break-words">{row.label}</p>
+            {row.price && (
+              <p class="text-foreground mt-1 text-lg font-semibold break-words tabular-nums">{row.price}</p>
+            )}
+            {row.note && <p class="text-muted-foreground mt-1 text-sm break-words">{row.note}</p>}
           </li>
         ))}
       </ul>
 
-      {/* Tablet+ : table */}
-      <div class="border-border hidden overflow-x-auto border sm:block">
-        <table class="w-full min-w-[28rem] text-left text-base">
+      {/* Tablet+ : full-width table, no forced min-width scroll */}
+      <div class="border-border hidden w-full max-w-full overflow-x-auto border md:block">
+        <table class="w-full table-fixed text-left text-base">
+          <colgroup>
+            <col class="w-[70%]" />
+            <col class="w-[30%]" />
+          </colgroup>
           <thead class="bg-secondary/70">
             <tr>
               <th class="text-foreground px-4 py-3 font-semibold" scope="col">
@@ -51,11 +59,11 @@ const { rows, caption, class: className } = Astro.props;
           <tbody class="divide-border divide-y">
             {rows.map((row) => (
               <tr>
-                <td class="text-foreground px-4 py-3 align-top">
+                <td class="text-foreground min-w-0 px-4 py-3 align-top break-words">
                   <span class="font-medium">{row.label}</span>
                   {row.note && <span class="text-muted-foreground mt-1 block text-sm">{row.note}</span>}
                 </td>
-                <td class="text-foreground px-4 py-3 align-top font-semibold whitespace-nowrap tabular-nums">
+                <td class="text-foreground px-4 py-3 align-top font-semibold break-words tabular-nums">
                   {row.price ?? "—"}
                 </td>
               </tr>

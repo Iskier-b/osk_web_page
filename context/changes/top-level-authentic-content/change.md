@@ -18,3 +18,5 @@ Planning decisions (2026-08-09):
 - QA: 375px + tablet + large desktop; no scope cuts
 
 Phase 2 harvest audit: see `source-harvest.md` (live URLs → routes, downloaded images, clarity rewrites, price gaps 1300/1350 and omitted 3550).
+
+Phase 4 fidelity (2026-08-09): checklist in `source-harvest.md` — prices/phones/addresses/ranking/course names OK vs live source; no unverified claims removed; Kontakt/Zapisy + depth-2 stubs untouched.
