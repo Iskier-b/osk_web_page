@@ -237,10 +237,10 @@ Cold starts on SSR stub routes are acceptable for a demo. No caching/CDN tuning 
 
 #### Automated
 
-- [x] 1.1 `npm run lint` passes
-- [x] 1.2 `npm run build` passes
-- [x] 1.3 Grep confirms no `demoKontoHref` / “Demo / konto” in `src/components/site/` or live layout chrome
-- [x] 1.4 `wrangler.jsonc` `"name"` is `osk-juszczak`
+- [x] 1.1 `npm run lint` passes — 11d6da2
+- [x] 1.2 `npm run build` passes — 11d6da2
+- [x] 1.3 Grep confirms no `demoKontoHref` / “Demo / konto” in `src/components/site/` or live layout chrome — 11d6da2
+- [x] 1.4 `wrangler.jsonc` `"name"` is `osk-juszczak` — 11d6da2
 
 #### Manual
 
@@ -251,7 +251,7 @@ Cold starts on SSR stub routes are acceptable for a demo. No caching/CDN tuning 
 
 #### Automated
 
-- [ ] 2.1 Local `npm run build` succeeds immediately before deploy
+- [x] 2.1 Local `npm run build` succeeds immediately before deploy
 
 #### Manual
 
