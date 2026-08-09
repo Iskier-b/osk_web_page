@@ -398,9 +398,9 @@ No database migration. Content moves from live source HTML into repo Markdown/as
 
 #### Automated
 
-- [x] 4.1 `npm run lint` passes
-- [x] 4.2 `npm run build` passes
-- [x] 4.3 Stub meta remains on Kontakt, Zapisy, and depth-2 stubs; absent on seven filled targets
+- [x] 4.1 `npm run lint` passes — 81b195f
+- [x] 4.2 `npm run build` passes — 81b195f
+- [x] 4.3 Stub meta remains on Kontakt, Zapisy, and depth-2 stubs; absent on seven filled targets — 81b195f
 
 #### Manual
 
