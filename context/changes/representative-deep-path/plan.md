@@ -258,7 +258,7 @@ Prerender both new pages like other marketing routes. No new carousels or heavy 
 
 #### Automated
 
-- [x] 3.1 `change.md` Notes contain the verification stamp
+- [x] 3.1 `change.md` Notes contain the verification stamp — 1a9f82a
 
 #### Manual
 
