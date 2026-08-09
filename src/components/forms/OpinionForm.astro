@@ -1,0 +1,72 @@
+---
+import { cn } from "@/lib/utils";
+import DemoFormNotice from "@/components/forms/DemoFormNotice.astro";
+import {
+  fieldStackClass,
+  formShellClass,
+  inputClass,
+  labelClass,
+  selectClass,
+  submitClass,
+  textareaClass,
+} from "@/components/forms/fieldClasses";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const ratingOptions = [1, 2, 3, 4, 5] as const;
+---
+
+<section class:list={cn(formShellClass, className)} aria-label="Formularz opinii">
+  <form class:list={cn(fieldStackClass, "max-w-xl")} onsubmit="return false;">
+    <DemoFormNotice class="mb-2" />
+
+    <div>
+      <label for="opinion-name" class:list={labelClass}>Imię i nazwisko</label>
+      <input id="opinion-name" name="name" type="text" autocomplete="name" class:list={inputClass} />
+    </div>
+
+    <div>
+      <label for="opinion-phone" class:list={labelClass}>Telefon</label>
+      <input id="opinion-phone" name="phone" type="tel" autocomplete="tel" class:list={inputClass} />
+    </div>
+
+    <div>
+      <label for="opinion-email" class:list={labelClass}>Email</label>
+      <input id="opinion-email" name="email" type="email" autocomplete="email" class:list={inputClass} />
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-3">
+      <div class="min-w-0">
+        <label for="opinion-rating-offer" class:list={labelClass}>Zakres oferty</label>
+        <select id="opinion-rating-offer" name="rating_offer" class:list={selectClass}>
+          {ratingOptions.map((value) => <option value={value}>{value}</option>)}
+        </select>
+      </div>
+      <div class="min-w-0">
+        <label for="opinion-rating-quality" class:list={labelClass}>Samochody</label>
+        <select id="opinion-rating-quality" name="rating_quality" class:list={selectClass}>
+          {ratingOptions.map((value) => <option value={value}>{value}</option>)}
+        </select>
+      </div>
+      <div class="min-w-0">
+        <label for="opinion-rating-delivery" class:list={labelClass}>Ocena instruktora</label>
+        <select id="opinion-rating-delivery" name="rating_delivery" class:list={selectClass}>
+          {ratingOptions.map((value) => <option value={value}>{value}</option>)}
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <label for="opinion-comment" class:list={labelClass}>Opis</label>
+      <textarea id="opinion-comment" name="comment" class:list={textareaClass} rows="5"></textarea>
+    </div>
+
+    <div>
+      <button type="submit" class:list={submitClass} disabled>Zapisz</button>
+    </div>
+  </form>
+</section>

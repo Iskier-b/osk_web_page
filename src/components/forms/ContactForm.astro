@@ -1,0 +1,49 @@
+---
+import { cn } from "@/lib/utils";
+import DemoFormNotice from "@/components/forms/DemoFormNotice.astro";
+import {
+  fieldStackClass,
+  formShellClass,
+  inputClass,
+  labelClass,
+  submitClass,
+  textareaClass,
+} from "@/components/forms/fieldClasses";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<section class:list={cn(formShellClass, className)} aria-label="Formularz kontaktowy">
+  <form class:list={cn(fieldStackClass, "max-w-xl")} onsubmit="return false;">
+    <DemoFormNotice class="mb-2" />
+
+    <div>
+      <label for="contact-name" class:list={labelClass}>Imię i nazwisko</label>
+      <input id="contact-name" name="name" type="text" autocomplete="name" class:list={inputClass} />
+    </div>
+
+    <div>
+      <label for="contact-email" class:list={labelClass}>Email</label>
+      <input id="contact-email" name="email" type="email" autocomplete="email" class:list={inputClass} />
+    </div>
+
+    <div>
+      <label for="contact-phone" class:list={labelClass}>Telefon</label>
+      <input id="contact-phone" name="phone" type="tel" autocomplete="tel" class:list={inputClass} />
+    </div>
+
+    <div>
+      <label for="contact-question" class:list={labelClass}>Wiadomość</label>
+      <textarea id="contact-question" name="question" class:list={textareaClass} placeholder="Twoje pytanie" rows="5"
+      ></textarea>
+    </div>
+
+    <div>
+      <button type="submit" class:list={submitClass} disabled>WYŚLIJ</button>
+    </div>
+  </form>
+</section>

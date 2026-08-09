@@ -1,0 +1,62 @@
+---
+import { cn } from "@/lib/utils";
+import DemoFormNotice from "@/components/forms/DemoFormNotice.astro";
+import {
+  checkboxClass,
+  fieldStackClass,
+  formShellClass,
+  inputClass,
+  labelClass,
+  selectClass,
+  submitClass,
+} from "@/components/forms/fieldClasses";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<section class:list={cn(formShellClass, className)} aria-label="Formularz zapisu na kurs">
+  <form class:list={cn(fieldStackClass, "max-w-xl")} onsubmit="return false;">
+    <DemoFormNotice class="mb-2" />
+
+    <fieldset class="min-w-0 space-y-4 border-0 p-0">
+      <legend class="text-foreground mb-1 text-base font-semibold tracking-tight">Twoje dane</legend>
+
+      <div>
+        <label for="enrollment-name" class:list={labelClass}>Imię i nazwisko</label>
+        <input id="enrollment-name" name="name" type="text" autocomplete="name" class:list={inputClass} />
+      </div>
+
+      <div>
+        <label for="enrollment-email" class:list={labelClass}>Email</label>
+        <input id="enrollment-email" name="email" type="email" autocomplete="email" class:list={inputClass} />
+      </div>
+
+      <div>
+        <label for="enrollment-phone" class:list={labelClass}>Telefon</label>
+        <input id="enrollment-phone" name="phone" type="tel" autocomplete="tel" class:list={inputClass} />
+      </div>
+    </fieldset>
+
+    <div>
+      <label for="enrollment-term" class:list={labelClass}>Termin kursu</label>
+      <select id="enrollment-term" name="term" class:list={selectClass} disabled>
+        <option value="" selected disabled>niedostępne w demo</option>
+      </select>
+    </div>
+
+    <div class="flex items-start gap-3">
+      <input id="enrollment-agreement" name="agreement" type="checkbox" class:list={checkboxClass} checked />
+      <label for="enrollment-agreement" class="text-foreground text-sm leading-relaxed">
+        Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z RODO.
+      </label>
+    </div>
+
+    <div>
+      <button type="submit" class:list={submitClass} disabled>ZAPISZ</button>
+    </div>
+  </form>
+</section>

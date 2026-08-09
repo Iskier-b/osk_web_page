@@ -1,0 +1,39 @@
+---
+import { cn } from "@/lib/utils";
+import DemoFormNotice from "@/components/forms/DemoFormNotice.astro";
+import { fieldStackClass, formShellClass, inputClass, labelClass, submitClass } from "@/components/forms/fieldClasses";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<section class:list={cn("border-border/80 bg-secondary/40 border-y", className)} aria-label="Szybki zapis na kurs">
+  <div class:list={formShellClass}>
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+      <form class:list={cn(fieldStackClass, "w-full max-w-xl")} onsubmit="return false;">
+        <DemoFormNotice />
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="min-w-0">
+            <label for="strip-name" class:list={labelClass}>Imię i nazwisko</label>
+            <input id="strip-name" name="name" type="text" autocomplete="name" class:list={inputClass} />
+          </div>
+          <div class="min-w-0">
+            <label for="strip-phone" class:list={labelClass}>Telefon</label>
+            <input id="strip-phone" name="phone" type="tel" autocomplete="tel" class:list={inputClass} />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+          <button type="submit" class:list={submitClass} disabled>ZAPISZ</button>
+          <a href="/zapisy-na-kurs" class="text-primary text-sm font-semibold underline-offset-4 hover:underline">
+            Pełny formularz zapisu
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

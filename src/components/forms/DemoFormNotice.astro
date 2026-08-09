@@ -1,0 +1,13 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<p class:list={cn("text-muted-foreground text-sm leading-relaxed", className)} role="note">
+  Wersja demonstracyjna — wysyłanie formularza jest wyłączone.
+</p>
