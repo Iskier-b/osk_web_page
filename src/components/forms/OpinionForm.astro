@@ -20,9 +20,9 @@ const { class: className } = Astro.props;
 const ratingOptions = [1, 2, 3, 4, 5] as const;
 ---
 
-<section class:list={cn(formShellClass, className)} aria-label="Formularz opinii">
+<section data-reveal class:list={cn(formShellClass, className)} aria-label="Formularz opinii">
   <form class:list={cn(fieldStackClass, "max-w-xl")} onsubmit="return false;">
-    <DemoFormNotice class="mb-2" />
+    <DemoFormNotice class="mb-1" />
 
     <div>
       <label for="opinion-name" class:list={labelClass}>Imię i nazwisko</label>

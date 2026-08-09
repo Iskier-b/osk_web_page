@@ -8,6 +8,12 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<p class:list={cn("text-muted-foreground text-sm leading-relaxed", className)} role="note">
+<p
+  class:list={cn(
+    "border-border/80 bg-muted/50 text-muted-foreground rounded-md border px-3.5 py-3 text-sm leading-relaxed",
+    className,
+  )}
+  role="note"
+>
   Wersja demonstracyjna — wysyłanie formularza jest wyłączone.
 </p>

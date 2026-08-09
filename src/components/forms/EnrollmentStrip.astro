@@ -10,7 +10,14 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<section class:list={cn("border-border/80 bg-secondary/40 border-y", className)} aria-label="Szybki zapis na kurs">
+<section
+  data-reveal
+  class:list={cn(
+    "border-border/70 from-secondary/70 via-accent/35 to-secondary/50 relative overflow-hidden border-y bg-gradient-to-r",
+    className,
+  )}
+  aria-label="Szybki zapis na kurs"
+>
   <div class:list={formShellClass}>
     <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
       <form class:list={cn(fieldStackClass, "w-full max-w-xl")} onsubmit="return false;">
@@ -29,7 +36,7 @@ const { class: className } = Astro.props;
 
         <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
           <button type="submit" class:list={submitClass} disabled>ZAPISZ</button>
-          <a href="/zapisy-na-kurs" class="text-primary text-sm font-semibold underline-offset-4 hover:underline">
+          <a href="/zapisy-na-kurs" class="text-primary text-sm font-bold underline-offset-4 hover:underline">
             Pełny formularz zapisu
           </a>
         </div>

@@ -17,9 +17,9 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<section class:list={cn(formShellClass, className)} aria-label="Formularz kontaktowy">
+<section data-reveal class:list={cn(formShellClass, className)} aria-label="Formularz kontaktowy">
   <form class:list={cn(fieldStackClass, "max-w-xl")} onsubmit="return false;">
-    <DemoFormNotice class="mb-2" />
+    <DemoFormNotice class="mb-1" />
 
     <div>
       <label for="contact-name" class:list={labelClass}>Imię i nazwisko</label>

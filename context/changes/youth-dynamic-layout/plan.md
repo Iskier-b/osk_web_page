@@ -356,8 +356,8 @@ No data migration. If the public URL is behind CI-only deploy, Phase 5 must incl
 
 #### Automated
 
-- [x] 3.1 `npm run lint` passes
-- [x] 3.2 `npm run build` passes
+- [x] 3.1 `npm run lint` passes — c3d53c1
+- [x] 3.2 `npm run build` passes — c3d53c1
 
 #### Manual
 
@@ -370,8 +370,8 @@ No data migration. If the public URL is behind CI-only deploy, Phase 5 must incl
 
 #### Automated
 
-- [ ] 4.1 `npm run lint` passes
-- [ ] 4.2 `npm run build` passes
+- [x] 4.1 `npm run lint` passes
+- [x] 4.2 `npm run build` passes
 
 #### Manual
 
