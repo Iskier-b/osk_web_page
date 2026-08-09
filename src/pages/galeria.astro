@@ -19,8 +19,12 @@ const { title, heroTitle, heroSubtitle, teaserImages } = entry.data;
   </ProseSection>
   {
     teaserImages && teaserImages.length > 0 && (
-      <section class="mx-auto w-full max-w-6xl px-4 pb-10 sm:px-6 sm:pb-12 lg:pb-16" aria-label="Podgląd galerii">
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <section
+        data-reveal
+        class="mx-auto w-full max-w-6xl px-4 pb-12 sm:px-6 sm:pb-14 lg:pb-20"
+        aria-label="Podgląd galerii"
+      >
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-3">
           {teaserImages.map((img) => (
             <MediaFigure src={img.src} alt={img.alt} />
           ))}

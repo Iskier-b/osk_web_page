@@ -51,24 +51,27 @@ const {
 
   {
     newsTeasers && newsTeasers.length > 0 && (
-      <section class="border-border/60 border-t" aria-labelledby="home-news-heading">
-        <div class="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:py-16">
-          <h2 id="home-news-heading" class="text-foreground text-2xl font-bold tracking-tight break-words sm:text-3xl">
+      <section data-reveal class="border-border/60 border-t" aria-labelledby="home-news-heading">
+        <div class="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-20">
+          <h2
+            id="home-news-heading"
+            class="text-foreground text-2xl font-extrabold tracking-tight break-words sm:text-3xl"
+          >
             Z życia Auto Szkoły Juszczak
           </h2>
-          <p class="text-muted-foreground mt-2 max-w-2xl text-base break-words">
+          <p class="text-muted-foreground mt-3 max-w-2xl text-base break-words sm:text-lg">
             Wybrane aktualności ze strony szkoły — pełna lista w dziale Aktualności.
           </p>
-          <ul class="mt-8 max-w-3xl space-y-6">
+          <ul class="mt-10 max-w-3xl space-y-7">
             {newsTeasers.map((item) => (
               <li class="min-w-0">
-                <h3 class="text-foreground text-lg font-semibold break-words">{item.title}</h3>
-                {item.summary && <p class="text-muted-foreground mt-1 text-base break-words">{item.summary}</p>}
+                <h3 class="text-foreground text-lg font-bold break-words sm:text-xl">{item.title}</h3>
+                {item.summary && <p class="text-muted-foreground mt-1.5 text-base break-words">{item.summary}</p>}
               </li>
             ))}
           </ul>
-          <p class="mt-8">
-            <a href="/artykuly" class="text-primary font-medium hover:underline">
+          <p class="mt-10">
+            <a href="/artykuly" class="text-primary font-semibold hover:underline">
               Przejdź do aktualności
             </a>
           </p>
@@ -79,24 +82,24 @@ const {
 
   {
     teaserImages && teaserImages.length > 0 && (
-      <section class="border-border/60 bg-secondary/30 border-t" aria-labelledby="home-gallery-heading">
-        <div class="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:py-16">
+      <section data-reveal class="border-border/60 bg-secondary/30 border-t" aria-labelledby="home-gallery-heading">
+        <div class="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-20">
           <h2
             id="home-gallery-heading"
-            class="text-foreground text-2xl font-bold tracking-tight break-words sm:text-3xl"
+            class="text-foreground text-2xl font-extrabold tracking-tight break-words sm:text-3xl"
           >
             Galeria
           </h2>
-          <p class="text-muted-foreground mt-2 max-w-2xl text-base break-words">
+          <p class="text-muted-foreground mt-3 max-w-2xl text-base break-words sm:text-lg">
             Fragment floty i szkolenia — więcej zdjęć w galerii.
           </p>
-          <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
             {teaserImages.map((img) => (
               <MediaFigure src={img.src} alt={img.alt} />
             ))}
           </div>
-          <p class="mt-8">
-            <a href="/galeria" class="text-primary font-medium hover:underline">
+          <p class="mt-10">
+            <a href="/galeria" class="text-primary font-semibold hover:underline">
               Zobacz galerię
             </a>
           </p>
@@ -107,24 +110,26 @@ const {
 
   {
     reviewQuotes && reviewQuotes.length > 0 && (
-      <section class="border-border/60 border-t" aria-labelledby="home-reviews-heading">
-        <div class="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:py-16">
+      <section data-reveal class="border-border/60 border-t" aria-labelledby="home-reviews-heading">
+        <div class="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-20">
           <h2
             id="home-reviews-heading"
-            class="text-foreground text-2xl font-bold tracking-tight break-words sm:text-3xl"
+            class="text-foreground text-2xl font-extrabold tracking-tight break-words sm:text-3xl"
           >
             Opinie kursantów
           </h2>
-          <ul class="mt-8 max-w-3xl space-y-8">
+          <ul class="mt-10 max-w-3xl space-y-9">
             {reviewQuotes.map((item) => (
               <li class="min-w-0">
-                <blockquote class="text-foreground text-base leading-relaxed break-words">„{item.quote}”</blockquote>
+                <blockquote class="text-foreground text-base leading-relaxed break-words sm:text-lg">
+                  „{item.quote}”
+                </blockquote>
                 <p class="text-muted-foreground mt-2 text-sm break-words">{item.author}</p>
               </li>
             ))}
           </ul>
-          <p class="mt-8">
-            <a href="/referencje" class="text-primary font-medium hover:underline">
+          <p class="mt-10">
+            <a href="/referencje" class="text-primary font-semibold hover:underline">
               Więcej opinii
             </a>
           </p>

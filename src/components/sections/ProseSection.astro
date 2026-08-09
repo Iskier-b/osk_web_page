@@ -9,10 +9,14 @@ interface Props {
 const { title, class: className } = Astro.props;
 ---
 
-<section class:list={cn("mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:py-16", className)}>
-  {title && <h2 class="text-foreground mb-6 text-2xl font-bold tracking-tight break-words sm:text-3xl">{title}</h2>}
+<section data-reveal class:list={cn("mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-20", className)}>
+  {
+    title && (
+      <h2 class="text-foreground mb-7 text-2xl font-extrabold tracking-tight break-words sm:text-3xl">{title}</h2>
+    )
+  }
   <div
-    class="text-foreground [&_a]:text-primary max-w-3xl space-y-4 text-base leading-relaxed break-words [&_a]:underline-offset-4 hover:[&_a]:underline [&_code]:block [&_code]:max-w-full [&_code]:font-mono [&_code]:text-sm [&_code]:break-all [&_h2]:mt-8 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:break-words [&_h3]:mt-6 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:break-words [&_ol]:list-decimal [&_ol]:pl-5 [&_p]:text-base [&_strong]:break-words [&_ul]:list-disc [&_ul]:pl-5"
+    class="text-foreground [&_a]:text-primary max-w-3xl space-y-5 text-base leading-relaxed break-words [&_a]:font-semibold [&_a]:underline-offset-4 hover:[&_a]:underline [&_code]:block [&_code]:max-w-full [&_code]:font-mono [&_code]:text-sm [&_code]:break-all [&_h2]:mt-10 [&_h2]:text-xl [&_h2]:font-extrabold [&_h2]:break-words [&_h3]:mt-7 [&_h3]:text-lg [&_h3]:font-bold [&_h3]:break-words [&_ol]:list-decimal [&_ol]:pl-5 [&_p]:text-base [&_p]:sm:text-lg [&_strong]:break-words [&_ul]:list-disc [&_ul]:pl-5"
   >
     <slot />
   </div>

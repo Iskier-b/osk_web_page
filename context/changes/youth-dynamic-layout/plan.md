@@ -342,9 +342,9 @@ No data migration. If the public URL is behind CI-only deploy, Phase 5 must incl
 
 #### Automated
 
-- [x] 2.1 `npm run lint` passes
-- [x] 2.2 `npm run build` passes
-- [x] 2.3 `git diff -- src/lib/site-nav.ts` is empty (no IA file changes)
+- [x] 2.1 `npm run lint` passes — 7ce6de0
+- [x] 2.2 `npm run build` passes — 7ce6de0
+- [x] 2.3 `git diff -- src/lib/site-nav.ts` is empty (no IA file changes) — 7ce6de0
 
 #### Manual
 
@@ -356,8 +356,8 @@ No data migration. If the public URL is behind CI-only deploy, Phase 5 must incl
 
 #### Automated
 
-- [ ] 3.1 `npm run lint` passes
-- [ ] 3.2 `npm run build` passes
+- [x] 3.1 `npm run lint` passes
+- [x] 3.2 `npm run build` passes
 
 #### Manual
 
