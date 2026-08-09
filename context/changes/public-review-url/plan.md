@@ -265,7 +265,7 @@ Cold starts on SSR stub routes are acceptable for a demo. No caching/CDN tuning 
 
 #### Automated
 
-- [x] 3.1 `change.md` Notes contain the public review URL
+- [x] 3.1 `change.md` Notes contain the public review URL — 4e1fb7c
 
 #### Manual
 
