@@ -1,5 +1,8 @@
 ---
-import StubPage from "@/components/site/StubPage.astro";
+export const prerender = true;
+
+import EnrollmentForm from "@/components/forms/EnrollmentForm.astro";
+import Hero from "@/components/sections/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
 import { brandName } from "@/lib/site-nav";
 
@@ -7,5 +10,6 @@ const title = "Zapisy na kurs";
 ---
 
 <Layout title={`${title} | ${brandName}`}>
-  <StubPage title={title} />
+  <Hero title={title} />
+  <EnrollmentForm />
 </Layout>

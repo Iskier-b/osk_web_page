@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 
+import EnrollmentStrip from "@/components/forms/EnrollmentStrip.astro";
 import CtaBand from "@/components/sections/CtaBand.astro";
 import DashboardStrip from "@/components/sections/DashboardStrip.astro";
 import Hero from "@/components/sections/Hero.astro";
@@ -28,6 +29,8 @@ const {
 
 <Layout title={title || brandName}>
   <Hero title={heroTitle ?? title} subtitle={heroSubtitle} pitches={heroPitches} image={heroImage} />
+
+  <EnrollmentStrip />
 
   {dashboardItems && dashboardItems.length > 0 && <DashboardStrip items={dashboardItems} />}
 

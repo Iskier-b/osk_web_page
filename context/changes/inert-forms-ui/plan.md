@@ -275,9 +275,9 @@ Not applicable (no data/backends). If S-04 Kontakt prose is mid-flight on anothe
 
 #### Automated
 
-- [x] 1.1 New form components exist under the chosen forms/ (or sections/) folder and import cleanly
-- [x] 1.2 npm run lint passes
-- [x] 1.3 npm run build passes
+- [x] 1.1 New form components exist under the chosen forms/ (or sections/) folder and import cleanly — 1734005
+- [x] 1.2 npm run lint passes — 1734005
+- [x] 1.3 npm run build passes — 1734005
 
 #### Manual
 
@@ -287,9 +287,9 @@ Not applicable (no data/backends). If S-04 Kontakt prose is mid-flight on anothe
 
 #### Automated
 
-- [ ] 2.1 `/` and `/zapisy-na-kurs` build as prerendered routes
-- [ ] 2.2 npm run lint passes
-- [ ] 2.3 npm run build passes
+- [x] 2.1 `/` and `/zapisy-na-kurs` build as prerendered routes
+- [x] 2.2 npm run lint passes
+- [x] 2.3 npm run build passes
 
 #### Manual
 
