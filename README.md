@@ -150,7 +150,7 @@ Route protection is handled in `src/middleware.ts`. Add paths to the `PROTECTED_
 
 ## Deployment
 
-This project deploys to [Cloudflare Workers](https://workers.cloudflare.com/).
+This project deploys to [Cloudflare Workers](https://workers.cloudflare.com/) (not Cloudflare Pages). The Astro 6 `@astrojs/cloudflare` adapter targets Workers + Static Assets; Pages is not a supported publish path for this stack.
 
 1. Build the project:
 
@@ -164,11 +164,13 @@ npm run build
 npx wrangler deploy
 ```
 
-Set `SUPABASE_URL` and `SUPABASE_KEY` as secrets in your Cloudflare dashboard or via `npx wrangler secret put`.
+After a successful deploy, Wrangler prints a public `*.workers.dev` URL — share that for review.
+
+Supabase secrets (`SUPABASE_URL`, `SUPABASE_KEY`) are optional for a public brochure review deploy. Set them in the Cloudflare dashboard or via `npx wrangler secret put` only when auth/backend features are needed.
 
 ## CI
 
-GitHub Actions runs lint + build on every push and PR to `master`. Configure `SUPABASE_URL` and `SUPABASE_KEY` as repository secrets in GitHub for the build step.
+GitHub Actions runs lint + build on every push and PR to `master`. Configure `SUPABASE_URL` and `SUPABASE_KEY` as repository secrets in GitHub for the build step. There is no CI deploy job; publishing remains a manual `npx wrangler deploy`.
 
 ## License
 

@@ -1,5 +1,5 @@
 ---
-import { brandName, demoKontoHref, demoKontoLabel, footerLinks, phoneHref, phoneLabel } from "@/lib/site-nav";
+import { brandName, footerLinks, phoneHref, phoneLabel } from "@/lib/site-nav";
 ---
 
 <footer class="border-border bg-muted/40 mt-auto border-t">
@@ -31,9 +31,6 @@ import { brandName, demoKontoHref, demoKontoLabel, footerLinks, phoneHref, phone
     <div
       class="border-border text-muted-foreground flex flex-col gap-2 border-t pt-4 text-sm sm:flex-row sm:items-center sm:justify-between"
     >
-      <a href={demoKontoHref} class="hover:text-primary transition-colors">
-        {demoKontoLabel}
-      </a>
       <p>© {brandName}</p>
     </div>
   </div>

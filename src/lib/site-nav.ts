@@ -18,9 +18,6 @@ export const zapisyCta: NavLink = {
   href: "/zapisy-na-kurs",
 };
 
-export const demoKontoHref = "/auth/signin";
-export const demoKontoLabel = "Demo / konto";
-
 /** Oferta dropdown — seven offer / location siblings (mvp-scope). */
 export const ofertaChildren: NavLink[] = [
   { label: "Jazdy doszkalające", href: "/jazdy-doszkalajace" },
@@ -56,7 +53,7 @@ export const primaryNav: PrimaryNavItem[] = [
 
 /**
  * Footer mapa / legal HTML links (PDFs omitted until assets exist).
- * Order follows source Mapa strony, then Demo / konto escape hatch.
+ * Order follows source Mapa strony.
  */
 export const footerLinks: NavLink[] = [
   { label: "O nas", href: "/nasza-auto-szkola" },
@@ -74,8 +71,6 @@ export const siteChrome = {
   phoneHref,
   phoneLabel,
   zapisyCta,
-  demoKontoHref,
-  demoKontoLabel,
   primaryNav,
   ofertaChildren,
   strefaChildren,
