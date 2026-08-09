@@ -1,9 +1,9 @@
 ---
 project: "OSK Juszczak redesign"
-version: 1
+version: 2
 status: draft
 created: 2026-08-08
-updated: 2026-08-08
+updated: 2026-08-09
 context_type: greenfield
 product_type: web-app
 target_scale:
@@ -34,7 +34,7 @@ Insight: the owner will commit to a redesign only after seeing *their* authentic
 ## Success Criteria
 
 ### Primary
-- AI model maps the current client site and saves a full analysis pack (not nav-only); user locks visual style by choosing from agent-proposed audience-based directions; ships a modernized public URL with authentic top-level content plus one representative deep path; owner reviews on mobile and desktop and recognizes their content in a clearer layout — forms visible, submit clearly disabled.
+- AI model maps the current client site and saves a full analysis pack (not nav-only); user locks visual style by choosing from agent-proposed audience-based directions; ships a modernized public URL with authentic top-level content plus one representative deep path; the public site uses a dynamic, youth-oriented layout/template designed and applied by the agent while keeping the existing menu information architecture unchanged; owner reviews on mobile and desktop and recognizes their content in a clearer layout — forms visible, submit clearly disabled.
 
 ### Secondary
 - (none locked beyond Primary — former desktop nice-to-have promoted into Primary via FR-008.)
@@ -48,9 +48,9 @@ Insight: the owner will commit to a redesign only after seeing *their* authentic
 
 ### US-01: Owner reviews modernized site with own content
 
-- **Given** the source analysis pack is documented, visual style is locked by user choice from agent proposals, and the site is available at a public URL
+- **Given** the source analysis pack is documented, visual style is locked by user choice from agent proposals, a youth-oriented dynamic layout/template has been designed and applied by the agent without changing menu IA, and the site is available at a public URL
 - **When** the owner opens the site on phone and desktop and walks top-level pages plus one representative deeper path
-- **Then** they recognize their content in a clearer modern layout; title-only / placeholder stubs appear where deep content was not copied; forms are visible with submit clearly disabled
+- **Then** they recognize their content in a clearer modern layout aimed at young course candidates; title-only / placeholder stubs appear where deep content was not copied; forms are visible with submit clearly disabled; menu structure (labels, hierarchy, destinations) matches the locked IA
 
 #### Acceptance Criteria
 - Analysis pack exists (structure + features/integrations/backend-needed + MVP-in/out) and navigation matches the new site
@@ -58,6 +58,8 @@ Insight: the owner will commit to a redesign only after seeing *their* authentic
 - One representative deep path has real copied content
 - Mobile: 375px, no horizontal scroll on top-level; primary nav usable
 - Desktop layout is readable and style-consistent
+- Layout/template is dynamic and youth-oriented (agent-designed), applied consistently across pages that already have content
+- Menu information architecture is unchanged — layout/presentation only; no renamed, reordered, added, or removed nav items as part of this redesign
 - No form submit sends data; disabled state is communicated
 - Public URL is available for owner review
 
@@ -84,6 +86,8 @@ Insight: the owner will commit to a redesign only after seeing *their* authentic
   > Socrates: Counter-argument considered: owner evaluates mainly on desktop → must-have. Resolution: promoted to must-have.
 - FR-009: Developer can publish the site on free static hosting so the owner reviews a public URL (not only local preview). Priority: must-have
   > Socrates: Counter-argument considered: without public URL there is no real demo. Resolution: kept must-have after page_mvp refresh (hosting wording omitted in brief; plan retains FR-009).
+- FR-010: Visitor experiences a dynamic, youth-oriented page layout/template designed and implemented by the AI agent; the existing menu information architecture (labels, hierarchy, destinations) stays unchanged — only layout and presentation adapt. Priority: must-have
+  > Socrates: Counter-argument considered: reopen FR-002 style-lock vs new post-build layout pass. Resolution (2026-08-09): new FR — FR-002 already done; this is a layout/template redesign for young course candidates with an explicit menu-IA freeze.
 
 ## Non-Functional Requirements
 
@@ -97,7 +101,7 @@ Insight: the owner will commit to a redesign only after seeing *their* authentic
 
 The site reorders the OSK offer into a clear information hierarchy — what appears first versus what is deferred — so the owner and visitors are not buried under a wall of content.
 
-Inputs: structure and copy from the source site (https://www.autojuszczak.com.pl/) plus the locked visual style. Output: a modernized hierarchy with full top-level content, one representative deep path filled, and title-only / placeholder stubs elsewhere. Encountered on first mobile/desktop screens as a calmer, ordered presentation instead of information overload.
+Inputs: structure and copy from the source site (https://www.autojuszczak.com.pl/) plus the locked visual style, plus an agent-designed youth-oriented dynamic layout/template that must not alter menu IA. Output: a modernized hierarchy with full top-level content, one representative deep path filled, title-only / placeholder stubs elsewhere, and a consistent youth-oriented presentation layer. Encountered on first mobile/desktop screens as a calmer, ordered presentation instead of information overload — now aimed at young course candidates without reshuffling the nav tree.
 
 ## Access Control
 
@@ -112,4 +116,6 @@ N/A — single public informational website. No login, no accounts, no role sepa
 
 ## Open Questions
 
-None remaining from shape-notes (quality cross-check accepted, 2026-08-08). Synced 2026-08-08 with refreshed `page_mvp.md` (FR-001 depth, FR-002 chooser, content guardrails; FR-009 retained).
+1. **How “dynamic” should the youth layout be within MVP constraints?** (e.g. motion/scroll presence and hierarchy vs heavy client interactivity) — Owner: user. Added 2026-08-09 with FR-010; does not reopen Non-Goals (no backend/CMS).
+
+Synced 2026-08-08 with refreshed `page_mvp.md` (FR-001 depth, FR-002 chooser, content guardrails; FR-009 retained). FR-010 added 2026-08-09 (youth-oriented dynamic layout; menu IA frozen).
