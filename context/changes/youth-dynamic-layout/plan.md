@@ -382,9 +382,9 @@ No data migration. If the public URL is behind CI-only deploy, Phase 5 must incl
 
 #### Automated
 
-- [x] 5.1 `npm run lint` passes
-- [x] 5.2 `npm run build` passes
-- [x] 5.3 Confirm `src/lib/site-nav.ts` still unchanged vs branch base
+- [x] 5.1 `npm run lint` passes — d82fe10
+- [x] 5.2 `npm run build` passes — d82fe10
+- [x] 5.3 Confirm `src/lib/site-nav.ts` still unchanged vs branch base — d82fe10
 
 #### Manual
 

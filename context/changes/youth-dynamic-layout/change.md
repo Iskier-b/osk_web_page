@@ -1,7 +1,7 @@
 ---
 change_id: youth-dynamic-layout
 title: Youth-oriented dynamic layout
-status: implementing
+status: implemented
 created: 2026-08-09
 updated: 2026-08-09
 ---
