@@ -315,8 +315,8 @@ Not applicable (no data/backends). If S-04 Kontakt prose is mid-flight on anothe
 
 #### Automated
 
-- [x] 4.1 npm run lint passes
-- [x] 4.2 npm run build passes
+- [x] 4.1 npm run lint passes — 4764cd7
+- [x] 4.2 npm run build passes — 4764cd7
 
 #### Manual
 
