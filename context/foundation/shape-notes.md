@@ -1,202 +1,260 @@
 ---
-project: "OSK Juszczak redesign"
-context_type: greenfield
-created: 2026-08-08
-updated: 2026-08-08
+project: "OSK Juszczak — prosty CMS (live edit)"
+context_type: brownfield
+created: 2026-08-18
+updated: 2026-08-19
 product_type: web-app
 target_scale:
   users: medium
   qps: low
   data_volume: small
 timeline_budget:
-  mvp_weeks: 5
+  delivery_weeks: 3
   hard_deadline: null
   after_hours_only: true
 checkpoint:
   current_phase: 8
   phases_completed: [1, 2, 3, 4, 5, 6, 7]
   gray_areas_resolved:
-    - topic: context type
-      decision: greenfield (user override; empty repo, client site is source input only)
-    - topic: pain category
-      decision: missing capability — no modern business-card site to present the offer
-    - topic: insight
-      decision: owner buys change only after seeing their own content in a new layout
-    - topic: primary persona
-      decision: OSK owner (decision to adopt the redesign vision)
-    - topic: pain moment
-      decision: drop in inquiries / rankings → "what do we do about this?"
-    - topic: auth strategy
-      decision: N/A — public informational site; no login, no roles
-    - topic: mvp timeline
-      decision: 5 weeks; user accepted sustained-effort cost
-    - topic: site mapping actor
-      decision: AI model performs site mapping and writes the structure documentation
-    - topic: analysis documentation depth
-      decision: F-01 delivers full analysis pack (sitemap, sections, forms, integrations, backend-needed, MVP-in vs MVP-out) — not nav map alone
-    - topic: style lock process
-      decision: agent proposes audience-based visual directions; user chooses; chosen direction applied consistently (supersedes developer-locks-after-PO-talk)
-    - topic: empty nav stubs
-      decision: no empty dead links — title-only / placeholder subsection pages when content not copied (placeholder means title-only, not invented body copy)
-    - topic: content fidelity
-      decision: source-faithful only — no invented facts/prices/contacts; light clarity/hierarchy edits OK; no new copywriting
-    - topic: deep path selection
-      decision: representative owner journey, not easiest path
-    - topic: inert forms UX
-      decision: keep form UI; clearly communicate submit disabled so trust is not broken
-    - topic: mobile metric
-      decision: measurable mobile bar (375px, no horizontal scroll on top-level; primary nav usable)
-    - topic: desktop priority
-      decision: promoted to must-have
-    - topic: public hosting
-      decision: kept must-have — public URL required for real demo (FR-009 retained after page_mvp.md refresh omitted hosting; user accepted plan sync option 1)
-    - topic: domain rule
-      decision: information hierarchy — what comes first vs what is deferred
-    - topic: wcag in mvp
-      decision: full WCAG out of MVP scope (explicit non-target)
-    - topic: timeline mode
-      decision: after hours; no hard deadline; user de-emphasized execution-time pressure
-    - topic: non-goals
-      decision: no external integrations; no CMS/edit panel; SEO optimization not an MVP goal
-    - topic: page_mvp refresh sync
-      decision: 2026-08-08 — refined page_mvp.md deltas folded into shape/PRD/roadmap without full reshape
-  frs_drafted: 9
+    - topic: this-change scope
+      decision: this repo does not build CMS UI — only wires the public site to the content store
+    - topic: missing content
+      decision: missing stored text shows the lookup key (e.g. osk.main.nasze_pojazdy), never an error and never invented copy
+    - topic: seed
+      decision: implementer writes schema + keyed seed; owner executes scripts in the store
+    - topic: connection
+      decision: content-store credentials never exposed to visitors; implementer helps configure connection, does not run setup scripts
+    - topic: key taxonomy
+      decision: implementer generates osk.<area>.<slug> for every page slot, nav item, and article field; osk.main.nasze_pojazdy is only an example
+    - topic: images
+      decision: gallery + article images from content store; all other images stay static files with a later retarget path
+  frs_drafted: 10
   quality_check_status: accepted
 ---
 
-# Seed (verbatim inputs)
+# Seed (verbatim input)
 
-From `context/page_mvp.md` (refreshed 2026-08-08) and session:
+od klienta powstała nowa funkcjonalność która wymaga aby treści na stronie były w łatwy sposób edytowalne, mozna by to zrealizować prostym widokiem w którym może on edytować treści w bazie na dedytkowanej stronie, nie robimy wersjonowania, podglądu, i innych funkcji CMSa tylko dajemy live edit na bazie, to do wszystkich linków, treści artykułów na stronach, dodatkowo w sekcji blog, prezentujemy listę artykułów z odpowiedniej tabeli, zasada wprowadzenia artykułów taka sama, prosta strona z edytowalnymi polami formularza plus upload obrazków. Właściciel może zaznaczyć artykuł jako niewyświetlany, zawsze na wieżchu, prezentowany. 
+Dostęp do tej sekcji z edycją albo w osobnej alikacji (będziemy tworzyli aplikację zarządzania OSK więc może tam - będą dostępy do aplikacji dla użytkowników z odpowiednimi rolami) jedynie dla użytkownika w roli administratora/edutora strony po zalogowaniu się. 
+Strona powinna być już dostosowana do działania w trybie takiego prostego CMS niezależnie od wybranego wariantu dostarczania treści.
 
-- Goal: demonstracyjna, zmodernizowana wersja strony OSK jako prezentacja koncepcji dla klienta biznesowego — nie produkcyjna kompletność.
-- Source site (input only, not the system under change): https://www.autojuszczak.com.pl/
-- Preserve information structure and key facts; redesign presentation, look, and UX.
-- Analysis first: full site map + menus, sections/components, forms, external integrations, backend-needed features, MVP-in vs MVP-out — saved in agent context docs.
-- Structure fully mirrored in nav; full real copy only for top pages + one thematic path; deeper pages = title-only / placeholder (no invented body).
-- No invented company facts, prices, addresses, phones; no new copywriting — new presentation of existing offer.
-- Visual gate: agent proposes audience-based directions → user chooses → apply consistently.
-- Mobile-first (mobile, tablet, desktop); mobile readability outranks desktop polish.
-- Architecture simple: no backend, DB, auth, accounts, complex business processes, heavy integrations unless user confirms.
-- Out-of-scope features: document in analysis; may appear as non-production demo UI only.
-- Success: working modernized demo, locked visual direction, structure parity, real top + one deep path, mobile+desktop, low complexity, out-of-scope documented, client can judge concept/UX/info architecture.
-- Priority: concept → UX → look → info structure → representative content → simplicity.
-- Public review URL kept as plan must-have (FR-009) even though refreshed brief omitted hosting wording.
+# Addendum (verbatim, 2026-08-19)
 
-## Forward: tech-stack
+uwzględnij nowe wymagania odkryte przez shape, uwzględnij że w tym zadaniu nie budujemy samego CMSa a jedynie podpinamy stronę do korzystania z bazy, teksty jeśli nie znalezione w bazie powinny generować klucz z bazy zamiast treści czy błędu (właściciel będzie mógł łatwo znaleźć i poprawić), agent w implementacji ma wygenerować model do Supabase do stworzebua tabel i przygotować SQL z aktualnymi danymi do szybkiego zapełnienia bazy czyli jeśli strona prezentuje treść: "nasze pojazdy" i jest on zamieniany na klucz: osk.main.nasze_pojazdy to w skrypcie pojawia się wpis pozwalający wstawić takich klucz do bazy z tesktem "nasze pojazdy". podobnie dla sekcji artykułów powinny one być już wstawione skryptu bez obrazków. Implementacja powinna zapewniac bezpieczne połączenie z bazą. Agent sam nie wykonuje skryptów pomaga jedynie założyć bazę i skonfigurować połączenie w aplikacji.
 
-- Locked downstream in `context/foundation/tech-stack.md` (Astro starter + Cloudflare Pages).
+# Addendum (verbatim, 2026-08-19 — Open Questions)
+
+1. osk.main.nasze_pojazdy - to tylko przykład, agent może go użyć lub nie, agent ma sam generować treść klucza zgdnie z zasadą: osk.<area>.<slug> for every page slot, nav item, and article field
+2. pozostają jako obrazy statyczne, tylko obrazki w galeriach i artykułach przychodzą z CMS (bazy), dla innych obrazów możesz zaproponować łatwe przejście w przyszłości na nowy system z bazą.
+3. Właścicile wykona skrpty w bazie danych, model stworzy odpowiednie skrypty
+
+## Shaping decisions (session 2026-08-18)
+
+- **Session mode:** restart — prior greenfield demo shape archived to `context/foundation/archive/shape-notes-2026-08-18-0032.md`
+- **Context type:** brownfield (confirmed)
+- **Change category:** new module — CMS + DB content layer
+- **Admin UI location:** separate OSK management application (future); **this repo** delivers DB layer + public SSR render only. Interim editing via Supabase Studio until the management app exists.
+- **This-change scope (2026-08-19):** do **not** build CMS UI in this task — only wire the public site to the content store.
+- **Missing-key fallback (2026-08-19):** if stored text is missing, the page shows the lookup key (example: copy "nasze pojazdy" → key `osk.main.nasze_pojazdy`) instead of content or an error, so the owner can find and fix it.
+- **Seed (2026-08-19):** implementer writes schema + keyed seed scripts; **owner** executes them in the content store. Implementer does not run the scripts.
+- **Connection (2026-08-19):** content-store credentials must never be exposed to visitors.
+- **Keys (2026-08-19, OQ-1):** implementer generates `osk.<area>.<slug>` for every page slot, nav item, and article field. `osk.main.nasze_pojazdy` is only an example.
+- **Images (2026-08-19, OQ-2):** gallery and article images from the content store; all other images stay static files. Remaining slots should stay easy to retarget to the store later.
+
+## Current System
+
+**Product:** OSK Juszczak redesign — public informational website (Astro 6 SSR, React islands, Tailwind 4, Cloudflare Workers). Originally scoped as a demo/proof-of-concept for the owner to approve a modernized layout.
+
+**Content today:**
+- 9 Markdown pages via Astro Content Collections (`src/content/pages/*.md`) with typed Zod frontmatter (hero, CTAs, prices, teasers, images).
+- Navigation, footer links, phone, and CTA hardcoded in `src/lib/site-nav.ts`.
+- 13 stub routes with title-only placeholders.
+- Blog (`/artykuly`): listing shell only — `newsTeasers` in frontmatter (title + summary); no individual article pages or DB.
+- Images: static paths under `/images/osk/` in `public/`.
+- Most public pages use `prerender = true` (build-time content).
+
+**Auth today:** Supabase SSR cookie auth scaffolded; middleware protects only `/dashboard`. No roles/RBAC. Dashboard is a placeholder (welcome + email + sign-out). PRD explicitly marked auth and CMS as non-goals for the demo MVP.
+
+**Database today:** Supabase wired for auth only — no product migrations, no content tables, no Storage bucket.
+
+**Users today:** Public visitors (course candidates); OSK owner reviews the demo like any visitor (no edit access).
+
+**Must preserve:**
+- Existing navigation information architecture (menu labels, hierarchy, destinations) unless the owner explicitly edits links via CMS.
+- Public page routes and section component kit (Hero, ProseSection, CtaBand, PriceTable, etc.).
+- Mobile usability bar (375px, no horizontal scroll on top-level pages).
+- SSR deployment on Cloudflare Workers.
+- Visual design / youth-oriented layout already applied.
 
 ## Vision & Problem Statement
 
-The OSK owner's current site looks outdated versus competitors and does not meaningfully drive candidate inflow; when inquiries and SEO rankings drop, they lack a concrete modern presentation of their own offer to evaluate. Visitors are also overloaded with information on the existing site, which weakens first impression.
+After the client approved the redesign direction, a new requirement emerged: the owner must be able to update site content themselves — links, page copy, and blog articles — without developer intervention. The current static Markdown + hardcoded-nav architecture cannot support that.
 
-Insight: the owner will commit to a redesign only after seeing *their* authentic content in a new information hierarchy — not an abstract mockup. The MVP is that proof: a modernized structure with real top-level (and one deep-path) content from https://www.autojuszczak.com.pl/. The owner's expectation for the live site is a modern look that attracts more course candidates. Target scale for live use: dozens to ~100 visitors/users (local OSK audience).
+The change adds a **minimal live-edit CMS**: form-based editing that writes directly to the database (no versioning, no preview, no full CMS feature set). The public site reads from the same database at render time, so content updates are live immediately. Blog articles gain a real listing from a DB table plus individual article pages, with visibility flags (hidden / pinned-on-top / displayed) and image upload.
+
+Insight: the site must be **CMS-ready at the rendering layer** regardless of where the admin UI lives — Supabase as single source of truth; public Astro app reads DB at SSR; edit UI deferred to future OSK management app (interim: Supabase Studio).
 
 ## User & Persona
 
-**Primary — OSK owner (Auto Szkoła Juszczak / business decision-maker).** Runs the driving school; feels the gap when leads and rankings slip; needs a tangible "new quality" vision of their site before approving change. Visits the site like any other browser user — no special access.
+**Primary — OSK owner / site editor (administrator lub edytor strony).** Runs the driving school; needs to keep the modernized site up to date (offers, prices, contact info, blog posts) without calling a developer. Logs in to the CMS panel, edits fields, uploads images, toggles article visibility. Expects changes to appear on the live public site immediately.
 
-### Secondary persona
-
-- **Service provider (you):** uses the MVP demo to encourage the owner to adopt the redesign.
-- **Course candidate (site visitor):** the audience the modernized look should attract; not the MVP decision-maker.
+**Secondary — course candidate (public visitor).** Unchanged — browses the public site; no login; sees published content only.
 
 ## Access Control
 
-N/A — single public informational website. No login, no accounts, no role separation. Owner and visitors reach the same pages through a normal browser.
+**Public site:** unchanged for visitors — no login required; published content only (articles/pages with display status ≠ hidden).
+
+**CMS / editing (interim MVP):** no in-app edit UI in this repository or a separate app yet. Site editor role edits content directly in **Supabase Studio** (tables + Storage). Future OSK management application will provide form-based CMS UI for the same Supabase backend.
+
+**Auth model change:** yes — introduce Supabase-backed **site editor** role (single role for MVP; full content + nav + article edit rights). RLS on all content tables: public read for published rows; write only for authenticated users with site-editor role. This app's existing auth scaffold (`middleware.ts`, `/dashboard`) is not the CMS entry point for MVP — dashboard may remain placeholder or redirect note until the OSK management app exists.
+
+**Role separation:** flat single role (`site_editor`) for MVP. No separate admin vs editor split yet.
 
 ## Success Criteria
 
 ### Primary
-- AI model maps the current client site and saves a full analysis pack (not nav-only); user locks visual style by choosing from agent-proposed audience-based directions; ships a modernized public URL with authentic top-level content plus one representative deep path; owner reviews on mobile and desktop and recognizes their content in a clearer layout — forms visible, submit clearly disabled.
+- Public site renders all CMS-managed content (pages, nav links, blog list, article detail) from Supabase at SSR time; an edit in Supabase Studio is visible on the live public site without redeploy.
+- Blog section lists articles from DB; individual article pages exist; visibility flags work (hidden not shown, pinned always on top of list, displayed normal).
+- Image references use Supabase Storage URLs after upload via Studio.
 
 ### Secondary
-- (none locked beyond Primary — former desktop nice-to-have promoted into Primary via FR-008.)
+- Existing Markdown content migrated/seeded into DB so the public site matches current demo content on day one.
 
 ### Guardrails
-- Copied content is source-faithful only: no invented facts, prices, contacts, or claims; light clarity/hierarchy edits OK; no new copywriting.
-- Mobile meets the FR-007 metric; forms never send data and communicate that clearly.
-- Analysis pack stays complete (structure + features + integrations + backend-needed + MVP-in/out); pages without copied body show title-only / placeholder, not empty dead links and not invented body copy.
+- Navigation information architecture (menu structure, hierarchy) preserved — only link targets/labels become DB-editable, not a restructure via CMS.
+- Mobile bar unchanged: 375px top-level pages without horizontal scroll.
+- No versioning, preview, or draft/publish workflow — live edit only.
+- Public visitors never see hidden articles or unpublished page states.
+- Existing section component kit and page routes reused — rendering layer swap (Markdown → DB), not a redesign.
 
 ## Timeline acknowledgment
 
-Acknowledged on 2026-08-08: 5-week MVP requires sustained dedication; user accepted.
+Target: ~3 weeks after-hours for DB layer + public SSR render + blog + nav migration. Interim editing via Supabase Studio only (no CMS UI).
 
 ## MVP flow (locked)
 
-1. AI model maps current site → save full analysis pack (sitemap, sections, forms, integrations, backend-needed, MVP-in vs MVP-out).
-2. Gate: agent proposes audience-based visual directions; user chooses and locks one direction.
-3. Publish modernized site to a public URL (free static hosting).
-4. Browse top-level pages on mobile (metric) and desktop with real copied content (clarity edits OK, no invented claims / no new copywriting).
-5. Walk one representative deeper path (not the easiest stub) with real copied content.
-6. Forms present as ready UI; submit disabled and clearly communicated (demo-only, not production-working).
-7. Pages without copied body: title-only / placeholder subsection, no empty dead links, no invented body.
-8. Owner evaluates: “our content, new layout / quality.”
+1. Developer adds Supabase migrations: content tables (pages, nav_links, articles), Storage bucket for images, RLS policies, site_editor role.
+2. Developer seeds DB from existing Markdown + `site-nav.ts` so public site parity on launch.
+3. Public pages switch from `getPageEntry()` / hardcoded nav to SSR reads from Supabase.
+4. Blog: `/artykuly` lists DB articles (pinned first, then by date); new `/artykul/[slug]` route for article body.
+5. Site editor opens Supabase Studio, edits a page field or article → saves → public site shows change immediately (SSR, no redeploy).
+6. Site editor uploads image to Storage via Studio, references URL in content.
+7. Site editor toggles article visibility flag (hidden / pinned / displayed).
 
 ## Functional Requirements
 
-### Discovery & style gate
-- FR-001: AI model can map the source client site and produce a reusable analysis pack covering sitemap/menus, key sections and repeated components, forms and interactive features, external integrations, backend-or-server-needed features, and an explicit MVP-in vs MVP-out classification. Priority: must-have
-  > Socrates: Counter-argument considered: AI mapping incomplete/wrong → do manually. Resolution: kept; depth expanded 2026-08-08 to match refreshed page_mvp §2 (not nav-only).
-- FR-002: User can lock the visual style before the MVP build starts by choosing from agent-proposed audience-based directions (with short pros per direction); the chosen direction is then applied consistently. Priority: must-have
-  > Socrates: Counter-argument considered: owner should pick style / lock too early. Resolution (updated 2026-08-08): user chooses from agent proposals — supersedes developer-locks-after-PO-talk.
+### Content editing (interim — Supabase Studio)
+- FR-001: Site editor can edit page content fields (hero, body sections, structured blocks matching existing page schema) directly in Supabase Studio. Priority: must-have. Change: new
+  > Socrates: Counter-argument considered: Studio is too technical for a driving-school owner. Resolution: kept for MVP — interim only; form UI ships in future OSK management app.
+- FR-002: Site editor can edit navigation links (primary nav, dropdowns, footer, phone, CTA) in Supabase Studio. Priority: must-have. Change: new
+  > Socrates: Counter-argument considered: editable nav could break IA or create dead links. Resolution: kept — IA structure seeded and constrained in schema; only href/label editable per slot.
+- FR-006: Site editor can create and edit blog articles (title, summary, body, hero image ref) and set visibility (hidden / pinned / displayed) in Supabase Studio. Priority: must-have. Change: new
+  > Socrates: Counter-argument considered: live edit without preview risks broken HTML/layout on production. Resolution: kept — owner accepts live-edit tradeoff; no preview by design.
+- FR-007: Visitor can see gallery images and article images loaded from the content store; other page images stay as static files. Priority: must-have. Change: modified
+  > Socrates: Counter-argument considered: Storage URLs vs static `/public/` paths adds complexity. Resolution (updated 2026-08-19): only gallery and article images come from the store in this change; remaining images stay files with a later retarget path.
 
-### Public site
-- FR-003: Visitor can browse the full navigation structure; where body content is not copied yet, the subsection shows a title-only / placeholder page (no empty dead-end links; no invented body copy). Priority: must-have
-  > Socrates: Counter-argument considered: full structure with empty links misleads the owner. Resolution: title-only / placeholder stubs instead of empty links.
-- FR-004: Visitor can read source-faithful top-hierarchy content that the owner recognizes, with light clarity/hierarchy edits allowed and no invented facts, prices, contacts, or claims (no new copywriting). Priority: must-have
-  > Socrates: Counter-argument considered: raw copy vs new vision tension. Resolution: source-faithful + light clarity edits only, no invention.
-- FR-005: Visitor can follow one developer-chosen deeper path with real copied content; the path must be a representative owner/candidate journey (e.g. offer → contact), not the easiest stub. Priority: must-have
-  > Socrates: Counter-argument considered: cherry-picking the easiest path. Resolution: require representative journey.
-- FR-006: Visitor can see forms as ready UI elements that perform no send/submit actions and clearly communicate that submission is disabled in this version (demo-only, must not imply production-working). Priority: must-have
-  > Socrates: Counter-argument considered: dead forms break trust. Resolution: keep UI; explicitly label submit as disabled.
-- FR-007: Visitor can use top-level pages on a 375px-wide mobile viewport without horizontal scrolling, with primary navigation reachable and usable; mobile remains priority over desktop polish. Priority: must-have
-  > Socrates: Counter-argument considered: “works on mobile” unmeasurable. Resolution: added 375px / no horizontal scroll / usable primary nav metric.
-- FR-008: Visitor can use a readable, stylistically consistent desktop layout. Priority: must-have
-  > Socrates: Counter-argument considered: owner evaluates mainly on desktop → must-have. Resolution: promoted to must-have.
-- FR-009: Developer can publish the site on free static hosting so the owner reviews a public URL (not only local preview). Priority: must-have
-  > Socrates: Counter-argument considered: without public URL there is no real demo. Resolution: kept must-have after page_mvp refresh (hosting wording omitted in brief; plan retains FR-009).
+### Public site (this repo)
+- FR-003: Visitor can view all site pages with content loaded from Supabase at SSR time (replacing Markdown/hardcoded sources). Priority: must-have. Change: modified
+  > Socrates: Counter-argument considered: SSR DB reads add latency vs prerendered Markdown. Resolution: kept — scale is low (local OSK); live edit outweighs build-time perf.
+- FR-004: Visitor can browse the blog article list at `/artykuly` sourced from DB, with pinned articles always listed first. Priority: must-have. Change: new
+  > Socrates: Counter-argument considered: pinning could stale the list if owner forgets to unpin. Resolution: kept — owner-controlled flag is the domain rule.
+- FR-005: Visitor can read a full blog article at `/artykul/[slug]`. Priority: must-have. Change: new
+  > Socrates: Counter-argument considered: individual article routes were explicitly out of MVP scope before. Resolution: kept — client requirement supersedes prior demo scope.
+
+### Migration & infrastructure
+- FR-008: Developer can write a keyed seed of existing Markdown pages, stub titles, nav copy, articles, and gallery/article images so the owner can fill the content store to match current site copy on launch. Priority: must-have. Change: new
+  > Socrates: Counter-argument considered: one-time seed script may drift from Markdown if both coexist. Resolution: kept — Markdown deprecated after seed; DB is sole source post-migration.
+- FR-009: Visitor (and owner reviewing the public site) can see the lookup key in place of missing stored text — never an error page and never invented copy — so the owner can find and correct the key. Priority: must-have. Change: new
+- FR-010: Developer can write a content-store table model and keyed seed (`osk.<area>.<slug>` generated for every slot; `osk.main.nasze_pojazdy` is only an example) without executing those scripts; the **owner** runs them in the store; the developer only helps configure the application connection. Priority: must-have. Change: new
 
 ## User Stories
 
-### US-01: Owner reviews modernized site with own content
+### US-01: Site editor updates live page content
 
-- **Given** the source analysis pack is documented, visual style is locked by user choice from agent proposals, and the site is available at a public URL
-- **When** the owner opens the site on phone and desktop and walks top-level pages plus one representative deeper path
-- **Then** they recognize their content in a clearer modern layout; title-only / placeholder stubs appear where deep content was not copied; forms are visible with submit clearly disabled
+- **Given** page content exists in Supabase (seeded from current site) and the site editor has site_editor role access in Supabase Studio
+- **When** they edit a page field (e.g. cennik price table data) and save
+- **Then** the public page at the corresponding URL shows the updated content on next request without redeploy
 
 #### Acceptance Criteria
-- Analysis pack exists (structure + features/integrations/backend-needed + MVP-in/out) and navigation matches the new site
-- Top-hierarchy pages use source-faithful content (clarity edits only; no invented facts)
-- One representative deep path has real copied content
-- Mobile: 375px, no horizontal scroll on top-level; primary nav usable
-- Desktop layout is readable and style-consistent
-- No form submit sends data; disabled state is communicated
-- Public URL is available for owner review
+- Edit in Studio → visible on public URL within one SSR request
+- Hidden page states are not shown to visitors
+- Mobile layout unchanged at 375px
+
+### US-02: Visitor reads blog with pinned articles
+
+- **Given** articles exist in DB with mixed visibility flags
+- **When** a visitor opens `/artykuly`
+- **Then** they see displayed and pinned articles only (hidden omitted), pinned first, then by date; clicking an article opens `/artykul/[slug]`
+
+#### Acceptance Criteria
+- Hidden articles absent from list and direct slug access returns 404
+- Pinned articles appear above non-pinned regardless of date
+- Article body and hero image render from DB fields
 
 ## Business Logic
 
-The site reorders the OSK offer into a clear information hierarchy — what appears first versus what is deferred — so the owner and visitors are not buried under a wall of content.
+The system applies a **visibility and ordering rule** to published content: pages and articles carry a display state (hidden / displayed / pinned-for-list); public render excludes hidden items, and blog listing always surfaces pinned items first regardless of publication date.
 
-Inputs: structure and copy from the source site (https://www.autojuszczak.com.pl/) plus the locked visual style. Output: a modernized hierarchy with full top-level content, one representative deep path filled, and title-only stubs elsewhere. Encountered on first mobile/desktop screens as a calmer, ordered presentation instead of information overload.
+Every piece of displayed copy is addressed by a stable lookup key (example: "nasze pojazdy" → `osk.main.nasze_pojazdy`). If the store has no value for a key, the public site shows that key instead of content or an error, so the owner can find and fill it.
+
+Current rule (demo): all visible content is static at build time with no visibility states and no lookup keys. This change adds live visibility control and keyed lookup with missing-key display.
+
+## Constraints & Preserved Behavior
+
+- **Deployment:** Cloudflare Workers — no runtime filesystem writes; all content changes go through Supabase.
+- **Rendering:** reuse existing Astro page routes and section components; swap data source from Content Collections / hardcoded nav to Supabase queries.
+- **Nav IA:** menu hierarchy and slot structure preserved in schema seed — CMS edits href/label per slot, not tree restructuring.
+- **Prerender:** CMS-managed pages must use SSR (`prerender = false`) or equivalent live fetch — remove build-time bake for DB-backed routes.
+- **Auth scaffold:** existing Supabase auth in this app remains; CMS UI not in scope — RLS + site_editor role gates writes at DB layer.
+- **Backward compatibility:** public URLs unchanged; no breaking route changes.
+- **Future OSK management app:** must use same Supabase project, tables, Storage bucket, and RLS policies — this repo defines the contract.
 
 ## Non-Functional Requirements
 
-- Mobile: top-level pages usable at 375px width without horizontal scrolling; primary navigation reachable and usable.
-- The MVP is reviewable at a public URL on free static hosting.
-- Forms never transmit submitted data; the disabled-submit state is visible to the visitor.
-- Full WCAG / accessibility conformance is not a target for this MVP (explicit non-target).
+- Public pages remain usable at 375px width without horizontal scrolling on top-level routes (no regression).
+- Content edits visible on public site without redeploy or rebuild (SSR read from Supabase).
+- Hidden content never exposed to anonymous visitors (RLS + application filter).
+- No draft/preview/version history — single live state per record.
+- Response time: visitor-perceived page load remains acceptable for local OSK traffic (no hard ms target; no regression vs current SSR demo).
 
 ## Non-Goals
 
-- Avoid: external integrations (payments, CRM, live student-zone backends, etc.) unless trivial client-side JS — keeps the MVP static and easy to demo.
-- Avoid: CMS / owner content-edit panel — MVP is a fixed proposal site, not a management product.
-- Avoid: SEO optimization as an MVP success goal — ranking decline is pain context, not something this version aims to fix.
+- Avoid: building CMS form UI in this change — this task only wires the public site to the content store; form UI belongs in a future OSK management app.
+- Avoid: versioning, preview, draft/publish workflow, revision history — explicit live-edit-only scope.
+- Avoid: building the OSK management application in this change — separate project, same content-store backend.
+- Avoid: restructuring navigation IA via CMS — slot structure frozen; labels/hrefs only.
+- Avoid: moving non-gallery, non-article images into the content store in this change — they stay as static files.
+- Avoid: building an image-upload UI — gallery and article images live in the store; owner manages them there.
+- Avoid: the implementer executing schema/seed scripts against the live store — implementer writes the scripts; the owner runs them.
+- Avoid: full WCAG conformance push — not a goal of this change.
+- Avoid: SEO tooling, sitemap generation, or analytics — out of scope.
+
+## Forward: technical-roadmap
+
+Recommended implementation layers in **this repo** (in order):
+
+1. **Supabase schema artifact (owner applies)** — SQL to create tables: keyed copy (`key` + `text`, convention `osk.<area>.<slug>` generated per slot), `nav_links`, `articles` (visibility: hidden | displayed | pinned), gallery/article image records; RLS (public read published, site_editor write). Implementer writes the SQL; **owner executes it**.
+2. **Keyed seed SQL (owner applies)** — INSERT for every current displayed string (Markdown + nav + stubs) and for gallery/article images. Implementer generates each key as `osk.<area>.<slug>`; `osk.main.nasze_pojazdy` is only an example of the pattern.
+3. **Content service** (`src/lib/services/content.ts`) — typed reads replacing `getPageEntry()` and `site-nav.ts`; missing key → render the key string, never throw, never invent copy. Image helper: gallery/article URLs from store; other images from `/images/osk/` (same slot API so later retarget is a source swap).
+4. **Secure connection** — `SUPABASE_URL` / `SUPABASE_KEY` remain server-only via `astro:env/server`; never expose to the client. Implementer helps configure `.dev.vars` / secrets; does not run CLI against production.
+5. **Page route updates** — remove `prerender = true` on DB-backed routes; inject keyed copy into existing section components.
+6. **Blog + gallery** — update `artykuly.astro`; add `src/pages/artykul/[slug].astro`; gallery grid reads store image URLs.
+
+**Later image retarget (not this change):** keep one image-slot helper (`src` URL). Today non-gallery/non-article `src` is a static path. A future change copies those files into Storage, seeds URL rows, and switches the helper — no page-layout rewrite.
+
+Future **OSK management app** (separate repo): form-based editors for pages/articles/nav, image upload widget, role-gated access — consumes same Supabase API; no changes to public render contract.
 
 ## Quality cross-check
 
-Status: **accepted** (2026-08-08). Soft-gate elements present: Access Control, Business Logic (one-sentence rule), project artifacts, timeline-cost acknowledgment (5-week sustained effort), Non-Goals. Preserved-behavior check n/a (greenfield). No gaps recorded for `/10x-prd` Open Questions from this gate.
+Status: **accepted** (2026-08-18).
 
-## Sync note (page_mvp refresh)
+| Element | Status |
+|---------|--------|
+| Access Control | present — site_editor role, RLS, Studio interim |
+| Business Logic | present — visibility/ordering rule |
+| Project artifacts | present |
+| Timeline-cost ack | present — 3 weeks after-hours |
+| Non-Goals | present — 6 entries |
+| Preserved behavior | present — Constraints & Preserved Behavior section |
 
-2026-08-08: User accepted option 1 after `/10x-shape` impact review of refreshed `context/page_mvp.md`. Folded into this file + `prd.md` + `roadmap.md`: broader FR-001 analysis pack, FR-002 user-chooses-style, content/placeholder guardrails, FR-009 retained. No full reshape.
+No gaps recorded.
