@@ -423,9 +423,9 @@ Per-page batched `site_copy` fetch (one `IN` query per page plus one `pages` loo
 
 #### Automated
 
-- [x] 3.1 Lint passes: `npm run lint`
-- [x] 3.2 Build passes: `npm run build`
-- [x] 3.3 No `prerender = true` on wired public content routes
+- [x] 3.1 Lint passes: `npm run lint` — 6db023e
+- [x] 3.2 Build passes: `npm run build` — 6db023e
+- [x] 3.3 No `prerender = true` on wired public content routes — 6db023e
 
 #### Manual
 
