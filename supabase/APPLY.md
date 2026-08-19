@@ -17,6 +17,10 @@ These steps apply the F-01 schema and seed to a Supabase project. **The implemen
 
 4. **Gallery files** — do **not** upload binaries in this change. Media rows already point at static paths such as `/images/osk/fleet-02.webp`. The `osk-media` bucket is created empty for future uploads.
 
+## Visibility and copy keys
+
+Page and article **visibility** (`hidden` / `displayed` / `pinned`) gates rows in `pages`, `articles`, and article-linked `media` — not `site_copy`. Anon can still `SELECT` any `site_copy` row by key. S-01 consumers must resolve visibility via the registry tables before displaying stored text; do not assume hiding a page hides its copy keys.
+
 ## Verify before apply
 
 ```bash
@@ -24,6 +28,17 @@ node scripts/verify-content-seed.mjs
 ```
 
 Ensures `key-catalog.json` and `seed.sql` stay in sync.
+
+## Regenerating catalog and seed after copy edits
+
+After changing Markdown, `site-nav.ts`, or stub titles, regenerate the catalog and seed from repo sources:
+
+```bash
+node scripts/build-key-catalog.mjs
+node scripts/verify-content-seed.mjs
+```
+
+Then re-apply `seed.sql` on hosted projects (step 2 above). Local `db reset` picks up the new seed automatically.
 
 ## Rollback
 

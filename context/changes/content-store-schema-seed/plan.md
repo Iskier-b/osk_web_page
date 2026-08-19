@@ -320,8 +320,8 @@ Seed size is small (tens to low hundreds of keys, local OSK copy). No indexes be
 
 #### Manual
 
-- [ ] 1.7 Read the migration: hidden-article SELECT cannot see `visibility = 'hidden'` rows; anon has no write policies
-- [ ] 1.8 Confirm bucket is public-read and created with no objects
+- [x] 1.7 Read the migration: hidden-article SELECT cannot see `visibility = 'hidden'` rows; anon has no write policies — impl review
+- [x] 1.8 Confirm bucket is public-read and created with no objects — impl review
 
 ### Phase 2: Key catalog from current copy
 
@@ -334,9 +334,9 @@ Seed size is small (tens to low hundreds of keys, local OSK copy). No indexes be
 
 #### Manual
 
-- [ ] 2.5 Spot-check `cennik` price keys against `cennik.md` (8 rows; only existing `price`/`note` fields)
-- [ ] 2.6 Spot-check article slugs/titles against the six `artykuly.md` teasers
-- [ ] 2.7 Confirm home/artykuly teaser titles are not duplicated as page-level `news_*` keys
+- [x] 2.5 Spot-check `cennik` price keys against `cennik.md` (8 rows; only existing `price`/`note` fields) — impl review
+- [x] 2.6 Spot-check article slugs/titles against the six `artykuly.md` teasers — impl review
+- [x] 2.7 Confirm home/artykuly teaser titles are not duplicated as page-level `news_*` keys — impl review
 
 ### Phase 3: Seed SQL, sync check, owner apply note
 
@@ -348,6 +348,10 @@ Seed size is small (tens to low hundreds of keys, local OSK copy). No indexes be
 
 #### Manual
 
-- [ ] 3.4 Owner-hat local path (optional if Docker is unavailable): `npx supabase start` then `npx supabase db reset`; Studio shows `site_copy` / `pages` / `nav_slots` / `articles` / `media` populated; gallery `url` values are `/images/osk/fleet-02.webp` etc.; article bodies are empty strings
+- [ ] 3.4 Owner-hat local path (optional if Docker is unavailable): `npx supabase start` then `npx supabase db reset`; Studio shows `site_copy` / `pages` / `nav_slots` / `articles` / `media` populated; gallery `url` values are `/images/osk/fleet-02.webp` etc.; article bodies are empty strings — Docker unavailable during impl review
 - [ ] 3.5 Owner-hat hosted path: follow `supabase/APPLY.md` against the real project when ready — not as part of the implementer commit
-- [ ] 3.6 Public site still renders from Markdown; no visual change required
+- [x] 3.6 Public site still renders from Markdown; no visual change required — impl review (build passes, no route wiring)
+
+## Addendum (impl review 2026-08-19)
+
+- `scripts/build-key-catalog.mjs` generates `key-catalog.json` and `seed.sql` from live Markdown/nav sources. Documented in `supabase/APPLY.md` under "Regenerating catalog and seed after copy edits".
