@@ -1,10 +1,10 @@
 ---
 change_id: content-store-schema-seed
 title: Content store schema seed
-status: impl_reviewed
+status: archived
 created: 2026-08-19
-updated: 2026-08-19
-archived_at: null
+updated: 2026-08-20
+archived_at: 2026-08-19T22:01:56Z
 ---
 
 ## Notes

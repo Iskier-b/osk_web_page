@@ -3,7 +3,7 @@ project: "OSK Juszczak — prosty CMS (live edit)"
 version: 1
 status: draft
 created: 2026-08-19
-updated: 2026-08-19
+updated: 2026-08-20
 prd_version: 2
 main_goal: quality
 top_blocker: none
@@ -30,7 +30,7 @@ After the owner approved the redesign direction, a new requirement landed: they 
 
 | ID | Change ID | Outcome (user can …) | Prerequisites | PRD refs | Status |
 |---|---|---|---|---|---|
-| F-01 | content-store-schema-seed | (foundation) schema and keyed seed scripts exist for every current page slot, nav item, and article field | — | US-01, US-02, US-03 | ready |
+| F-01 | content-store-schema-seed | (foundation) schema and keyed seed scripts exist for every current page slot, nav item, and article field | — | US-01, US-02, US-03 | done |
 | S-01 | live-keyed-page-copy | user can read public page copy and gallery images from the content store; a stored-text change appears on the next request without rebuild; missing text shows the lookup key | F-01 | US-01, US-03 | proposed |
 | S-02 | live-nav-from-store | user can browse primary nav, dropdowns, footer, phone, and CTA whose labels and destinations come from the content store | F-01, S-01 | US-01 | proposed |
 | S-03 | live-blog-visibility | user can read the blog list with pinned articles first and open a full article; hidden articles are omitted; article images come from the content store | F-01, S-01 | US-02 | proposed |
@@ -60,7 +60,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Sequenced first under `quality` because page and blog slices cannot be planned or checked for correctness without a stable key, visibility, and seed contract; a thin or invented key set would force rework on every public route. In this prototype phase the implementer and owner are the same person, so applying the scripts is not an external wait.
-- **Status:** ready
+- **Status:** done
 
 ## Slices
 
@@ -131,4 +131,4 @@ None remaining. PRD Open Questions were resolved 2026-08-19 (key taxonomy, image
 
 ## Done
 
-(Empty on first generation. `/10x-archive` appends an entry here — and flips that item's `Status` to `done` — when a change whose `Change ID` matches the item is archived.)
+- **F-01: (foundation) schema and keyed seed scripts exist for every current page slot, nav item, and article field** — Archived 2026-08-20 → `context/archive/2026-08-19-content-store-schema-seed/`. Lesson: —.
