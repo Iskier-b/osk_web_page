@@ -14,8 +14,8 @@ import {
   type PublicPageSlug,
 } from "@/lib/content/page-key-registry";
 import type { ContentPageView, FormPageView, StubPageView } from "@/lib/content/page-types";
-import { resolveCopy } from "@/lib/content/resolve-copy";
-import { assertPublicPage, loadCopyKeys, loadGalleryMedia, loadPageVisibility } from "@/lib/content/store";
+import { resolveCopy, isMissingKey } from "@/lib/content/resolve-copy";
+import { loadCopyKeys, loadGalleryMedia, loadPageVisibility, should404ForVisibility } from "@/lib/content/store";
 import { createClient } from "@/lib/supabase";
 
 export type LoadPublicPageResult =
@@ -44,9 +44,9 @@ export async function loadPublicPage(slug: string, astro: AstroGlobal): Promise<
   }
 
   const client = createClient(astro.request.headers, astro.cookies);
-  const pageRow = await loadPageVisibility(client, slug);
+  const visibility = await loadPageVisibility(client, slug);
 
-  if (!assertPublicPage(pageRow)) {
+  if (should404ForVisibility(visibility)) {
     return { notFound: true };
   }
 
@@ -54,8 +54,14 @@ export async function loadPublicPage(slug: string, astro: AstroGlobal): Promise<
   const copyMap = await loadCopyKeys(client, keys);
 
   const area = slugToArea(slug);
-  const bodyMarkdown = resolveCopy(pageKey(area, "body"), copyMap);
-  const bodyHtml = bodyMarkdown && bodyMarkdown !== pageKey(area, "body") ? await renderMarkdownBody(bodyMarkdown) : "";
+  const bodyKey = pageKey(area, "body");
+  const bodyMarkdown = resolveCopy(bodyKey, copyMap);
+  let bodyHtml = "";
+  if (isMissingKey(bodyKey, bodyMarkdown)) {
+    bodyHtml = `<p>${bodyKey}</p>`;
+  } else if (bodyMarkdown) {
+    bodyHtml = await renderMarkdownBody(bodyMarkdown);
+  }
 
   const kind = PAGE_REGISTRY_KIND[slug];
 
@@ -96,8 +102,10 @@ export function heroImageForPage(
   heroImageAlt: string | undefined,
 ): { src: string; alt: string } | undefined {
   const staticHero = STATIC_HERO_IMAGES[slug];
-  if (!staticHero || !heroImageAlt) {
+  if (!staticHero) {
     return undefined;
   }
-  return { src: staticHero.src, alt: heroImageAlt };
+
+  const altKey = pageKey(slugToArea(slug), "hero_image_alt");
+  return { src: staticHero.src, alt: heroImageAlt ?? altKey };
 }

@@ -1,9 +1,12 @@
-import { createMarkdownProcessor } from "@astrojs/markdown-remark";
+import { createMarkdownProcessor, markdownConfigDefaults } from "@astrojs/markdown-remark";
+import rehypeSanitize from "rehype-sanitize";
 
 let processor: Awaited<ReturnType<typeof createMarkdownProcessor>> | null = null;
 
 async function getProcessor() {
-  processor ??= await createMarkdownProcessor();
+  processor ??= await createMarkdownProcessor({
+    rehypePlugins: [...markdownConfigDefaults.rehypePlugins, rehypeSanitize],
+  });
   return processor;
 }
 

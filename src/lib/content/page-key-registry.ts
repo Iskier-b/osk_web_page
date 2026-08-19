@@ -204,3 +204,11 @@ export function isPublicPageSlug(slug: string): slug is PublicPageSlug {
 }
 
 export const GALLERY_PAGE_SLUGS = new Set<PublicPageSlug>(["home", "galeria"]);
+
+/** Upper bounds for numbered copy keys — must match PAGE_COPY_KEYS entries per page. */
+export const NUMBERED_COPY_LIMITS = {
+  hero_pitch: 5,
+  price: 8,
+  dashboard: 3,
+  review: 3,
+} as const;

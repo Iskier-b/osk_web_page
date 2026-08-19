@@ -2,22 +2,33 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 
 import type { MediaRow, PageRow, SiteCopyRow } from "@/types";
 
+export type PageVisibilityResult = { status: "ok"; row: PageRow } | { status: "missing" } | { status: "error" };
+
+/** @deprecated Use PageVisibilityResult from loadPageVisibility instead. */
 export function assertPublicPage(page: PageRow | null): page is PageRow {
   return page !== null && page.visibility !== "hidden";
 }
 
-export async function loadPageVisibility(client: SupabaseClient | null, slug: string): Promise<PageRow | null> {
+export function should404ForVisibility(visibility: PageVisibilityResult): boolean {
+  return visibility.status === "missing" || (visibility.status === "ok" && visibility.row.visibility === "hidden");
+}
+
+export async function loadPageVisibility(client: SupabaseClient | null, slug: string): Promise<PageVisibilityResult> {
   if (!client) {
-    return null;
+    return { status: "error" };
   }
 
   const response = await client.from("pages").select("*").eq("slug", slug).maybeSingle();
 
   if (response.error) {
-    return null;
+    return { status: "error" };
   }
 
-  return (response.data as PageRow | null) ?? null;
+  if (!response.data) {
+    return { status: "missing" };
+  }
+
+  return { status: "ok", row: response.data as PageRow };
 }
 
 export async function loadCopyKeys(client: SupabaseClient | null, keys: string[]): Promise<Map<string, string>> {

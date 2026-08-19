@@ -403,8 +403,8 @@ Per-page batched `site_copy` fetch (one `IN` query per page plus one `pages` loo
 
 #### Manual
 
-- [ ] 1.4 `resolveCopy` missing-key and empty-string behavior verified
-- [ ] 1.5 `renderMarkdownBody` produces expected HTML
+- [x] 1.4 `resolveCopy` missing-key and empty-string behavior verified — impl-review
+- [x] 1.5 `renderMarkdownBody` produces expected HTML — impl-review
 
 ### Phase 2: Page view-models
 

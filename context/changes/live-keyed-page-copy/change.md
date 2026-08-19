@@ -1,7 +1,7 @@
 ---
 change_id: live-keyed-page-copy
 title: Live keyed page copy
-status: implemented
+status: impl_reviewed
 created: 2026-08-20
 updated: 2026-08-20
 archived_at: null

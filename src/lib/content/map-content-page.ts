@@ -1,7 +1,29 @@
 import { pageKey, slugToArea } from "@/lib/content/keys";
+import { NUMBERED_COPY_LIMITS } from "@/lib/content/page-key-registry";
 import { isMissingKey, resolveCopy } from "@/lib/content/resolve-copy";
 
 import type { CtaView } from "./page-types";
+
+function isSafeHref(href: string): boolean {
+  const trimmed = href.trim();
+  if (trimmed.startsWith("/") && !trimmed.startsWith("//")) {
+    return true;
+  }
+
+  try {
+    return new URL(trimmed).protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
+function safeHref(href: string, hrefKey: string): string {
+  if (isMissingKey(hrefKey, href)) {
+    return href;
+  }
+
+  return isSafeHref(href) ? href : hrefKey;
+}
 
 function resolveCta(
   area: string,
@@ -17,10 +39,15 @@ function resolveCta(
     return undefined;
   }
 
-  return { label, href };
+  return { label, href: safeHref(href, hrefKey) };
 }
 
-function collectNumberedStrings(area: string, prefix: string, copyMap: Map<string, string>, max = 20): string[] {
+function collectNumberedStrings(
+  area: string,
+  prefix: string,
+  copyMap: Map<string, string>,
+  max = NUMBERED_COPY_LIMITS.hero_pitch,
+): string[] {
   const values: string[] = [];
 
   for (let i = 1; i <= max; i += 1) {
@@ -38,7 +65,7 @@ function collectNumberedStrings(area: string, prefix: string, copyMap: Map<strin
 function collectPriceRows(area: string, copyMap: Map<string, string>): import("./page-types").PriceRowView[] {
   const rows: import("./page-types").PriceRowView[] = [];
 
-  for (let i = 1; i <= 20; i += 1) {
+  for (let i = 1; i <= NUMBERED_COPY_LIMITS.price; i += 1) {
     const labelKey = pageKey(area, `price_${i}_label`);
     const label = resolveCopy(labelKey, copyMap);
     if (isMissingKey(labelKey, label)) {
@@ -63,7 +90,7 @@ function collectPriceRows(area: string, copyMap: Map<string, string>): import(".
 function collectDashboardItems(area: string, copyMap: Map<string, string>): import("./page-types").DashboardItemView[] {
   const items: import("./page-types").DashboardItemView[] = [];
 
-  for (let i = 1; i <= 20; i += 1) {
+  for (let i = 1; i <= NUMBERED_COPY_LIMITS.dashboard; i += 1) {
     const titleKey = pageKey(area, `dashboard_${i}_title`);
     const title = resolveCopy(titleKey, copyMap);
     if (isMissingKey(titleKey, title)) {
@@ -80,7 +107,7 @@ function collectDashboardItems(area: string, copyMap: Map<string, string>): impo
     items.push({
       title,
       body: isMissingKey(bodyKey, body) ? bodyKey : body,
-      href: isMissingKey(hrefKey, href) ? undefined : href,
+      href: isMissingKey(hrefKey, href) ? undefined : safeHref(href, hrefKey),
       linkLabel: isMissingKey(linkLabelKey, linkLabel) ? undefined : linkLabel,
     });
   }
@@ -91,7 +118,7 @@ function collectDashboardItems(area: string, copyMap: Map<string, string>): impo
 function collectReviewQuotes(area: string, copyMap: Map<string, string>): import("./page-types").ReviewQuoteView[] {
   const quotes: import("./page-types").ReviewQuoteView[] = [];
 
-  for (let i = 1; i <= 20; i += 1) {
+  for (let i = 1; i <= NUMBERED_COPY_LIMITS.review; i += 1) {
     const authorKey = pageKey(area, `review_${i}_author`);
     const quoteKey = pageKey(area, `review_${i}_quote`);
     const author = resolveCopy(authorKey, copyMap);
@@ -132,10 +159,10 @@ export function mapContentPage(
 
   const view: import("./page-types").ContentPageView = {
     title: isMissingKey(titleKey, title) ? titleKey : title,
-    description: isMissingKey(descriptionKey, description) ? undefined : description,
+    description: isMissingKey(descriptionKey, description) ? descriptionKey : description,
     heroTitle: isMissingKey(heroTitleKey, heroTitle) ? (isMissingKey(titleKey, title) ? titleKey : title) : heroTitle,
-    heroSubtitle: isMissingKey(heroSubtitleKey, heroSubtitle) ? undefined : heroSubtitle,
-    heroImageAlt: isMissingKey(heroImageAltKey, heroImageAlt) ? undefined : heroImageAlt,
+    heroSubtitle: isMissingKey(heroSubtitleKey, heroSubtitle) ? heroSubtitleKey : heroSubtitle,
+    heroImageAlt: isMissingKey(heroImageAltKey, heroImageAlt) ? heroImageAltKey : heroImageAlt,
     bodyHtml,
     cta: resolveCta(area, "cta_", copyMap),
     secondaryCta: resolveCta(area, "secondary_cta_", copyMap),
