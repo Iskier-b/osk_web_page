@@ -342,9 +342,9 @@ Seed size is small (tens to low hundreds of keys, local OSK copy). No indexes be
 
 #### Automated
 
-- [x] 3.1 `node scripts/verify-content-seed.mjs` exits 0
-- [x] 3.2 `npm run lint` passes
-- [x] 3.3 `npm run build` passes (site still Markdown-backed; no route changes)
+- [x] 3.1 `node scripts/verify-content-seed.mjs` exits 0 — 4fdb064
+- [x] 3.2 `npm run lint` passes — 4fdb064
+- [x] 3.3 `npm run build` passes (site still Markdown-backed; no route changes) — 4fdb064
 
 #### Manual
 
