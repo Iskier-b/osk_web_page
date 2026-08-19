@@ -397,9 +397,9 @@ Per-page batched `site_copy` fetch (one `IN` query per page plus one `pages` loo
 
 #### Automated
 
-- [x] 1.1 Lint passes: `npm run lint`
-- [x] 1.2 Production build passes: `npm run build`
-- [x] 1.3 New modules typecheck under existing `tsconfig`
+- [x] 1.1 Lint passes: `npm run lint` — 11cd226
+- [x] 1.2 Production build passes: `npm run build` — 11cd226
+- [x] 1.3 New modules typecheck under existing `tsconfig` — 11cd226
 
 #### Manual
 
