@@ -311,12 +311,12 @@ Seed size is small (tens to low hundreds of keys, local OSK copy). No indexes be
 
 #### Automated
 
-- [x] 1.1 Migration file exists under `supabase/migrations/` with the `_content_store_schema.sql` suffix
-- [x] 1.2 SQL creates `site_copy`, `pages`, `nav_slots`, `articles`, `media`
-- [x] 1.3 SQL enables RLS on each of those tables and defines `is_site_editor()`
-- [x] 1.4 SQL creates Storage bucket `osk-media`
-- [x] 1.5 `src/types.ts` exports the visibility / kind unions and the five row types
-- [x] 1.6 `npm run lint` passes
+- [x] 1.1 Migration file exists under `supabase/migrations/` with the `_content_store_schema.sql` suffix — 8040ffb
+- [x] 1.2 SQL creates `site_copy`, `pages`, `nav_slots`, `articles`, `media` — 8040ffb
+- [x] 1.3 SQL enables RLS on each of those tables and defines `is_site_editor()` — 8040ffb
+- [x] 1.4 SQL creates Storage bucket `osk-media` — 8040ffb
+- [x] 1.5 `src/types.ts` exports the visibility / kind unions and the five row types — 8040ffb
+- [x] 1.6 `npm run lint` passes — 8040ffb
 
 #### Manual
 
@@ -327,10 +327,10 @@ Seed size is small (tens to low hundreds of keys, local OSK copy). No indexes be
 
 #### Automated
 
-- [ ] 2.1 `supabase/key-catalog.json` parses as JSON
-- [ ] 2.2 Copy keys are unique and match the `site_copy.key` regex
-- [ ] 2.3 Every coverage group listed above is present (9 content bodies, 14 stub bodies, 6 articles, 6 gallery alts, full nav+footer+chrome)
-- [ ] 2.4 No keys whose `source` is a form component or `index.astro` section heading
+- [x] 2.1 `supabase/key-catalog.json` parses as JSON
+- [x] 2.2 Copy keys are unique and match the `site_copy.key` regex
+- [x] 2.3 Every coverage group listed above is present (9 content bodies, 14 stub bodies, 6 articles, 6 gallery alts, full nav+footer+chrome)
+- [x] 2.4 No keys whose `source` is a form component or `index.astro` section heading
 
 #### Manual
 

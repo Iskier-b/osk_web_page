@@ -1,0 +1,1623 @@
+{
+  "copy": [
+    {
+      "key": "osk.home.title",
+      "value": "Auto Szkoła Juszczak",
+      "source": "src/content/pages/home.md frontmatter.title"
+    },
+    {
+      "key": "osk.home.description",
+      "value": "Auto Szkoła Juszczak Łódź — kursy prawa jazdy kat. A, A2, B oraz automaty. Teofilów, Bałuty, Retkinia, Aleksandrów Łódzki, Zgierz.",
+      "source": "src/content/pages/home.md frontmatter.description"
+    },
+    {
+      "key": "osk.home.hero_title",
+      "value": "Auto Szkoła Juszczak",
+      "source": "src/content/pages/home.md frontmatter.heroTitle"
+    },
+    {
+      "key": "osk.home.hero_subtitle",
+      "value": "Łódź (Bałuty, Teofilów, Retkinia), Aleksandrów Łódzki, Zgierz",
+      "source": "src/content/pages/home.md frontmatter.heroSubtitle"
+    },
+    {
+      "key": "osk.home.hero_image_alt",
+      "value": "Samochód szkoleniowy Auto Szkoły Juszczak",
+      "source": "src/content/pages/home.md frontmatter.heroImage.alt"
+    },
+    {
+      "key": "osk.home.hero_pitch_1",
+      "value": "Kursy prawa jazdy również na samochodach z automatyczną skrzynią biegów.",
+      "source": "src/content/pages/home.md frontmatter.heroPitches[0]"
+    },
+    {
+      "key": "osk.home.hero_pitch_2",
+      "value": "W rankingu zdawalności WORD Łódź zawsze na czołowych miejscach.",
+      "source": "src/content/pages/home.md frontmatter.heroPitches[1]"
+    },
+    {
+      "key": "osk.home.hero_pitch_3",
+      "value": "Nauka zdawania egzaminu za I podejściem.",
+      "source": "src/content/pages/home.md frontmatter.heroPitches[2]"
+    },
+    {
+      "key": "osk.home.hero_pitch_4",
+      "value": "Nauka na trasach egzaminacyjnych pojazdami identycznymi jak na egzaminie.",
+      "source": "src/content/pages/home.md frontmatter.heroPitches[3]"
+    },
+    {
+      "key": "osk.home.hero_pitch_5",
+      "value": "Efektywnie i bez stresu od 1999 r.",
+      "source": "src/content/pages/home.md frontmatter.heroPitches[4]"
+    },
+    {
+      "key": "osk.home.cta_label",
+      "value": "Zostań naszym kursantem",
+      "source": "src/content/pages/home.md.cta_label"
+    },
+    {
+      "key": "osk.home.cta_href",
+      "value": "/zapisy-na-kurs",
+      "source": "src/content/pages/home.md.cta_href"
+    },
+    {
+      "key": "osk.home.secondary_cta_label",
+      "value": "Więcej o nas",
+      "source": "src/content/pages/home.md.secondary_cta_label"
+    },
+    {
+      "key": "osk.home.secondary_cta_href",
+      "value": "/nasza-auto-szkola",
+      "source": "src/content/pages/home.md.secondary_cta_href"
+    },
+    {
+      "key": "osk.home.dashboard_1_title",
+      "value": "Najbliższe kursy",
+      "source": "src/content/pages/home.md frontmatter.dashboardItems[0].title"
+    },
+    {
+      "key": "osk.home.dashboard_1_body",
+      "value": "|-",
+      "source": "src/content/pages/home.md frontmatter.dashboardItems[0].body"
+    },
+    {
+      "key": "osk.home.dashboard_2_title",
+      "value": "Cena za kurs",
+      "source": "src/content/pages/home.md frontmatter.dashboardItems[1].title"
+    },
+    {
+      "key": "osk.home.dashboard_2_body",
+      "value": "3900,00 PLN",
+      "source": "src/content/pages/home.md frontmatter.dashboardItems[1].body"
+    },
+    {
+      "key": "osk.home.dashboard_2_href",
+      "value": "/cennik",
+      "source": "src/content/pages/home.md frontmatter.dashboardItems[1].href"
+    },
+    {
+      "key": "osk.home.dashboard_2_link_label",
+      "value": "Zobacz cennik",
+      "source": "src/content/pages/home.md frontmatter.dashboardItems[1].linkLabel"
+    },
+    {
+      "key": "osk.home.dashboard_3_title",
+      "value": "Adres",
+      "source": "src/content/pages/home.md frontmatter.dashboardItems[2].title"
+    },
+    {
+      "key": "osk.home.dashboard_3_body",
+      "value": "|-",
+      "source": "src/content/pages/home.md frontmatter.dashboardItems[2].body"
+    },
+    {
+      "key": "osk.home.review_1_author",
+      "value": "radek p.",
+      "source": "src/content/pages/home.md frontmatter.reviewQuotes[0].author"
+    },
+    {
+      "key": "osk.home.review_1_quote",
+      "value": "Po złych doświadczeniach w innej auto szkole muszę powiedzieć, że jestem bardzo zadowolony z zajęć praktycznych z Panem Jackiem. Polecam auto szkołę Juszczak.",
+      "source": "src/content/pages/home.md frontmatter.reviewQuotes[0].quote"
+    },
+    {
+      "key": "osk.home.review_2_author",
+      "value": "Joanna",
+      "source": "src/content/pages/home.md frontmatter.reviewQuotes[1].author"
+    },
+    {
+      "key": "osk.home.review_2_quote",
+      "value": "Pełen profesjonalizm. Ciekawie przeprowadzone zajęcia teoretyczne, bardzo miła obsługa w biurze, bezproblemowe umawianie jazd. Czyste samochody, punktualne zaczynanie i kończenie zajęć.",
+      "source": "src/content/pages/home.md frontmatter.reviewQuotes[1].quote"
+    },
+    {
+      "key": "osk.home.review_3_author",
+      "value": "Paulina",
+      "source": "src/content/pages/home.md frontmatter.reviewQuotes[2].author"
+    },
+    {
+      "key": "osk.home.review_3_quote",
+      "value": "Auto szkoła Juszczak to dobra szkoła ma wysoką zdawalność czego jestem przykładem. Egzamin państwowy zdałam za pierwszym podejściem praktyczny jak i teoretyczny.",
+      "source": "src/content/pages/home.md frontmatter.reviewQuotes[2].quote"
+    },
+    {
+      "key": "osk.home.gallery_1_alt",
+      "value": "Flota pojazdów szkoleniowych Auto Szkoły Juszczak",
+      "source": "src/content/pages/home.md frontmatter.teaserImages[0].alt"
+    },
+    {
+      "key": "osk.home.gallery_2_alt",
+      "value": "Samochód nauki jazdy Auto Szkoły Juszczak",
+      "source": "src/content/pages/home.md frontmatter.teaserImages[1].alt"
+    },
+    {
+      "key": "osk.home.gallery_3_alt",
+      "value": "Pojazd szkoleniowy przed zajęciami",
+      "source": "src/content/pages/home.md frontmatter.teaserImages[2].alt"
+    },
+    {
+      "key": "osk.home.body",
+      "value": "\n## Poznaj naszą Auto Szkołę\n\nAuto Szkoła Juszczak szkoli kandydatów na kierowców kategorii B od 1999 roku na terenie Łodzi, Aleksandrowa Łódzkiego, Zgierza oraz innych pobliskich miejscowości. Szkolimy na nowych samochodach marki Hyundai i20 — takich samych, jak na egzaminie państwowym WORD w Łodzi.\n\nOferujemy profesjonalne kursy nauki jazdy, dzięki którym zdobędziecie prawo jazdy kategorii B i nauczycie się bezpiecznie oraz pewnie jeździć samochodem. Kurs prawa jazdy kat. B z automatyczną skrzynią biegów (kod 78) prowadzimy samochodem marki Honda Jazz.\n\nKurs nauki jazdy kategorii B — szczegóły cenowe znajdziesz w [cenniku](/cennik).",
+      "source": "src/content/pages/home.md body"
+    },
+    {
+      "key": "osk.nasza_auto_szkola.title",
+      "value": "O nas",
+      "source": "src/content/pages/nasza-auto-szkola.md frontmatter.title"
+    },
+    {
+      "key": "osk.nasza_auto_szkola.description",
+      "value": "Poznaj Auto Szkołę Juszczak — szkolenie kat. B od 1999 roku w Łodzi (Teofilów, Bałuty, Retkinia), Aleksandrowie Łódzkim i Zgierzu.",
+      "source": "src/content/pages/nasza-auto-szkola.md frontmatter.description"
+    },
+    {
+      "key": "osk.nasza_auto_szkola.hero_title",
+      "value": "O nas",
+      "source": "src/content/pages/nasza-auto-szkola.md frontmatter.heroTitle"
+    },
+    {
+      "key": "osk.nasza_auto_szkola.hero_subtitle",
+      "value": "Poznaj nas i zobacz, jak profesjonalnie działamy",
+      "source": "src/content/pages/nasza-auto-szkola.md frontmatter.heroSubtitle"
+    },
+    {
+      "key": "osk.nasza_auto_szkola.hero_image_alt",
+      "value": "Pojazdy szkoleniowe Auto Szkoły Juszczak",
+      "source": "src/content/pages/nasza-auto-szkola.md frontmatter.heroImage.alt"
+    },
+    {
+      "key": "osk.nasza_auto_szkola.cta_label",
+      "value": "Zapisy na kurs",
+      "source": "src/content/pages/nasza-auto-szkola.md.cta_label"
+    },
+    {
+      "key": "osk.nasza_auto_szkola.cta_href",
+      "value": "/zapisy-na-kurs",
+      "source": "src/content/pages/nasza-auto-szkola.md.cta_href"
+    },
+    {
+      "key": "osk.nasza_auto_szkola.body",
+      "value": "\nAuto Szkoła Juszczak szkoli kandydatów na kierowców kategorii B od 1999 roku. Jazdy odbywają się na nowych, zadbanych samochodach marki Hyundai i20 i Kia Rio — identycznych jak na egzaminie państwowym w łódzkim WORD. Gwarantujemy wysoki poziom szkolenia zarówno teoretycznego, jak i praktycznego.\n\nPracujemy na nowym sprzęcie multimedialnym, nasze sale wykładowe są dobrze wyposażone, nagrywamy własne filmy instruktażowe, które pomagają w nauce jazdy oraz obsłudze samochodu. Informacje zdobyte podczas nauki w naszej Auto Szkole zaprocentują nie tylko na egzaminie, ale i po zakończonym kursie prawa jazdy.\n\n> Nasi kursanci to świetni kierowcy. Potrafią poradzić sobie w każdej sytuacji. Zawsze docierający do celu podróży.\n\nAuto Szkoła Juszczak zatrudnia wykwalifikowaną kadrę instruktorską, która charakteryzuje się dużą cierpliwością i wysokimi umiejętnościami dydaktycznymi — to zapewnia efektywne szkolenie w miłej i bezstresowej atmosferze.\n\nMobilizujemy do nauki, podpowiadamy, skąd czerpać pozawykładową wiedzę, rozpatrujemy konkretne sytuacje, jakie mogą zdarzyć się na drodze. Trasy jazd staramy się tak dobrać, by pokrywały się z trasami egzaminacyjnymi.\n\n> Jeździmy 6 dni w tygodniu. Godziny jazd dostosowujemy zawsze do indywidualnych potrzeb każdego kursanta.\n\nNasza Auto Szkoła zlokalizowana jest we wschodniej części Łodzi, dzięki czemu kursanci mają dogodny dojazd z Teofilowa, Bałut, Retkini, a także z Aleksandrowa Łódzkiego (autobus linii 78 bezpośrednio pod szkołę) oraz Zgierza (linia autobusowa 6). Adres: **ul. Rydzowa 2, 91-211 Łódź**. Telefon: **510 285 635**.\n\n## Precyzja kierowania\n\nDoświadczenie i umiejętności zdobyte podczas nauki w naszej auto szkole procentują nie tylko na egzaminie, ale i po zakończonym kursie prawa jazdy. Z nami zostaniesz dobrym kierowcą.",
+      "source": "src/content/pages/nasza-auto-szkola.md body"
+    },
+    {
+      "key": "osk.kursy.title",
+      "value": "Oferta",
+      "source": "src/content/pages/kursy.md frontmatter.title"
+    },
+    {
+      "key": "osk.kursy.description",
+      "value": "Kursy na prawo jazdy w Auto Szkole Juszczak — teoria, pierwsza pomoc, jazdy i egzamin wewnętrzny.",
+      "source": "src/content/pages/kursy.md frontmatter.description"
+    },
+    {
+      "key": "osk.kursy.hero_title",
+      "value": "Oferta",
+      "source": "src/content/pages/kursy.md frontmatter.heroTitle"
+    },
+    {
+      "key": "osk.kursy.hero_subtitle",
+      "value": "Nasze kursy na prawo jazdy są godne polecenia kursantom w całej Łodzi",
+      "source": "src/content/pages/kursy.md frontmatter.heroSubtitle"
+    },
+    {
+      "key": "osk.kursy.cta_label",
+      "value": "Zobacz cennik",
+      "source": "src/content/pages/kursy.md.cta_label"
+    },
+    {
+      "key": "osk.kursy.cta_href",
+      "value": "/cennik",
+      "source": "src/content/pages/kursy.md.cta_href"
+    },
+    {
+      "key": "osk.kursy.body",
+      "value": "\n### Część teoretyczna kursu nauki jazdy\n\nUczestnikiem kursu na prawo jazdy może zostać każda osoba, która ukończyła 16 lat i dziewięć miesięcy.\n\nSzkolenie w Auto Szkole Juszczak rozpoczyna się od części teoretycznej w sali wykładowej przy ul. Rydzowa 2 na Teofilowie. Zajęcia teoretyczne obejmują 30 godzin lekcyjnych po 45 min każda. Szkolenia odbywają się w formie kursu popołudniowego (jeden tydzień od poniedziałku do piątku od godziny 17:00) oraz kursu weekendowego dla zapracowanych (dwie soboty i jedna niedziela od godziny 9:00). Prowadzimy również kurs online — wykłady w dowolnym czasie i miejscu.\n\nW ramach kursu prawa jazdy kat. B kursanci otrzymują darmowe pomoce dydaktyczne: podręcznik, płytę CD z aktualnymi testami oraz bezpłatny egzamin wewnętrzny po zakończeniu całego kursu. Używamy nowoczesnego sprzętu multimedialnego, który pomaga przyswoić przepisy ruchu drogowego i lepiej zrozumieć sytuacje na drodze.\n\n### Zajęcia z pierwszej pomocy przedmedycznej\n\nCzęść teoretyczna obejmuje ponadto 4 godziny lekcyjne zajęć z pierwszej pomocy przedmedycznej, przeprowadzonych przy użyciu manekinów.\n\n### Pierwsze jazdy z kandydatami na kierowców\n\nJazdy dostosowujemy indywidualnie do każdego kursanta. Pierwsza godzina jazd musi odbyć się na placu manewrowym. U osób, które wcześniej miały styczność z samochodem, rozpoznajemy podstawowe umiejętności i dostosowujemy program szkolenia. Dla osób zaczynających od zera rozpoczynamy od zapoznania z pojazdem: ruszanie, zatrzymanie, zmiana biegów, kręcenie kierownicą — bez zbędnego stresu przed wyjazdem w miasto.\n\n### Kurs podstawowy w ruchu drogowym\n\nPo opanowaniu pojazdu na placu manewrowym oswajamy kursantów z ruchem drogowym — od łatwiejszych manewrów po trudniejsze skrzyżowania. Kładziemy nacisk na manewry obowiązkowe (parkowanie, zawracanie). Jeździmy po trasach egzaminacyjnych. Uczymy jeździć bezpiecznie, zgodnie z przepisami, oraz stosujemy jazdę energooszczędną.\n\n### Egzamin wewnętrzny w Auto Szkole Juszczak\n\nAby upewnić kursantów o zdobytych umiejętnościach i przygotować ich psychicznie do egzaminu państwowego w WORD, przeprowadzamy egzamin wewnętrzny — próbę generalną opartą na arkuszu egzaminacyjnym, wyglądającą jak egzamin państwowy.",
+      "source": "src/content/pages/kursy.md body"
+    },
+    {
+      "key": "osk.cennik.title",
+      "value": "Cennik",
+      "source": "src/content/pages/cennik.md frontmatter.title"
+    },
+    {
+      "key": "osk.cennik.description",
+      "value": "Cennik kursów na prawo jazdy Auto Szkoły Juszczak — kat. B, automat, jazdy doszkalające i raty.",
+      "source": "src/content/pages/cennik.md frontmatter.description"
+    },
+    {
+      "key": "osk.cennik.hero_title",
+      "value": "Cennik",
+      "source": "src/content/pages/cennik.md frontmatter.heroTitle"
+    },
+    {
+      "key": "osk.cennik.hero_subtitle",
+      "value": "Dowiedz się, ile zapłacisz za usługę",
+      "source": "src/content/pages/cennik.md frontmatter.heroSubtitle"
+    },
+    {
+      "key": "osk.cennik.cta_label",
+      "value": "Zapisy na kurs",
+      "source": "src/content/pages/cennik.md.cta_label"
+    },
+    {
+      "key": "osk.cennik.cta_href",
+      "value": "/zapisy-na-kurs",
+      "source": "src/content/pages/cennik.md.cta_href"
+    },
+    {
+      "key": "osk.cennik.price_1_label",
+      "value": "Podstawowy kurs prawa jazdy kat. B",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[0].label"
+    },
+    {
+      "key": "osk.cennik.price_1_price",
+      "value": "3900 zł",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[0].price"
+    },
+    {
+      "key": "osk.cennik.price_1_note",
+      "value": "30 godzin jazd i 30 godzin teorii",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[0].note"
+    },
+    {
+      "key": "osk.cennik.price_2_label",
+      "value": "Podstawowy kurs prawa jazdy kat. B (automatyczna skrzynia biegów)",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[1].label"
+    },
+    {
+      "key": "osk.cennik.price_2_price",
+      "value": "3950 zł",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[1].price"
+    },
+    {
+      "key": "osk.cennik.price_3_label",
+      "value": "Kurs ekspresowy",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[2].label"
+    },
+    {
+      "key": "osk.cennik.price_3_price",
+      "value": "4900 zł",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[2].price"
+    },
+    {
+      "key": "osk.cennik.price_3_note",
+      "value": "Płatne w całości; jazdy 5–6 razy w tygodniu, łącznie z niedzielą",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[2].note"
+    },
+    {
+      "key": "osk.cennik.price_4_label",
+      "value": "Dodatkowa 1 h jazdy doszkalającej",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[3].label"
+    },
+    {
+      "key": "osk.cennik.price_4_price",
+      "value": "135 zł",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[3].price"
+    },
+    {
+      "key": "osk.cennik.price_5_label",
+      "value": "Pakiet 10 godzin jazd",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[4].label"
+    },
+    {
+      "key": "osk.cennik.price_5_price",
+      "value": "1300 zł",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[4].price"
+    },
+    {
+      "key": "osk.cennik.price_6_label",
+      "value": "Jazdy doszkalające w niedzielę (2 godz.)",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[5].label"
+    },
+    {
+      "key": "osk.cennik.price_6_price",
+      "value": "490 zł",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[5].price"
+    },
+    {
+      "key": "osk.cennik.price_7_label",
+      "value": "Szkolenie dla osób z dokumentem PJ",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[6].label"
+    },
+    {
+      "key": "osk.cennik.price_7_price",
+      "value": "150 zł / h",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[6].price"
+    },
+    {
+      "key": "osk.cennik.price_8_label",
+      "value": "Pakiet 10 godzin dla osób z dokumentem PJ",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[7].label"
+    },
+    {
+      "key": "osk.cennik.price_8_price",
+      "value": "1450 zł",
+      "source": "src/content/pages/cennik.md frontmatter.priceRows[7].price"
+    },
+    {
+      "key": "osk.cennik.body",
+      "value": "\nOferujemy atrakcyjną cenę za kurs nauki prawa jazdy kat. B oraz wyjątkowy pakiet 10 godzin jazdy doszkalającej w cenie **1350 zł**. W cenie kursu podstawowego: podręcznik do samodzielnej nauki i dostęp do testów, zajęcia z I pomocy przedmedycznej, szkolenie z jazdy energooszczędnej (ekojazda), indywidualne ustalanie jazd w godzinach 8:00–20:00. Jazdy autami Kia Rio, Hyundai i20; automat — Honda Jazz.\n\nDoszkalamy również osoby z innych auto szkół oraz osoby mające prawo jazdy, które niepewnie czują się za kierownicą po dłuższej przerwie.\n\n### Ponadto w ofercie\n\n- Jazdy po placu manewrowym zgodnym z placem egzaminacyjnym\n- Plac manewrowy na ul. Maratońskiej (Retkinia)\n- Kurs sobotni — zajęcia w godz. 9:00–15:00\n- Kurs popołudniowy — zajęcia w godz. 17:00–21:00\n\n### Cennik ratalny (nieoprocentowany)\n\n- I wpłata — 1000 zł przy zapisie na kurs\n- II wpłata — 1000 zł do 5 godz. jazd\n- III wpłata — pozostała kwota do 20 godz. jazd\n\n### Numer rachunku bankowego\n\n**mBank**  \n`94 1140 2004 0000 3102 5056 7470`",
+      "source": "src/content/pages/cennik.md body"
+    },
+    {
+      "key": "osk.porady_dla_kursanta.title",
+      "value": "Strefa kursanta",
+      "source": "src/content/pages/porady-dla-kursanta.md frontmatter.title"
+    },
+    {
+      "key": "osk.porady_dla_kursanta.description",
+      "value": "Materiały dla kursantów Auto Szkoły Juszczak — wymogi formalne, pytania i trasy egzaminacyjne, filmy oraz instruktorzy.",
+      "source": "src/content/pages/porady-dla-kursanta.md frontmatter.description"
+    },
+    {
+      "key": "osk.porady_dla_kursanta.hero_title",
+      "value": "Strefa kursanta",
+      "source": "src/content/pages/porady-dla-kursanta.md frontmatter.heroTitle"
+    },
+    {
+      "key": "osk.porady_dla_kursanta.hero_subtitle",
+      "value": "Porady i materiały przydatne przed egzaminem i w trakcie kursu",
+      "source": "src/content/pages/porady-dla-kursanta.md frontmatter.heroSubtitle"
+    },
+    {
+      "key": "osk.porady_dla_kursanta.cta_label",
+      "value": "Zapisy na kurs",
+      "source": "src/content/pages/porady-dla-kursanta.md.cta_label"
+    },
+    {
+      "key": "osk.porady_dla_kursanta.cta_href",
+      "value": "/zapisy-na-kurs",
+      "source": "src/content/pages/porady-dla-kursanta.md.cta_href"
+    },
+    {
+      "key": "osk.porady_dla_kursanta.body",
+      "value": "\nW Strefie kursanta zebraliśmy praktyczne informacje potrzebne przed zapisem i w trakcie szkolenia: wymogi formalne, pytania egzaminacyjne, trasy egzaminacyjne, trudne skrzyżowania, filmy instruktażowe, sylwetki instruktorów oraz ranking auto szkół Łódź.\n\n### Doświadczenie poparte faktami\n\nAuto Szkoła Juszczak szkoli dobrych kierowców kat. B od 1999 roku na terenie Łodzi, Aleksandrowa Łódzkiego oraz innych pobliskich miejscowości. Zdobyte wieloletnie doświadczenie oraz nowe samochody marki Hyundai.",
+      "source": "src/content/pages/porady-dla-kursanta.md body"
+    },
+    {
+      "key": "osk.galeria.title",
+      "value": "Galeria",
+      "source": "src/content/pages/galeria.md frontmatter.title"
+    },
+    {
+      "key": "osk.galeria.description",
+      "value": "Galeria firmowa Auto Szkoły Juszczak — flota i szkolenie.",
+      "source": "src/content/pages/galeria.md frontmatter.description"
+    },
+    {
+      "key": "osk.galeria.hero_title",
+      "value": "Galeria",
+      "source": "src/content/pages/galeria.md frontmatter.heroTitle"
+    },
+    {
+      "key": "osk.galeria.hero_subtitle",
+      "value": "Zobacz naszą galerię firmową",
+      "source": "src/content/pages/galeria.md frontmatter.heroSubtitle"
+    },
+    {
+      "key": "osk.galeria.gallery_1_alt",
+      "value": "Flota pojazdów szkoleniowych Auto Szkoły Juszczak",
+      "source": "src/content/pages/galeria.md frontmatter.teaserImages[0].alt"
+    },
+    {
+      "key": "osk.galeria.gallery_2_alt",
+      "value": "Samochód nauki jazdy Auto Szkoły Juszczak",
+      "source": "src/content/pages/galeria.md frontmatter.teaserImages[1].alt"
+    },
+    {
+      "key": "osk.galeria.gallery_3_alt",
+      "value": "Pojazd szkoleniowy przed zajęciami",
+      "source": "src/content/pages/galeria.md frontmatter.teaserImages[2].alt"
+    },
+    {
+      "key": "osk.galeria.body",
+      "value": "\nGaleria firmowa Auto Szkoły Juszczak. Poniżej kilka wybranych zdjęć floty i szkolenia.",
+      "source": "src/content/pages/galeria.md body"
+    },
+    {
+      "key": "osk.artykuly.title",
+      "value": "Aktualności",
+      "source": "src/content/pages/artykuly.md frontmatter.title"
+    },
+    {
+      "key": "osk.artykuly.description",
+      "value": "Aktualności i wpisy z życia Auto Szkoły Juszczak.",
+      "source": "src/content/pages/artykuly.md frontmatter.description"
+    },
+    {
+      "key": "osk.artykuly.hero_title",
+      "value": "Aktualności",
+      "source": "src/content/pages/artykuly.md frontmatter.heroTitle"
+    },
+    {
+      "key": "osk.artykuly.hero_subtitle",
+      "value": "Z życia Auto Szkoły Juszczak",
+      "source": "src/content/pages/artykuly.md frontmatter.heroSubtitle"
+    },
+    {
+      "key": "osk.artykuly.body",
+      "value": "\nWybrane aktualności ze strony Auto Szkoły Juszczak — tytuły i krótkie zapowiedzi z życia szkoły.",
+      "source": "src/content/pages/artykuly.md body"
+    },
+    {
+      "key": "osk.prawo_jazdy_automat.title",
+      "value": "Prawo jazdy w automacie",
+      "source": "src/content/pages/prawo-jazdy-automat.md frontmatter.title"
+    },
+    {
+      "key": "osk.prawo_jazdy_automat.description",
+      "value": "Kurs kategorii B na automatyczną skrzynię biegów w Auto Szkole Juszczak — jazdy na Hondzie Jazz.",
+      "source": "src/content/pages/prawo-jazdy-automat.md frontmatter.description"
+    },
+    {
+      "key": "osk.prawo_jazdy_automat.hero_title",
+      "value": "Prawo jazdy w automacie",
+      "source": "src/content/pages/prawo-jazdy-automat.md frontmatter.heroTitle"
+    },
+    {
+      "key": "osk.prawo_jazdy_automat.hero_subtitle",
+      "value": "Kurs kategorii B na automat",
+      "source": "src/content/pages/prawo-jazdy-automat.md frontmatter.heroSubtitle"
+    },
+    {
+      "key": "osk.prawo_jazdy_automat.cta_label",
+      "value": "Zapisz się na kurs",
+      "source": "src/content/pages/prawo-jazdy-automat.md.cta_label"
+    },
+    {
+      "key": "osk.prawo_jazdy_automat.cta_href",
+      "value": "/zapisy-na-kurs",
+      "source": "src/content/pages/prawo-jazdy-automat.md.cta_href"
+    },
+    {
+      "key": "osk.prawo_jazdy_automat.body",
+      "value": "\n### Kurs kategorii B na automat\n\nZapraszamy na kurs prawa jazdy kategorii B na automatyczną skrzynię biegów. Szkolenie praktyczne prowadzimy na Hondzie Jazz — nowoczesnym, małym i zwinnym samochodzie.\n\nKorzyści jazdy na automacie:\n\n- brak stresu związanego ze sprzęgłem i dźwignią zmiany biegów\n- samochód nie zgaśnie na skrzyżowaniu\n- płynniejsze ruszanie\n- więcej uwagi na obserwację drogi\n\nCena podstawowego kursu kat. B na automat: **3950 zł**. Więcej informacji pod telefonem **510 285 635**.\n\nPolecamy i zapraszamy.",
+      "source": "src/content/pages/prawo-jazdy-automat.md body"
+    },
+    {
+      "key": "osk.kontakt.title",
+      "value": "Kontakt",
+      "source": "src/content/pages/kontakt.md frontmatter.title"
+    },
+    {
+      "key": "osk.kontakt.description",
+      "value": "Kontakt Auto Szkoły Juszczak — adres ul. Rydzowa 2 w Łodzi, telefony i godziny otwarcia.",
+      "source": "src/content/pages/kontakt.md frontmatter.description"
+    },
+    {
+      "key": "osk.kontakt.hero_title",
+      "value": "Zapraszamy do kontaktu",
+      "source": "src/content/pages/kontakt.md frontmatter.heroTitle"
+    },
+    {
+      "key": "osk.kontakt.hero_subtitle",
+      "value": "Masz pytania?",
+      "source": "src/content/pages/kontakt.md frontmatter.heroSubtitle"
+    },
+    {
+      "key": "osk.kontakt.body",
+      "value": "\nZapraszamy do kontaktu z Auto Szkołą Juszczak.\n\n**Adres:** ul. Rydzowa 2, 91-211 Łódź\n\n**Godziny otwarcia:** Pon. – Pt. 10:00 – 18:00\n\nDojazd komunikacją miejską:\n\n- autobusy: 76, 78, 78A, 83, 96\n- tramwaje: 2, 8, 13, 16\n\n**Telefon:** 510 285 635\n\n**Telefon stacjonarny:** 42 236 61 90\n\nWłaściciel: Jacek Juszczak",
+      "source": "src/content/pages/kontakt.md body"
+    },
+    {
+      "key": "osk.jazdy_doszkalajace.title",
+      "value": "Jazdy doszkalające",
+      "source": "src/pages/jazdy-doszkalajace.astro title"
+    },
+    {
+      "key": "osk.jazdy_doszkalajace.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.prawo_jazdy_na_motocykl.title",
+      "value": "Prawo jazdy na motocykl A i A2",
+      "source": "src/pages/prawo-jazdy-na-motocykl.astro title"
+    },
+    {
+      "key": "osk.prawo_jazdy_na_motocykl.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.wspolpraca.title",
+      "value": "Współpraca",
+      "source": "src/pages/wspolpraca.astro title"
+    },
+    {
+      "key": "osk.wspolpraca.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.auto_szkola_zgierz.title",
+      "value": "Kursy Zgierz",
+      "source": "src/pages/auto-szkola-zgierz.astro title"
+    },
+    {
+      "key": "osk.auto_szkola_zgierz.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.auto_szkola_retkinia.title",
+      "value": "Retkinia",
+      "source": "src/pages/auto-szkola-retkinia.astro title"
+    },
+    {
+      "key": "osk.auto_szkola_retkinia.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.wymogi_formalne.title",
+      "value": "Wymogi formalne",
+      "source": "src/pages/wymogi-formalne.astro title"
+    },
+    {
+      "key": "osk.wymogi_formalne.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.pytania_egzaminacyjne.title",
+      "value": "Pytania egzaminacyjne",
+      "source": "src/pages/pytania-egzaminacyjne.astro title"
+    },
+    {
+      "key": "osk.pytania_egzaminacyjne.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.trasy_egzaminacyjne.title",
+      "value": "Trasy egzaminacyjne",
+      "source": "src/pages/trasy-egzaminacyjne.astro title"
+    },
+    {
+      "key": "osk.trasy_egzaminacyjne.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.trudne_skrzyzowania.title",
+      "value": "Trudne skrzyżowania",
+      "source": "src/pages/trudne-skrzyzowania.astro title"
+    },
+    {
+      "key": "osk.trudne_skrzyzowania.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.filmy_instruktazowe.title",
+      "value": "Filmy instruktażowe",
+      "source": "src/pages/filmy-instruktazowe.astro title"
+    },
+    {
+      "key": "osk.filmy_instruktazowe.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.nasi_instruktorzy.title",
+      "value": "Nasi instruktorzy",
+      "source": "src/pages/nasi-instruktorzy.astro title"
+    },
+    {
+      "key": "osk.nasi_instruktorzy.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.ranking_auto_szkol_lodz.title",
+      "value": "Ranking auto szkół Łódź",
+      "source": "src/pages/ranking-auto-szkol-lodz.astro title"
+    },
+    {
+      "key": "osk.ranking_auto_szkol_lodz.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.regulamin.title",
+      "value": "Regulamin",
+      "source": "src/pages/regulamin.astro title"
+    },
+    {
+      "key": "osk.regulamin.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.polityka_prywatnosci.title",
+      "value": "Polityka prywatności",
+      "source": "src/pages/polityka-prywatnosci.astro title"
+    },
+    {
+      "key": "osk.polityka_prywatnosci.body",
+      "value": "Treść w przygotowaniu",
+      "source": "src/components/site/StubPage.astro placeholder"
+    },
+    {
+      "key": "osk.zapisy_na_kurs.title",
+      "value": "Zapisy na kurs",
+      "source": "src/pages/zapisy-na-kurs.astro title"
+    },
+    {
+      "key": "osk.referencje.title",
+      "value": "Opinie",
+      "source": "src/pages/referencje.astro title"
+    },
+    {
+      "key": "osk.referencje.hero_subtitle",
+      "value": "Zobacz co mówią o nas kursanci",
+      "source": "src/pages/referencje.astro lead"
+    },
+    {
+      "key": "osk.chrome.brand_name",
+      "value": "Auto Szkoła Juszczak",
+      "source": "src/lib/site-nav.ts brandName"
+    },
+    {
+      "key": "osk.chrome.home_href",
+      "value": "/",
+      "source": "src/lib/site-nav.ts homeHref"
+    },
+    {
+      "key": "osk.chrome.phone_label",
+      "value": "510 285 635",
+      "source": "src/lib/site-nav.ts phoneLabel"
+    },
+    {
+      "key": "osk.chrome.phone_href",
+      "value": "tel:510285635",
+      "source": "src/lib/site-nav.ts phoneHref"
+    },
+    {
+      "key": "osk.chrome.zapisy_cta_label",
+      "value": "Zapisy na kurs",
+      "source": "src/lib/site-nav.ts zapisyCta.label"
+    },
+    {
+      "key": "osk.chrome.zapisy_cta_href",
+      "value": "/zapisy-na-kurs",
+      "source": "src/lib/site-nav.ts zapisyCta.href"
+    },
+    {
+      "key": "osk.nav.primary_onas.label",
+      "value": "O nas",
+      "source": "src/lib/site-nav.ts primaryNav[0] label"
+    },
+    {
+      "key": "osk.nav.primary_onas.href",
+      "value": "/nasza-auto-szkola",
+      "source": "src/lib/site-nav.ts primaryNav[0] href"
+    },
+    {
+      "key": "osk.nav.primary_aktualnosci.label",
+      "value": "Aktualności",
+      "source": "src/lib/site-nav.ts primaryNav[1] label"
+    },
+    {
+      "key": "osk.nav.primary_aktualnosci.href",
+      "value": "/artykuly",
+      "source": "src/lib/site-nav.ts primaryNav[1] href"
+    },
+    {
+      "key": "osk.nav.primary_oferta.label",
+      "value": "Oferta",
+      "source": "src/lib/site-nav.ts primaryNav[2] label"
+    },
+    {
+      "key": "osk.nav.primary_oferta.href",
+      "value": "/kursy",
+      "source": "src/lib/site-nav.ts primaryNav[2] href"
+    },
+    {
+      "key": "osk.nav.oferta_jazdy_doszkalajace.label",
+      "value": "Jazdy doszkalające",
+      "source": "src/lib/site-nav.ts ofertaChildren[0] label"
+    },
+    {
+      "key": "osk.nav.oferta_jazdy_doszkalajace.href",
+      "value": "/jazdy-doszkalajace",
+      "source": "src/lib/site-nav.ts ofertaChildren[0] href"
+    },
+    {
+      "key": "osk.nav.oferta_prawo_jazdy_automat.label",
+      "value": "Prawo jazdy w automacie",
+      "source": "src/lib/site-nav.ts ofertaChildren[1] label"
+    },
+    {
+      "key": "osk.nav.oferta_prawo_jazdy_automat.href",
+      "value": "/prawo-jazdy-automat",
+      "source": "src/lib/site-nav.ts ofertaChildren[1] href"
+    },
+    {
+      "key": "osk.nav.oferta_prawo_jazdy_na_motocykl.label",
+      "value": "Prawo jazdy na motocykl A i A2",
+      "source": "src/lib/site-nav.ts ofertaChildren[2] label"
+    },
+    {
+      "key": "osk.nav.oferta_prawo_jazdy_na_motocykl.href",
+      "value": "/prawo-jazdy-na-motocykl",
+      "source": "src/lib/site-nav.ts ofertaChildren[2] href"
+    },
+    {
+      "key": "osk.nav.oferta_opinie.label",
+      "value": "Opinie",
+      "source": "src/lib/site-nav.ts ofertaChildren[3] label"
+    },
+    {
+      "key": "osk.nav.oferta_opinie.href",
+      "value": "/referencje",
+      "source": "src/lib/site-nav.ts ofertaChildren[3] href"
+    },
+    {
+      "key": "osk.nav.oferta_wspolpraca.label",
+      "value": "Współpraca",
+      "source": "src/lib/site-nav.ts ofertaChildren[4] label"
+    },
+    {
+      "key": "osk.nav.oferta_wspolpraca.href",
+      "value": "/wspolpraca",
+      "source": "src/lib/site-nav.ts ofertaChildren[4] href"
+    },
+    {
+      "key": "osk.nav.oferta_kursy_zgierz.label",
+      "value": "Kursy Zgierz",
+      "source": "src/lib/site-nav.ts ofertaChildren[5] label"
+    },
+    {
+      "key": "osk.nav.oferta_kursy_zgierz.href",
+      "value": "/auto-szkola-zgierz",
+      "source": "src/lib/site-nav.ts ofertaChildren[5] href"
+    },
+    {
+      "key": "osk.nav.oferta_retkinia.label",
+      "value": "Retkinia",
+      "source": "src/lib/site-nav.ts ofertaChildren[6] label"
+    },
+    {
+      "key": "osk.nav.oferta_retkinia.href",
+      "value": "/auto-szkola-retkinia",
+      "source": "src/lib/site-nav.ts ofertaChildren[6] href"
+    },
+    {
+      "key": "osk.nav.primary_cennik.label",
+      "value": "Cennik",
+      "source": "src/lib/site-nav.ts primaryNav[3] label"
+    },
+    {
+      "key": "osk.nav.primary_cennik.href",
+      "value": "/cennik",
+      "source": "src/lib/site-nav.ts primaryNav[3] href"
+    },
+    {
+      "key": "osk.nav.primary_galeria.label",
+      "value": "Galeria",
+      "source": "src/lib/site-nav.ts primaryNav[4] label"
+    },
+    {
+      "key": "osk.nav.primary_galeria.href",
+      "value": "/galeria",
+      "source": "src/lib/site-nav.ts primaryNav[4] href"
+    },
+    {
+      "key": "osk.nav.primary_strefa_kursanta.label",
+      "value": "Strefa kursanta",
+      "source": "src/lib/site-nav.ts primaryNav[5] label"
+    },
+    {
+      "key": "osk.nav.primary_strefa_kursanta.href",
+      "value": "/porady-dla-kursanta",
+      "source": "src/lib/site-nav.ts primaryNav[5] href"
+    },
+    {
+      "key": "osk.nav.strefa_wymogi_formalne.label",
+      "value": "Wymogi formalne",
+      "source": "src/lib/site-nav.ts strefaChildren[0] label"
+    },
+    {
+      "key": "osk.nav.strefa_wymogi_formalne.href",
+      "value": "/wymogi-formalne",
+      "source": "src/lib/site-nav.ts strefaChildren[0] href"
+    },
+    {
+      "key": "osk.nav.strefa_pytania_egzaminacyjne.label",
+      "value": "Pytania egzaminacyjne",
+      "source": "src/lib/site-nav.ts strefaChildren[1] label"
+    },
+    {
+      "key": "osk.nav.strefa_pytania_egzaminacyjne.href",
+      "value": "/pytania-egzaminacyjne",
+      "source": "src/lib/site-nav.ts strefaChildren[1] href"
+    },
+    {
+      "key": "osk.nav.strefa_trasy_egzaminacyjne.label",
+      "value": "Trasy egzaminacyjne",
+      "source": "src/lib/site-nav.ts strefaChildren[2] label"
+    },
+    {
+      "key": "osk.nav.strefa_trasy_egzaminacyjne.href",
+      "value": "/trasy-egzaminacyjne",
+      "source": "src/lib/site-nav.ts strefaChildren[2] href"
+    },
+    {
+      "key": "osk.nav.strefa_trudne_skrzyzowania.label",
+      "value": "Trudne skrzyżowania",
+      "source": "src/lib/site-nav.ts strefaChildren[3] label"
+    },
+    {
+      "key": "osk.nav.strefa_trudne_skrzyzowania.href",
+      "value": "/trudne-skrzyzowania",
+      "source": "src/lib/site-nav.ts strefaChildren[3] href"
+    },
+    {
+      "key": "osk.nav.strefa_filmy_instruktazowe.label",
+      "value": "Filmy instruktażowe",
+      "source": "src/lib/site-nav.ts strefaChildren[4] label"
+    },
+    {
+      "key": "osk.nav.strefa_filmy_instruktazowe.href",
+      "value": "/filmy-instruktazowe",
+      "source": "src/lib/site-nav.ts strefaChildren[4] href"
+    },
+    {
+      "key": "osk.nav.strefa_nasi_instruktorzy.label",
+      "value": "Nasi instruktorzy",
+      "source": "src/lib/site-nav.ts strefaChildren[5] label"
+    },
+    {
+      "key": "osk.nav.strefa_nasi_instruktorzy.href",
+      "value": "/nasi-instruktorzy",
+      "source": "src/lib/site-nav.ts strefaChildren[5] href"
+    },
+    {
+      "key": "osk.nav.strefa_ranking_auto_szkol_lodz.label",
+      "value": "Ranking auto szkół Łódź",
+      "source": "src/lib/site-nav.ts strefaChildren[6] label"
+    },
+    {
+      "key": "osk.nav.strefa_ranking_auto_szkol_lodz.href",
+      "value": "/ranking-auto-szkol-lodz",
+      "source": "src/lib/site-nav.ts strefaChildren[6] href"
+    },
+    {
+      "key": "osk.nav.primary_kontakt.label",
+      "value": "Kontakt",
+      "source": "src/lib/site-nav.ts primaryNav[6] label"
+    },
+    {
+      "key": "osk.nav.primary_kontakt.href",
+      "value": "/kontakt",
+      "source": "src/lib/site-nav.ts primaryNav[6] href"
+    },
+    {
+      "key": "osk.nav.footer_onas.label",
+      "value": "O nas",
+      "source": "src/lib/site-nav.ts footerLinks[0] label"
+    },
+    {
+      "key": "osk.nav.footer_onas.href",
+      "value": "/nasza-auto-szkola",
+      "source": "src/lib/site-nav.ts footerLinks[0] href"
+    },
+    {
+      "key": "osk.nav.footer_oferta.label",
+      "value": "Oferta",
+      "source": "src/lib/site-nav.ts footerLinks[1] label"
+    },
+    {
+      "key": "osk.nav.footer_oferta.href",
+      "value": "/kursy",
+      "source": "src/lib/site-nav.ts footerLinks[1] href"
+    },
+    {
+      "key": "osk.nav.footer_cennik.label",
+      "value": "Cennik",
+      "source": "src/lib/site-nav.ts footerLinks[2] label"
+    },
+    {
+      "key": "osk.nav.footer_cennik.href",
+      "value": "/cennik",
+      "source": "src/lib/site-nav.ts footerLinks[2] href"
+    },
+    {
+      "key": "osk.nav.footer_galeria.label",
+      "value": "Galeria",
+      "source": "src/lib/site-nav.ts footerLinks[3] label"
+    },
+    {
+      "key": "osk.nav.footer_galeria.href",
+      "value": "/galeria",
+      "source": "src/lib/site-nav.ts footerLinks[3] href"
+    },
+    {
+      "key": "osk.nav.footer_strefa_kursanta.label",
+      "value": "Strefa kursanta",
+      "source": "src/lib/site-nav.ts footerLinks[4] label"
+    },
+    {
+      "key": "osk.nav.footer_strefa_kursanta.href",
+      "value": "/porady-dla-kursanta",
+      "source": "src/lib/site-nav.ts footerLinks[4] href"
+    },
+    {
+      "key": "osk.nav.footer_polityka_prywatnosci.label",
+      "value": "Polityka prywatności",
+      "source": "src/lib/site-nav.ts footerLinks[5] label"
+    },
+    {
+      "key": "osk.nav.footer_polityka_prywatnosci.href",
+      "value": "/polityka-prywatnosci",
+      "source": "src/lib/site-nav.ts footerLinks[5] href"
+    },
+    {
+      "key": "osk.nav.footer_regulamin.label",
+      "value": "Regulamin",
+      "source": "src/lib/site-nav.ts footerLinks[6] label"
+    },
+    {
+      "key": "osk.nav.footer_regulamin.href",
+      "value": "/regulamin",
+      "source": "src/lib/site-nav.ts footerLinks[6] href"
+    },
+    {
+      "key": "osk.nav.chrome_brand.label",
+      "value": "Auto Szkoła Juszczak",
+      "source": "src/lib/site-nav.ts brandName/homeHref label"
+    },
+    {
+      "key": "osk.nav.chrome_brand.href",
+      "value": "/",
+      "source": "src/lib/site-nav.ts brandName/homeHref href"
+    },
+    {
+      "key": "osk.nav.chrome_phone.label",
+      "value": "510 285 635",
+      "source": "src/lib/site-nav.ts phone label"
+    },
+    {
+      "key": "osk.nav.chrome_phone.href",
+      "value": "tel:510285635",
+      "source": "src/lib/site-nav.ts phone href"
+    },
+    {
+      "key": "osk.nav.chrome_zapisy.label",
+      "value": "Zapisy na kurs",
+      "source": "src/lib/site-nav.ts zapisyCta label"
+    },
+    {
+      "key": "osk.nav.chrome_zapisy.href",
+      "value": "/zapisy-na-kurs",
+      "source": "src/lib/site-nav.ts zapisyCta href"
+    },
+    {
+      "key": "osk.article.praca_dla_instruktora_prawa_jazdy_kat_b.title",
+      "value": "Praca dla instruktora prawa jazdy kat. B",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[0].title"
+    },
+    {
+      "key": "osk.article.praca_dla_instruktora_prawa_jazdy_kat_b.summary",
+      "value": "Praca dla instruktora prawa jazdy kategoria B w naszej auto szkole.",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[0].summary"
+    },
+    {
+      "key": "osk.article.praca_dla_instruktora_prawa_jazdy_kat_b.body",
+      "value": "",
+      "source": "src/content/pages/artykuly.md article body (empty until S-03)"
+    },
+    {
+      "key": "osk.article.jak_zdac_egzamin_na_prawo_jazdy_bez_stresu.title",
+      "value": "Jak zdać egzamin na prawo jazdy bez stresu",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[1].title"
+    },
+    {
+      "key": "osk.article.jak_zdac_egzamin_na_prawo_jazdy_bez_stresu.summary",
+      "value": "Kilka porad jak zmniejszyć stres.",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[1].summary"
+    },
+    {
+      "key": "osk.article.jak_zdac_egzamin_na_prawo_jazdy_bez_stresu.body",
+      "value": "",
+      "source": "src/content/pages/artykuly.md article body (empty until S-03)"
+    },
+    {
+      "key": "osk.article.jak_zdac_egzamin_na_prawko.title",
+      "value": "Jak zdać egzamin na prawko",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[2].title"
+    },
+    {
+      "key": "osk.article.jak_zdac_egzamin_na_prawko.summary",
+      "value": "Kurs i egzamin kat. B — jak zdać?",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[2].summary"
+    },
+    {
+      "key": "osk.article.jak_zdac_egzamin_na_prawko.body",
+      "value": "",
+      "source": "src/content/pages/artykuly.md article body (empty until S-03)"
+    },
+    {
+      "key": "osk.article.dodatkowe_jazdy_przed_egzaminem_kat_b.title",
+      "value": "Dodatkowe jazdy przed egzaminem kat. B",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[3].title"
+    },
+    {
+      "key": "osk.article.dodatkowe_jazdy_przed_egzaminem_kat_b.summary",
+      "value": "Jazdy doszkalające przed egzaminem na prawo jazdy.",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[3].summary"
+    },
+    {
+      "key": "osk.article.dodatkowe_jazdy_przed_egzaminem_kat_b.body",
+      "value": "",
+      "source": "src/content/pages/artykuly.md article body (empty until S-03)"
+    },
+    {
+      "key": "osk.article.jazdy_doszkalajace_przed_egzaminem.title",
+      "value": "Jazdy doszkalające przed egzaminem",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[4].title"
+    },
+    {
+      "key": "osk.article.jazdy_doszkalajace_przed_egzaminem.summary",
+      "value": "Standardowy kurs nauki jazdy obejmuje 30 godzin nauki praktycznej.",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[4].summary"
+    },
+    {
+      "key": "osk.article.jazdy_doszkalajace_przed_egzaminem.body",
+      "value": "",
+      "source": "src/content/pages/artykuly.md article body (empty until S-03)"
+    },
+    {
+      "key": "osk.article.kurs_kategoria_b_automat.title",
+      "value": "Kurs kategoria B automat",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[5].title"
+    },
+    {
+      "key": "osk.article.kurs_kategoria_b_automat.summary",
+      "value": "Kurs prawa jazdy samochodem Honda Jazz wyposażonym w automatyczną skrzynię biegów.",
+      "source": "src/content/pages/artykuly.md frontmatter.newsTeasers[5].summary"
+    },
+    {
+      "key": "osk.article.kurs_kategoria_b_automat.body",
+      "value": "",
+      "source": "src/content/pages/artykuly.md article body (empty until S-03)"
+    }
+  ],
+  "pages": [
+    {
+      "slug": "home",
+      "path": "/",
+      "kind": "content",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "nasza-auto-szkola",
+      "path": "/nasza-auto-szkola",
+      "kind": "content",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "kursy",
+      "path": "/kursy",
+      "kind": "content",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "cennik",
+      "path": "/cennik",
+      "kind": "content",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "porady-dla-kursanta",
+      "path": "/porady-dla-kursanta",
+      "kind": "content",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "galeria",
+      "path": "/galeria",
+      "kind": "content",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "artykuly",
+      "path": "/artykuly",
+      "kind": "content",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "prawo-jazdy-automat",
+      "path": "/prawo-jazdy-automat",
+      "kind": "content",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "kontakt",
+      "path": "/kontakt",
+      "kind": "content",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "jazdy-doszkalajace",
+      "path": "/jazdy-doszkalajace",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "prawo-jazdy-na-motocykl",
+      "path": "/prawo-jazdy-na-motocykl",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "wspolpraca",
+      "path": "/wspolpraca",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "auto-szkola-zgierz",
+      "path": "/auto-szkola-zgierz",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "auto-szkola-retkinia",
+      "path": "/auto-szkola-retkinia",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "wymogi-formalne",
+      "path": "/wymogi-formalne",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "pytania-egzaminacyjne",
+      "path": "/pytania-egzaminacyjne",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "trasy-egzaminacyjne",
+      "path": "/trasy-egzaminacyjne",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "trudne-skrzyzowania",
+      "path": "/trudne-skrzyzowania",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "filmy-instruktazowe",
+      "path": "/filmy-instruktazowe",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "nasi-instruktorzy",
+      "path": "/nasi-instruktorzy",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "ranking-auto-szkol-lodz",
+      "path": "/ranking-auto-szkol-lodz",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "regulamin",
+      "path": "/regulamin",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "polityka-prywatnosci",
+      "path": "/polityka-prywatnosci",
+      "kind": "stub",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "zapisy-na-kurs",
+      "path": "/zapisy-na-kurs",
+      "kind": "form",
+      "visibility": "displayed"
+    },
+    {
+      "slug": "referencje",
+      "path": "/referencje",
+      "kind": "form",
+      "visibility": "displayed"
+    }
+  ],
+  "nav_slots": [
+    {
+      "id": "primary_onas",
+      "parent_id": null,
+      "placement": "primary",
+      "sort_order": 1,
+      "label_key": "osk.nav.primary_onas.label",
+      "href_key": "osk.nav.primary_onas.href"
+    },
+    {
+      "id": "primary_aktualnosci",
+      "parent_id": null,
+      "placement": "primary",
+      "sort_order": 2,
+      "label_key": "osk.nav.primary_aktualnosci.label",
+      "href_key": "osk.nav.primary_aktualnosci.href"
+    },
+    {
+      "id": "primary_oferta",
+      "parent_id": null,
+      "placement": "primary",
+      "sort_order": 3,
+      "label_key": "osk.nav.primary_oferta.label",
+      "href_key": "osk.nav.primary_oferta.href"
+    },
+    {
+      "id": "oferta_jazdy_doszkalajace",
+      "parent_id": "primary_oferta",
+      "placement": "primary",
+      "sort_order": 1,
+      "label_key": "osk.nav.oferta_jazdy_doszkalajace.label",
+      "href_key": "osk.nav.oferta_jazdy_doszkalajace.href"
+    },
+    {
+      "id": "oferta_prawo_jazdy_automat",
+      "parent_id": "primary_oferta",
+      "placement": "primary",
+      "sort_order": 2,
+      "label_key": "osk.nav.oferta_prawo_jazdy_automat.label",
+      "href_key": "osk.nav.oferta_prawo_jazdy_automat.href"
+    },
+    {
+      "id": "oferta_prawo_jazdy_na_motocykl",
+      "parent_id": "primary_oferta",
+      "placement": "primary",
+      "sort_order": 3,
+      "label_key": "osk.nav.oferta_prawo_jazdy_na_motocykl.label",
+      "href_key": "osk.nav.oferta_prawo_jazdy_na_motocykl.href"
+    },
+    {
+      "id": "oferta_opinie",
+      "parent_id": "primary_oferta",
+      "placement": "primary",
+      "sort_order": 4,
+      "label_key": "osk.nav.oferta_opinie.label",
+      "href_key": "osk.nav.oferta_opinie.href"
+    },
+    {
+      "id": "oferta_wspolpraca",
+      "parent_id": "primary_oferta",
+      "placement": "primary",
+      "sort_order": 5,
+      "label_key": "osk.nav.oferta_wspolpraca.label",
+      "href_key": "osk.nav.oferta_wspolpraca.href"
+    },
+    {
+      "id": "oferta_kursy_zgierz",
+      "parent_id": "primary_oferta",
+      "placement": "primary",
+      "sort_order": 6,
+      "label_key": "osk.nav.oferta_kursy_zgierz.label",
+      "href_key": "osk.nav.oferta_kursy_zgierz.href"
+    },
+    {
+      "id": "oferta_retkinia",
+      "parent_id": "primary_oferta",
+      "placement": "primary",
+      "sort_order": 7,
+      "label_key": "osk.nav.oferta_retkinia.label",
+      "href_key": "osk.nav.oferta_retkinia.href"
+    },
+    {
+      "id": "primary_cennik",
+      "parent_id": null,
+      "placement": "primary",
+      "sort_order": 4,
+      "label_key": "osk.nav.primary_cennik.label",
+      "href_key": "osk.nav.primary_cennik.href"
+    },
+    {
+      "id": "primary_galeria",
+      "parent_id": null,
+      "placement": "primary",
+      "sort_order": 5,
+      "label_key": "osk.nav.primary_galeria.label",
+      "href_key": "osk.nav.primary_galeria.href"
+    },
+    {
+      "id": "primary_strefa_kursanta",
+      "parent_id": null,
+      "placement": "primary",
+      "sort_order": 6,
+      "label_key": "osk.nav.primary_strefa_kursanta.label",
+      "href_key": "osk.nav.primary_strefa_kursanta.href"
+    },
+    {
+      "id": "strefa_wymogi_formalne",
+      "parent_id": "primary_strefa_kursanta",
+      "placement": "primary",
+      "sort_order": 1,
+      "label_key": "osk.nav.strefa_wymogi_formalne.label",
+      "href_key": "osk.nav.strefa_wymogi_formalne.href"
+    },
+    {
+      "id": "strefa_pytania_egzaminacyjne",
+      "parent_id": "primary_strefa_kursanta",
+      "placement": "primary",
+      "sort_order": 2,
+      "label_key": "osk.nav.strefa_pytania_egzaminacyjne.label",
+      "href_key": "osk.nav.strefa_pytania_egzaminacyjne.href"
+    },
+    {
+      "id": "strefa_trasy_egzaminacyjne",
+      "parent_id": "primary_strefa_kursanta",
+      "placement": "primary",
+      "sort_order": 3,
+      "label_key": "osk.nav.strefa_trasy_egzaminacyjne.label",
+      "href_key": "osk.nav.strefa_trasy_egzaminacyjne.href"
+    },
+    {
+      "id": "strefa_trudne_skrzyzowania",
+      "parent_id": "primary_strefa_kursanta",
+      "placement": "primary",
+      "sort_order": 4,
+      "label_key": "osk.nav.strefa_trudne_skrzyzowania.label",
+      "href_key": "osk.nav.strefa_trudne_skrzyzowania.href"
+    },
+    {
+      "id": "strefa_filmy_instruktazowe",
+      "parent_id": "primary_strefa_kursanta",
+      "placement": "primary",
+      "sort_order": 5,
+      "label_key": "osk.nav.strefa_filmy_instruktazowe.label",
+      "href_key": "osk.nav.strefa_filmy_instruktazowe.href"
+    },
+    {
+      "id": "strefa_nasi_instruktorzy",
+      "parent_id": "primary_strefa_kursanta",
+      "placement": "primary",
+      "sort_order": 6,
+      "label_key": "osk.nav.strefa_nasi_instruktorzy.label",
+      "href_key": "osk.nav.strefa_nasi_instruktorzy.href"
+    },
+    {
+      "id": "strefa_ranking_auto_szkol_lodz",
+      "parent_id": "primary_strefa_kursanta",
+      "placement": "primary",
+      "sort_order": 7,
+      "label_key": "osk.nav.strefa_ranking_auto_szkol_lodz.label",
+      "href_key": "osk.nav.strefa_ranking_auto_szkol_lodz.href"
+    },
+    {
+      "id": "primary_kontakt",
+      "parent_id": null,
+      "placement": "primary",
+      "sort_order": 7,
+      "label_key": "osk.nav.primary_kontakt.label",
+      "href_key": "osk.nav.primary_kontakt.href"
+    },
+    {
+      "id": "footer_onas",
+      "parent_id": null,
+      "placement": "footer",
+      "sort_order": 1,
+      "label_key": "osk.nav.footer_onas.label",
+      "href_key": "osk.nav.footer_onas.href"
+    },
+    {
+      "id": "footer_oferta",
+      "parent_id": null,
+      "placement": "footer",
+      "sort_order": 2,
+      "label_key": "osk.nav.footer_oferta.label",
+      "href_key": "osk.nav.footer_oferta.href"
+    },
+    {
+      "id": "footer_cennik",
+      "parent_id": null,
+      "placement": "footer",
+      "sort_order": 3,
+      "label_key": "osk.nav.footer_cennik.label",
+      "href_key": "osk.nav.footer_cennik.href"
+    },
+    {
+      "id": "footer_galeria",
+      "parent_id": null,
+      "placement": "footer",
+      "sort_order": 4,
+      "label_key": "osk.nav.footer_galeria.label",
+      "href_key": "osk.nav.footer_galeria.href"
+    },
+    {
+      "id": "footer_strefa_kursanta",
+      "parent_id": null,
+      "placement": "footer",
+      "sort_order": 5,
+      "label_key": "osk.nav.footer_strefa_kursanta.label",
+      "href_key": "osk.nav.footer_strefa_kursanta.href"
+    },
+    {
+      "id": "footer_polityka_prywatnosci",
+      "parent_id": null,
+      "placement": "footer",
+      "sort_order": 6,
+      "label_key": "osk.nav.footer_polityka_prywatnosci.label",
+      "href_key": "osk.nav.footer_polityka_prywatnosci.href"
+    },
+    {
+      "id": "footer_regulamin",
+      "parent_id": null,
+      "placement": "footer",
+      "sort_order": 7,
+      "label_key": "osk.nav.footer_regulamin.label",
+      "href_key": "osk.nav.footer_regulamin.href"
+    },
+    {
+      "id": "chrome_brand",
+      "parent_id": null,
+      "placement": "chrome",
+      "sort_order": 1,
+      "label_key": "osk.nav.chrome_brand.label",
+      "href_key": "osk.nav.chrome_brand.href"
+    },
+    {
+      "id": "chrome_phone",
+      "parent_id": null,
+      "placement": "chrome",
+      "sort_order": 2,
+      "label_key": "osk.nav.chrome_phone.label",
+      "href_key": "osk.nav.chrome_phone.href"
+    },
+    {
+      "id": "chrome_zapisy",
+      "parent_id": null,
+      "placement": "chrome",
+      "sort_order": 3,
+      "label_key": "osk.nav.chrome_zapisy.label",
+      "href_key": "osk.nav.chrome_zapisy.href"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "praca_dla_instruktora_prawa_jazdy_kat_b",
+      "visibility": "displayed",
+      "published_at": "2026-08-19T00:00:00+00:00",
+      "sort_order": 1,
+      "title_key": "osk.article.praca_dla_instruktora_prawa_jazdy_kat_b.title",
+      "summary_key": "osk.article.praca_dla_instruktora_prawa_jazdy_kat_b.summary",
+      "body_key": "osk.article.praca_dla_instruktora_prawa_jazdy_kat_b.body"
+    },
+    {
+      "slug": "jak_zdac_egzamin_na_prawo_jazdy_bez_stresu",
+      "visibility": "displayed",
+      "published_at": "2026-08-19T00:00:00+00:00",
+      "sort_order": 2,
+      "title_key": "osk.article.jak_zdac_egzamin_na_prawo_jazdy_bez_stresu.title",
+      "summary_key": "osk.article.jak_zdac_egzamin_na_prawo_jazdy_bez_stresu.summary",
+      "body_key": "osk.article.jak_zdac_egzamin_na_prawo_jazdy_bez_stresu.body"
+    },
+    {
+      "slug": "jak_zdac_egzamin_na_prawko",
+      "visibility": "displayed",
+      "published_at": "2026-08-19T00:00:00+00:00",
+      "sort_order": 3,
+      "title_key": "osk.article.jak_zdac_egzamin_na_prawko.title",
+      "summary_key": "osk.article.jak_zdac_egzamin_na_prawko.summary",
+      "body_key": "osk.article.jak_zdac_egzamin_na_prawko.body"
+    },
+    {
+      "slug": "dodatkowe_jazdy_przed_egzaminem_kat_b",
+      "visibility": "displayed",
+      "published_at": "2026-08-19T00:00:00+00:00",
+      "sort_order": 4,
+      "title_key": "osk.article.dodatkowe_jazdy_przed_egzaminem_kat_b.title",
+      "summary_key": "osk.article.dodatkowe_jazdy_przed_egzaminem_kat_b.summary",
+      "body_key": "osk.article.dodatkowe_jazdy_przed_egzaminem_kat_b.body"
+    },
+    {
+      "slug": "jazdy_doszkalajace_przed_egzaminem",
+      "visibility": "displayed",
+      "published_at": "2026-08-19T00:00:00+00:00",
+      "sort_order": 5,
+      "title_key": "osk.article.jazdy_doszkalajace_przed_egzaminem.title",
+      "summary_key": "osk.article.jazdy_doszkalajace_przed_egzaminem.summary",
+      "body_key": "osk.article.jazdy_doszkalajace_przed_egzaminem.body"
+    },
+    {
+      "slug": "kurs_kategoria_b_automat",
+      "visibility": "displayed",
+      "published_at": "2026-08-19T00:00:00+00:00",
+      "sort_order": 6,
+      "title_key": "osk.article.kurs_kategoria_b_automat.title",
+      "summary_key": "osk.article.kurs_kategoria_b_automat.summary",
+      "body_key": "osk.article.kurs_kategoria_b_automat.body"
+    }
+  ],
+  "media": [
+    {
+      "id": "home_gallery_1",
+      "kind": "gallery",
+      "page_slug": "home",
+      "article_slug": null,
+      "sort_order": 1,
+      "url": "/images/osk/fleet-02.webp",
+      "alt_key": "osk.home.gallery_1_alt"
+    },
+    {
+      "id": "home_gallery_2",
+      "kind": "gallery",
+      "page_slug": "home",
+      "article_slug": null,
+      "sort_order": 2,
+      "url": "/images/osk/fleet-03.webp",
+      "alt_key": "osk.home.gallery_2_alt"
+    },
+    {
+      "id": "home_gallery_3",
+      "kind": "gallery",
+      "page_slug": "home",
+      "article_slug": null,
+      "sort_order": 3,
+      "url": "/images/osk/fleet-04.webp",
+      "alt_key": "osk.home.gallery_3_alt"
+    },
+    {
+      "id": "galeria_gallery_1",
+      "kind": "gallery",
+      "page_slug": "galeria",
+      "article_slug": null,
+      "sort_order": 1,
+      "url": "/images/osk/fleet-02.webp",
+      "alt_key": "osk.galeria.gallery_1_alt"
+    },
+    {
+      "id": "galeria_gallery_2",
+      "kind": "gallery",
+      "page_slug": "galeria",
+      "article_slug": null,
+      "sort_order": 2,
+      "url": "/images/osk/fleet-03.webp",
+      "alt_key": "osk.galeria.gallery_2_alt"
+    },
+    {
+      "id": "galeria_gallery_3",
+      "kind": "gallery",
+      "page_slug": "galeria",
+      "article_slug": null,
+      "sort_order": 3,
+      "url": "/images/osk/fleet-04.webp",
+      "alt_key": "osk.galeria.gallery_3_alt"
+    }
+  ]
+}
