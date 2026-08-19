@@ -16,20 +16,21 @@ Visitors experience a cohesive youth-forward shell (chrome + sections + stubs + 
 
 ## Key Decisions Made
 
-| Decision | Choice | Why (1 sentence) |
-| -------- | ------ | ---------------- |
-| Dynamic depth | 2–3 motion/scroll reveals | Matches young-drivers energy inside MVP without heavy interactivity |
-| Style lock | Broad tokens + youth composition | FR-002 stays locked; FR-010 is not a second chooser |
-| Page scope | Home + top-level + deep path + chrome | Covers US-01 owner walk |
-| Nav rebuild | Enhanced mobile sheet (same IA) | Literal bottom tabs cannot host 7 items + nested children safely |
-| Copy | Zero new copywriting | PRD fidelity guardrails |
-| Success | Visual checklist + owner review | Market-feedback north star |
-| Stubs/forms | Full visual youth polish | Avoid mixed old/new shells; S-05 behavior untouched |
-| Time pressure | No scope cuts | Ship the agreed surface completely |
+| Decision      | Choice                                | Why (1 sentence)                                                    |
+| ------------- | ------------------------------------- | ------------------------------------------------------------------- |
+| Dynamic depth | 2–3 motion/scroll reveals             | Matches young-drivers energy inside MVP without heavy interactivity |
+| Style lock    | Broad tokens + youth composition      | FR-002 stays locked; FR-010 is not a second chooser                 |
+| Page scope    | Home + top-level + deep path + chrome | Covers US-01 owner walk                                             |
+| Nav rebuild   | Enhanced mobile sheet (same IA)       | Literal bottom tabs cannot host 7 items + nested children safely    |
+| Copy          | Zero new copywriting                  | PRD fidelity guardrails                                             |
+| Success       | Visual checklist + owner review       | Market-feedback north star                                          |
+| Stubs/forms   | Full visual youth polish              | Avoid mixed old/new shells; S-05 behavior untouched                 |
+| Time pressure | No scope cuts                         | Ship the agreed surface completely                                  |
 
 ## Scope
 
 **In scope:**
+
 - Motion foundation + `prefers-reduced-motion`
 - Chrome presentation rebuild over frozen `site-nav.ts`
 - Hero/section composition on filled home, top-level, deep path
@@ -37,6 +38,7 @@ Visitors experience a cohesive youth-forward shell (chrome + sections + stubs + 
 - Responsive / IA / public-URL checklist
 
 **Out of scope:**
+
 - IA edits in `site-nav.ts`
 - New palette lock / young-drivers token swap
 - New copy, invented claims
@@ -49,13 +51,13 @@ Keep Broad CSS variables. Restyle Astro/React presentation components and sectio
 
 ## Phases at a Glance
 
-| Phase | What it delivers | Key risk |
-| ----- | ---------------- | -------- |
-| 1. Motion foundation | Utilities + reduced-motion + reveal helper | Motion ships without a11y gate |
-| 2. Chrome rebuild | Youth header/nav/footer, same IA | Accidental IA drift or unusable mobile nav |
-| 3. Hero + sections | Lean first viewport + filled-page system | Overcrowded hero or invented copy creep |
-| 4. Stubs + forms | On-system placeholders and form shells | Touching S-05 submit semantics |
-| 5. Bar + owner checklist | 375/desktop + public URL verify | Declaring done before owner can see URL |
+| Phase                    | What it delivers                           | Key risk                                   |
+| ------------------------ | ------------------------------------------ | ------------------------------------------ |
+| 1. Motion foundation     | Utilities + reduced-motion + reveal helper | Motion ships without a11y gate             |
+| 2. Chrome rebuild        | Youth header/nav/footer, same IA           | Accidental IA drift or unusable mobile nav |
+| 3. Hero + sections       | Lean first viewport + filled-page system   | Overcrowded hero or invented copy creep    |
+| 4. Stubs + forms         | On-system placeholders and form shells     | Touching S-05 submit semantics             |
+| 5. Bar + owner checklist | 375/desktop + public URL verify            | Declaring done before owner can see URL    |
 
 **Prerequisites:** S-02 content + S-03 public URL + Broad lock in place; `site-nav.ts` freeze baseline  
 **Estimated effort:** ~3–5 sessions across 5 phases

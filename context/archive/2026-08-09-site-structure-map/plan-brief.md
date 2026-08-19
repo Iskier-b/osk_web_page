@@ -16,15 +16,15 @@ Change folder holds `README.md` + `sitemap.md` + `sections.md` + `forms-integrat
 
 ## Key Decisions Made
 
-| Decision | Choice | Why |
-| -------- | ------ | --- |
-| Pack packaging | Multi-doc + README index | Slice-friendly citations; matches “documents” plural in brief |
-| Blog depth | Listing only (`/artykuly`) | Low MVP value vs crawl cost |
-| MVP stance | Maximal structure; copy = all primary nav (+ Zapisy if primary CTA) | Richer owner recognition without full-site copy migration |
-| Deep path / forms | Recommend, do not lock | Informs S-04/S-05; roadmap still confirms later |
-| Done bar | FR-001 checklist only | Fast gate; no mandatory live spot-check |
-| Crawl gaps | Record unreachable / asset-only | Honest inventory despite timeouts/PDFs |
-| Language | EN structure, PL labels/URLs | Fits foundation docs; preserves authenticity |
+| Decision          | Choice                                                              | Why                                                           |
+| ----------------- | ------------------------------------------------------------------- | ------------------------------------------------------------- |
+| Pack packaging    | Multi-doc + README index                                            | Slice-friendly citations; matches “documents” plural in brief |
+| Blog depth        | Listing only (`/artykuly`)                                          | Low MVP value vs crawl cost                                   |
+| MVP stance        | Maximal structure; copy = all primary nav (+ Zapisy if primary CTA) | Richer owner recognition without full-site copy migration     |
+| Deep path / forms | Recommend, do not lock                                              | Informs S-04/S-05; roadmap still confirms later               |
+| Done bar          | FR-001 checklist only                                               | Fast gate; no mandatory live spot-check                       |
+| Crawl gaps        | Record unreachable / asset-only                                     | Honest inventory despite timeouts/PDFs                        |
+| Language          | EN structure, PL labels/URLs                                        | Fits foundation docs; preserves authenticity                  |
 
 ## Scope
 
@@ -38,12 +38,12 @@ Docs-only change under `context/changes/site-structure-map/`. Crawl HTML (nav/fo
 
 ## Phases at a Glance
 
-| Phase | What it delivers | Key risk |
-| ----- | ---------------- | -------- |
+| Phase                         | What it delivers                       | Key risk                                 |
+| ----------------------------- | -------------------------------------- | ---------------------------------------- |
 | 1. Scaffold & crawl inventory | README contracts + URL inventory table | Timeouts → mark unreachable, don’t stall |
-| 2. Structure & sections | `sitemap.md` + `sections.md` | Missing footer/Strefa links |
-| 3. Features & integrations | `forms-integrations.md` | Over-claiming backends not evidenced |
-| 4. MVP scope & handoff | `mvp-scope.md` + checklist complete | Copy-target list drifts from primary nav |
+| 2. Structure & sections       | `sitemap.md` + `sections.md`           | Missing footer/Strefa links              |
+| 3. Features & integrations    | `forms-integrations.md`                | Over-claiming backends not evidenced     |
+| 4. MVP scope & handoff        | `mvp-scope.md` + checklist complete    | Copy-target list drifts from primary nav |
 
 **Prerequisites:** Access to fetch https://www.autojuszczak.com.pl/ (shell curl OK if WebFetch times out).  
 **Estimated effort:** ~1–2 sessions across 4 doc phases.

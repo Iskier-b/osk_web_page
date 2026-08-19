@@ -46,15 +46,18 @@ Current workaround: a developer edits files and redeploys. Cost: every text chan
 ## Success Criteria
 
 ### Primary
+
 - Public site renders pages, nav links, blog list, and article detail from the content store; a stored-text change is visible on the live public site without rebuild or redeploy.
 - Every displayed string is addressed by a lookup key in the form `osk.<area>.<slug>` (one key per page slot, nav item, and article field). The implementer generates the keys from current copy; `osk.main.nasze_pojazdy` is only an illustration, not a required key. If the store has no value, the page shows that key — never an error and never invented copy — so the owner can find and fill it.
 - Blog lists articles from the store (pinned first, then by date); individual article pages exist; visibility flags work (hidden not shown, pinned always on top, displayed normal). Gallery images and article images come from the content store; all other images stay as today’s static files.
 - Implementer writes the schema and seed scripts; the owner executes them in the content store. The implementer helps configure the application connection and does **not** run those scripts.
 
 ### Secondary
+
 - After the owner runs the seed scripts, the public site matches current demo copy on day one (pages, stubs, nav, articles, gallery images).
 
 ### Guardrails
+
 - Navigation information architecture (menu structure, hierarchy) preserved — only link targets/labels become store-editable, not a restructure.
 - Mobile bar unchanged: 375px top-level pages without horizontal scroll.
 - No versioning, preview, or draft/publish workflow — live store values only.
@@ -73,6 +76,7 @@ Current workaround: a developer edits files and redeploys. Cost: every text chan
 - **Before:** copy lived in Markdown / hardcoded nav and changed only after a developer edit and deploy
 
 #### Acceptance Criteria
+
 - Stored-text change is visible on the public URL without redeploy
 - Hidden articles are not shown to visitors
 - Mobile layout unchanged at 375px
@@ -85,6 +89,7 @@ Current workaround: a developer edits files and redeploys. Cost: every text chan
 - **Before:** `/artykuly` was a listing shell of teasers only; no article detail pages
 
 #### Acceptance Criteria
+
 - Hidden articles absent from list and direct slug access is not a public article
 - Pinned articles appear above non-pinned regardless of date
 - Article body and article images render from the content store
@@ -97,6 +102,7 @@ Current workaround: a developer edits files and redeploys. Cost: every text chan
 - **Before:** missing files either broke the build or showed a placeholder page title
 
 #### Acceptance Criteria
+
 - Missing key never produces an error page
 - Displayed fallback is the lookup key (pattern `osk.<area>.<slug>`)
 - Filling the key in the store replaces the fallback with the stored text on the next request

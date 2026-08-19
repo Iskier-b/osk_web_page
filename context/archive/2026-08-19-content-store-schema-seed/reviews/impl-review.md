@@ -1,4 +1,5 @@
 <!-- IMPL-REVIEW-REPORT -->
+
 # Implementation Review: Content-store schema and keyed seed
 
 - **Plan**: context/changes/content-store-schema-seed/plan.md
@@ -9,14 +10,14 @@
 
 ## Verdicts
 
-| Dimension | Verdict |
-|-----------|---------|
-| Plan Adherence | PASS |
-| Scope Discipline | WARNING |
-| Safety & Quality | PASS |
-| Architecture | PASS |
-| Pattern Consistency | PASS |
-| Success Criteria | PASS |
+| Dimension           | Verdict |
+| ------------------- | ------- |
+| Plan Adherence      | PASS    |
+| Scope Discipline    | WARNING |
+| Safety & Quality    | PASS    |
+| Architecture        | PASS    |
+| Pattern Consistency | PASS    |
+| Success Criteria    | PASS    |
 
 ## Findings
 
@@ -85,8 +86,8 @@
 
 ## Automated Verification Results
 
-| Command | Result | Output |
-|---------|--------|--------|
-| `node scripts/verify-content-seed.mjs` | PASS | OK (221 copy keys, 25 pages, 31 nav slots, 6 articles, 6 media) |
-| `npm run lint` | PASS | exit 0 |
-| `npm run build` | PASS | exit 0, all routes prerendered |
+| Command                                | Result | Output                                                          |
+| -------------------------------------- | ------ | --------------------------------------------------------------- |
+| `node scripts/verify-content-seed.mjs` | PASS   | OK (221 copy keys, 25 pages, 31 nav slots, 6 articles, 6 media) |
+| `npm run lint`                         | PASS   | exit 0                                                          |
+| `npm run build`                        | PASS   | exit 0, all routes prerendered                                  |

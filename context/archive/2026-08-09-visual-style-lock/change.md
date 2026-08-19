@@ -12,6 +12,7 @@ archived_at: 2026-08-08T23:07:25Z
 Roadmap F-02 / PRD FR-002 / page_mvp §5.
 
 Planning decisions (2026-08-09):
+
 - Docs-only under this change folder (no `src/` token or page work)
 - Markdown direction cards only (no moodboards / live previews)
 - Audiences = page_mvp examples: young drivers / business / broad universal

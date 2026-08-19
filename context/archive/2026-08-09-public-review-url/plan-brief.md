@@ -16,17 +16,18 @@ A branded `*.workers.dev` URL loads the brochure site; top-level S-02 routes wor
 
 ## Key Decisions Made
 
-| Decision | Choice | Why (1 sentence) |
-| -------- | ------ | ---------------- |
-| Deploy method | Manual Wrangler only | Hits FR-009 without building auto-deploy pipeline |
-| Hosting | Cloudflare Workers `*.workers.dev` (not Pages) | Astro 6 adapter dropped Pages; current `wrangler.jsonc` already matches Workers |
-| Auth surface | Soft-hide footer Demo/konto only | Clean owner walkthrough without removing starter auth code |
-| Secrets | No Supabase on the Worker | MVP is public brochure; auth env is unused noise |
-| Done bar | Top-level walkthrough on live URL | Matches market-feedback intent beyond homepage-only smoke |
+| Decision      | Choice                                         | Why (1 sentence)                                                                |
+| ------------- | ---------------------------------------------- | ------------------------------------------------------------------------------- |
+| Deploy method | Manual Wrangler only                           | Hits FR-009 without building auto-deploy pipeline                               |
+| Hosting       | Cloudflare Workers `*.workers.dev` (not Pages) | Astro 6 adapter dropped Pages; current `wrangler.jsonc` already matches Workers |
+| Auth surface  | Soft-hide footer Demo/konto only               | Clean owner walkthrough without removing starter auth code                      |
+| Secrets       | No Supabase on the Worker                      | MVP is public brochure; auth env is unused noise                                |
+| Done bar      | Top-level walkthrough on live URL              | Matches market-feedback intent beyond homepage-only smoke                       |
 
 ## Scope
 
 **In scope:**
+
 - Rename Worker to `osk-juszczak`
 - Remove footer auth link + unused nav constants
 - README deploy truth (Workers, optional secrets)
@@ -34,6 +35,7 @@ A branded `*.workers.dev` URL loads the brochure site; top-level S-02 routes wor
 - Phone + desktop top-level verification
 
 **Out of scope:**
+
 - Pages migration / static export / custom domain
 - Auto-deploy CI
 - Removing auth routes; setting Supabase secrets
@@ -45,11 +47,11 @@ Keep existing Astro SSR → Cloudflare Workers Assets pipeline. Soft-hide one fo
 
 ## Phases at a Glance
 
-| Phase | What it delivers | Key risk |
-| ----- | ---------------- | -------- |
-| 1. Prepare publish surface | Rename + soft-hide + docs | Missed auth link elsewhere in chrome |
-| 2. Manual first publish | Live `*.workers.dev` URL recorded | Cloudflare account / Wrangler auth gate |
-| 3. Owner-ready verification | Top-level phone+desktop sign-off | SSR stub 500s or mobile layout regression on live host |
+| Phase                       | What it delivers                  | Key risk                                               |
+| --------------------------- | --------------------------------- | ------------------------------------------------------ |
+| 1. Prepare publish surface  | Rename + soft-hide + docs         | Missed auth link elsewhere in chrome                   |
+| 2. Manual first publish     | Live `*.workers.dev` URL recorded | Cloudflare account / Wrangler auth gate                |
+| 3. Owner-ready verification | Top-level phone+desktop sign-off  | SSR stub 500s or mobile layout regression on live host |
 
 **Prerequisites:** S-02 done; Cloudflare account the developer can log into with Wrangler  
 **Estimated effort:** ~1 session across 3 phases (Phase 2 blocked on human login)

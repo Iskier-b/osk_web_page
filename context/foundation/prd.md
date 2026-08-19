@@ -20,7 +20,7 @@ timeline_budget:
 
 The OSK owner's current site looks outdated versus competitors and does not meaningfully drive candidate inflow; when inquiries and SEO rankings drop, they lack a concrete modern presentation of their own offer to evaluate. Visitors are also overloaded with information on the existing site, which weakens first impression.
 
-Insight: the owner will commit to a redesign only after seeing *their* authentic content in a new information hierarchy — not an abstract mockup. The MVP is that proof: a modernized structure with real top-level (and one deep-path) content from https://www.autojuszczak.com.pl/. The owner's expectation for the live site is a modern look that attracts more course candidates. Target scale for live use: dozens to ~100 visitors/users (local OSK audience). Character: proof-of-concept / demonstracyjny redesign — not a production-complete site. Priority: concept → UX → look → info structure → representative content → simplicity.
+Insight: the owner will commit to a redesign only after seeing _their_ authentic content in a new information hierarchy — not an abstract mockup. The MVP is that proof: a modernized structure with real top-level (and one deep-path) content from https://www.autojuszczak.com.pl/. The owner's expectation for the live site is a modern look that attracts more course candidates. Target scale for live use: dozens to ~100 visitors/users (local OSK audience). Character: proof-of-concept / demonstracyjny redesign — not a production-complete site. Priority: concept → UX → look → info structure → representative content → simplicity.
 
 ## User & Persona
 
@@ -34,12 +34,15 @@ Insight: the owner will commit to a redesign only after seeing *their* authentic
 ## Success Criteria
 
 ### Primary
+
 - AI model maps the current client site and saves a full analysis pack (not nav-only); user locks visual style by choosing from agent-proposed audience-based directions; ships a modernized public URL with authentic top-level content plus one representative deep path; the public site uses a dynamic, youth-oriented layout/template designed and applied by the agent while keeping the existing menu information architecture unchanged; owner reviews on mobile and desktop and recognizes their content in a clearer layout — forms visible, submit clearly disabled.
 
 ### Secondary
+
 - (none locked beyond Primary — former desktop nice-to-have promoted into Primary via FR-008.)
 
 ### Guardrails
+
 - Copied content is source-faithful only: no invented facts, prices, contacts, or claims; light clarity/hierarchy edits OK; no new copywriting.
 - Mobile meets the FR-007 metric; forms never send data and communicate that clearly.
 - Analysis pack stays complete (structure + features + integrations + backend-needed + MVP-in/out); pages without copied body show title-only / placeholder, not empty dead links and not invented body copy.
@@ -53,6 +56,7 @@ Insight: the owner will commit to a redesign only after seeing *their* authentic
 - **Then** they recognize their content in a clearer modern layout aimed at young course candidates; title-only / placeholder stubs appear where deep content was not copied; forms are visible with submit clearly disabled; menu structure (labels, hierarchy, destinations) matches the locked IA
 
 #### Acceptance Criteria
+
 - Analysis pack exists (structure + features/integrations/backend-needed + MVP-in/out) and navigation matches the new site
 - Top-hierarchy pages use source-faithful content (clarity edits only; no invented facts)
 - One representative deep path has real copied content
@@ -66,12 +70,14 @@ Insight: the owner will commit to a redesign only after seeing *their* authentic
 ## Functional Requirements
 
 ### Discovery & style gate
+
 - FR-001: AI model can map the source client site and produce a reusable analysis pack covering sitemap/menus, key sections and repeated components, forms and interactive features, external integrations, backend-or-server-needed features, and an explicit MVP-in vs MVP-out classification. Priority: must-have
   > Socrates: Counter-argument considered: AI mapping incomplete/wrong → do manually. Resolution: kept; depth expanded 2026-08-08 to match refreshed page_mvp §2 (not nav-only).
 - FR-002: User can lock the visual style before the MVP build starts by choosing from agent-proposed audience-based directions (with short pros per direction); the chosen direction is then applied consistently. Priority: must-have
   > Socrates: Counter-argument considered: owner should pick style / lock too early. Resolution (updated 2026-08-08): user chooses from agent proposals — supersedes developer-locks-after-PO-talk.
 
 ### Public site
+
 - FR-003: Visitor can browse the full navigation structure; where body content is not copied yet, the subsection shows a title-only / placeholder page (no empty dead-end links; no invented body copy). Priority: must-have
   > Socrates: Counter-argument considered: full structure with empty links misleads the owner. Resolution: title-only / placeholder stubs instead of empty links.
 - FR-004: Visitor can read source-faithful top-hierarchy content that the owner recognizes, with light clarity/hierarchy edits allowed and no invented facts, prices, contacts, or claims (no new copywriting). Priority: must-have

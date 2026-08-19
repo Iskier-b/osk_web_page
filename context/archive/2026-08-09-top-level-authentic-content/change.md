@@ -12,6 +12,7 @@ archived_at: 2026-08-09T00:08:21Z
 <!-- Free-form notes for this change: links, ad-hoc context, decisions that don't belong in research/frame/plan. -->
 
 Planning decisions (2026-08-09):
+
 - Scope: five fuller pages (home, O nas, Oferta, Cennik, Strefa) + Galeria/Aktualności light blurbs; Kontakt + Zapisy remain stubs until S-05
 - Content: Astro Content Collections + Markdown (no MDX); light clarity rewrites OK
 - Media: small set of source images

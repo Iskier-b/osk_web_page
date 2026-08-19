@@ -15,10 +15,10 @@ audit_command: "npm audit --json"
 
 Session overrides applied for this run (file on disk unchanged):
 
-| Field | Hand-off file | This run |
-| ----- | ------------- | -------- |
-| starter_id | 10x-astro-starter | astro |
-| deployment_target | cloudflare-pages | github-pages |
+| Field             | Hand-off file     | This run     |
+| ----------------- | ----------------- | ------------ |
+| starter_id        | 10x-astro-starter | astro        |
+| deployment_target | cloudflare-pages  | github-pages |
 
 Hand-off file (`context/foundation/tech-stack.md`) as of this run:
 
@@ -51,10 +51,10 @@ A greenfield web-app MVP (medium audience, 5 after-hours weeks) accepted the rec
 
 ## Pre-scaffold verification
 
-| Signal             | Value                                         | Severity | Notes                                      |
-| ------------------ | --------------------------------------------- | -------- | ------------------------------------------ |
-| npm package        | create-astro v5.2.3 published 2026-07-27      | fresh    | resolved from cmd_template                 |
-| GitHub repo        | not run                                       | —        | docs_url is https://docs.astro.build (not GitHub) |
+| Signal      | Value                                    | Severity | Notes                                             |
+| ----------- | ---------------------------------------- | -------- | ------------------------------------------------- |
+| npm package | create-astro v5.2.3 published 2026-07-27 | fresh    | resolved from cmd_template                        |
+| GitHub repo | not run                                  | —        | docs_url is https://docs.astro.build (not GitHub) |
 
 ## Scaffold log
 
@@ -105,27 +105,28 @@ A greenfield web-app MVP (medium audience, 5 after-hours weeks) accepted the rec
 
 ## Hints recorded but not acted on
 
-| Hint                       | Value (hand-off file) | Session override |
-| -------------------------- | --------------------- | ---------------- |
-| bootstrapper_confidence    | first-class           | verified (from astro card) |
-| quality_override           | false                 | — |
-| path_taken                 | standard              | — |
-| self_check_answers         | null                  | — |
-| team_size                  | solo                  | — |
-| deployment_target          | cloudflare-pages      | github-pages |
-| ci_provider                | github-actions        | — |
-| ci_default_flow            | auto-deploy-on-merge  | — |
-| has_auth                   | false                 | — |
-| has_payments               | false                 | — |
-| has_realtime               | false                 | — |
-| has_ai                     | false                 | — |
-| has_background_jobs        | false                 | — |
+| Hint                    | Value (hand-off file) | Session override           |
+| ----------------------- | --------------------- | -------------------------- |
+| bootstrapper_confidence | first-class           | verified (from astro card) |
+| quality_override        | false                 | —                          |
+| path_taken              | standard              | —                          |
+| self_check_answers      | null                  | —                          |
+| team_size               | solo                  | —                          |
+| deployment_target       | cloudflare-pages      | github-pages               |
+| ci_provider             | github-actions        | —                          |
+| ci_default_flow         | auto-deploy-on-merge  | —                          |
+| has_auth                | false                 | —                          |
+| has_payments            | false                 | —                          |
+| has_realtime            | false                 | —                          |
+| has_ai                  | false                 | —                          |
+| has_background_jobs     | false                 | —                          |
 
 ## Next steps
 
 Next: a future skill will set up agent context (CLAUDE.md, AGENTS.md). For now, your project is scaffolded and verified — happy hacking.
 
 Useful manual steps in the meantime:
+
 - Because the conflict policy kept the old starter as the live tree, review `*.scaffold` siblings if you want plain Astro basics instead — or clear the prior scaffold and re-run `/10x-bootstrapper` in a clean directory.
 - Update `context/foundation/tech-stack.md` if the session overrides (`astro`, `github-pages`) should become the permanent hand-off.
 - Address audit findings per your project's risk tolerance — the full breakdown is in this log.

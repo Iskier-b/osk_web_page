@@ -9,8 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-const KEY_REGEX =
-  /^osk\.[a-z0-9]+(_[a-z0-9]+)*(\.[a-z0-9]+(_[a-z0-9]+)*)+$/;
+const KEY_REGEX = /^osk\.[a-z0-9]+(_[a-z0-9]+)*(\.[a-z0-9]+(_[a-z0-9]+)*)+$/;
 
 const STUB_PLACEHOLDER = "Treść w przygotowaniu";
 const SEED_PUBLISHED_AT = "2026-08-19T00:00:00+00:00";
@@ -141,10 +140,7 @@ function parseYamlSubset(yaml) {
 }
 
 function unquote(v) {
-  if (
-    (v.startsWith('"') && v.endsWith('"')) ||
-    (v.startsWith("'") && v.endsWith("'"))
-  ) {
+  if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
     return v.slice(1, -1);
   }
   return v;
@@ -188,10 +184,8 @@ for (const page of contentPages) {
   const base = src;
 
   if (data.title) addCopy(copy, `osk.${area}.title`, data.title, `${base} frontmatter.title`);
-  if (data.description)
-    addCopy(copy, `osk.${area}.description`, data.description, `${base} frontmatter.description`);
-  if (data.heroTitle)
-    addCopy(copy, `osk.${area}.hero_title`, data.heroTitle, `${base} frontmatter.heroTitle`);
+  if (data.description) addCopy(copy, `osk.${area}.description`, data.description, `${base} frontmatter.description`);
+  if (data.heroTitle) addCopy(copy, `osk.${area}.hero_title`, data.heroTitle, `${base} frontmatter.heroTitle`);
   if (data.heroSubtitle)
     addCopy(copy, `osk.${area}.hero_subtitle`, data.heroSubtitle, `${base} frontmatter.heroSubtitle`);
   if (data.heroImage?.alt)
@@ -245,12 +239,7 @@ for (const page of contentPages) {
   if (Array.isArray(data.teaserImages) && (page.id === "home" || page.id === "galeria")) {
     data.teaserImages.forEach((img, idx) => {
       if (img.src?.includes("fleet-")) {
-        addCopy(
-          copy,
-          `osk.${area}.gallery_${idx + 1}_alt`,
-          img.alt,
-          `${base} frontmatter.teaserImages[${idx}].alt`,
-        );
+        addCopy(copy, `osk.${area}.gallery_${idx + 1}_alt`, img.alt, `${base} frontmatter.teaserImages[${idx}].alt`);
       }
     });
   }
@@ -285,12 +274,7 @@ for (const stub of stubs) {
 /** Form pages */
 addCopy(copy, "osk.zapisy_na_kurs.title", "Zapisy na kurs", "src/pages/zapisy-na-kurs.astro title");
 addCopy(copy, "osk.referencje.title", "Opinie", "src/pages/referencje.astro title");
-addCopy(
-  copy,
-  "osk.referencje.hero_subtitle",
-  "Zobacz co mówią o nas kursanci",
-  "src/pages/referencje.astro lead",
-);
+addCopy(copy, "osk.referencje.hero_subtitle", "Zobacz co mówią o nas kursanci", "src/pages/referencje.astro lead");
 
 /** Chrome */
 addCopy(copy, "osk.chrome.brand_name", "Auto Szkoła Juszczak", "src/lib/site-nav.ts brandName");
@@ -321,23 +305,143 @@ function navSlot(id, parentId, placement, sortOrder, label, href, source) {
 navSlot("primary_onas", null, "primary", 1, "O nas", "/nasza-auto-szkola", "src/lib/site-nav.ts primaryNav[0]");
 navSlot("primary_aktualnosci", null, "primary", 2, "Aktualności", "/artykuly", "src/lib/site-nav.ts primaryNav[1]");
 navSlot("primary_oferta", null, "primary", 3, "Oferta", "/kursy", "src/lib/site-nav.ts primaryNav[2]");
-navSlot("oferta_jazdy_doszkalajace", "primary_oferta", "primary", 1, "Jazdy doszkalające", "/jazdy-doszkalajace", "src/lib/site-nav.ts ofertaChildren[0]");
-navSlot("oferta_prawo_jazdy_automat", "primary_oferta", "primary", 2, "Prawo jazdy w automacie", "/prawo-jazdy-automat", "src/lib/site-nav.ts ofertaChildren[1]");
-navSlot("oferta_prawo_jazdy_na_motocykl", "primary_oferta", "primary", 3, "Prawo jazdy na motocykl A i A2", "/prawo-jazdy-na-motocykl", "src/lib/site-nav.ts ofertaChildren[2]");
-navSlot("oferta_opinie", "primary_oferta", "primary", 4, "Opinie", "/referencje", "src/lib/site-nav.ts ofertaChildren[3]");
-navSlot("oferta_wspolpraca", "primary_oferta", "primary", 5, "Współpraca", "/wspolpraca", "src/lib/site-nav.ts ofertaChildren[4]");
-navSlot("oferta_kursy_zgierz", "primary_oferta", "primary", 6, "Kursy Zgierz", "/auto-szkola-zgierz", "src/lib/site-nav.ts ofertaChildren[5]");
-navSlot("oferta_retkinia", "primary_oferta", "primary", 7, "Retkinia", "/auto-szkola-retkinia", "src/lib/site-nav.ts ofertaChildren[6]");
+navSlot(
+  "oferta_jazdy_doszkalajace",
+  "primary_oferta",
+  "primary",
+  1,
+  "Jazdy doszkalające",
+  "/jazdy-doszkalajace",
+  "src/lib/site-nav.ts ofertaChildren[0]",
+);
+navSlot(
+  "oferta_prawo_jazdy_automat",
+  "primary_oferta",
+  "primary",
+  2,
+  "Prawo jazdy w automacie",
+  "/prawo-jazdy-automat",
+  "src/lib/site-nav.ts ofertaChildren[1]",
+);
+navSlot(
+  "oferta_prawo_jazdy_na_motocykl",
+  "primary_oferta",
+  "primary",
+  3,
+  "Prawo jazdy na motocykl A i A2",
+  "/prawo-jazdy-na-motocykl",
+  "src/lib/site-nav.ts ofertaChildren[2]",
+);
+navSlot(
+  "oferta_opinie",
+  "primary_oferta",
+  "primary",
+  4,
+  "Opinie",
+  "/referencje",
+  "src/lib/site-nav.ts ofertaChildren[3]",
+);
+navSlot(
+  "oferta_wspolpraca",
+  "primary_oferta",
+  "primary",
+  5,
+  "Współpraca",
+  "/wspolpraca",
+  "src/lib/site-nav.ts ofertaChildren[4]",
+);
+navSlot(
+  "oferta_kursy_zgierz",
+  "primary_oferta",
+  "primary",
+  6,
+  "Kursy Zgierz",
+  "/auto-szkola-zgierz",
+  "src/lib/site-nav.ts ofertaChildren[5]",
+);
+navSlot(
+  "oferta_retkinia",
+  "primary_oferta",
+  "primary",
+  7,
+  "Retkinia",
+  "/auto-szkola-retkinia",
+  "src/lib/site-nav.ts ofertaChildren[6]",
+);
 navSlot("primary_cennik", null, "primary", 4, "Cennik", "/cennik", "src/lib/site-nav.ts primaryNav[3]");
 navSlot("primary_galeria", null, "primary", 5, "Galeria", "/galeria", "src/lib/site-nav.ts primaryNav[4]");
-navSlot("primary_strefa_kursanta", null, "primary", 6, "Strefa kursanta", "/porady-dla-kursanta", "src/lib/site-nav.ts primaryNav[5]");
-navSlot("strefa_wymogi_formalne", "primary_strefa_kursanta", "primary", 1, "Wymogi formalne", "/wymogi-formalne", "src/lib/site-nav.ts strefaChildren[0]");
-navSlot("strefa_pytania_egzaminacyjne", "primary_strefa_kursanta", "primary", 2, "Pytania egzaminacyjne", "/pytania-egzaminacyjne", "src/lib/site-nav.ts strefaChildren[1]");
-navSlot("strefa_trasy_egzaminacyjne", "primary_strefa_kursanta", "primary", 3, "Trasy egzaminacyjne", "/trasy-egzaminacyjne", "src/lib/site-nav.ts strefaChildren[2]");
-navSlot("strefa_trudne_skrzyzowania", "primary_strefa_kursanta", "primary", 4, "Trudne skrzyżowania", "/trudne-skrzyzowania", "src/lib/site-nav.ts strefaChildren[3]");
-navSlot("strefa_filmy_instruktazowe", "primary_strefa_kursanta", "primary", 5, "Filmy instruktażowe", "/filmy-instruktazowe", "src/lib/site-nav.ts strefaChildren[4]");
-navSlot("strefa_nasi_instruktorzy", "primary_strefa_kursanta", "primary", 6, "Nasi instruktorzy", "/nasi-instruktorzy", "src/lib/site-nav.ts strefaChildren[5]");
-navSlot("strefa_ranking_auto_szkol_lodz", "primary_strefa_kursanta", "primary", 7, "Ranking auto szkół Łódź", "/ranking-auto-szkol-lodz", "src/lib/site-nav.ts strefaChildren[6]");
+navSlot(
+  "primary_strefa_kursanta",
+  null,
+  "primary",
+  6,
+  "Strefa kursanta",
+  "/porady-dla-kursanta",
+  "src/lib/site-nav.ts primaryNav[5]",
+);
+navSlot(
+  "strefa_wymogi_formalne",
+  "primary_strefa_kursanta",
+  "primary",
+  1,
+  "Wymogi formalne",
+  "/wymogi-formalne",
+  "src/lib/site-nav.ts strefaChildren[0]",
+);
+navSlot(
+  "strefa_pytania_egzaminacyjne",
+  "primary_strefa_kursanta",
+  "primary",
+  2,
+  "Pytania egzaminacyjne",
+  "/pytania-egzaminacyjne",
+  "src/lib/site-nav.ts strefaChildren[1]",
+);
+navSlot(
+  "strefa_trasy_egzaminacyjne",
+  "primary_strefa_kursanta",
+  "primary",
+  3,
+  "Trasy egzaminacyjne",
+  "/trasy-egzaminacyjne",
+  "src/lib/site-nav.ts strefaChildren[2]",
+);
+navSlot(
+  "strefa_trudne_skrzyzowania",
+  "primary_strefa_kursanta",
+  "primary",
+  4,
+  "Trudne skrzyżowania",
+  "/trudne-skrzyzowania",
+  "src/lib/site-nav.ts strefaChildren[3]",
+);
+navSlot(
+  "strefa_filmy_instruktazowe",
+  "primary_strefa_kursanta",
+  "primary",
+  5,
+  "Filmy instruktażowe",
+  "/filmy-instruktazowe",
+  "src/lib/site-nav.ts strefaChildren[4]",
+);
+navSlot(
+  "strefa_nasi_instruktorzy",
+  "primary_strefa_kursanta",
+  "primary",
+  6,
+  "Nasi instruktorzy",
+  "/nasi-instruktorzy",
+  "src/lib/site-nav.ts strefaChildren[5]",
+);
+navSlot(
+  "strefa_ranking_auto_szkol_lodz",
+  "primary_strefa_kursanta",
+  "primary",
+  7,
+  "Ranking auto szkół Łódź",
+  "/ranking-auto-szkol-lodz",
+  "src/lib/site-nav.ts strefaChildren[6]",
+);
 navSlot("primary_kontakt", null, "primary", 7, "Kontakt", "/kontakt", "src/lib/site-nav.ts primaryNav[6]");
 
 const footerLinks = [
@@ -365,7 +469,12 @@ const articles = (artykulyData.newsTeasers ?? []).map((teaser, idx) => {
   const summaryKey = `osk.article.${slug}.summary`;
   const bodyKey = `osk.article.${slug}.body`;
   addCopy(copy, titleKey, teaser.title, `src/content/pages/artykuly.md frontmatter.newsTeasers[${idx}].title`);
-  addCopy(copy, summaryKey, teaser.summary ?? "", `src/content/pages/artykuly.md frontmatter.newsTeasers[${idx}].summary`);
+  addCopy(
+    copy,
+    summaryKey,
+    teaser.summary ?? "",
+    `src/content/pages/artykuly.md frontmatter.newsTeasers[${idx}].summary`,
+  );
   addCopy(copy, bodyKey, "", `src/content/pages/artykuly.md article body (empty until S-03)`);
   return {
     slug,
@@ -387,11 +496,7 @@ const pages = [
 ];
 
 /** Media gallery rows */
-const galleryUrls = [
-  "/images/osk/fleet-02.webp",
-  "/images/osk/fleet-03.webp",
-  "/images/osk/fleet-04.webp",
-];
+const galleryUrls = ["/images/osk/fleet-02.webp", "/images/osk/fleet-03.webp", "/images/osk/fleet-04.webp"];
 const media = [];
 for (const pageSlug of ["home", "galeria"]) {
   galleryUrls.forEach((url, idx) => {
@@ -422,18 +527,17 @@ const seedParts = [];
 
 seedParts.push("-- Idempotent content-store seed (generated from key-catalog.json)\n");
 
-const copyValues = copy
-  .map((row) => `  (${sqlLiteral(row.key)}, ${sqlLiteral(row.value)})`)
-  .join(",\n");
-seedParts.push(`insert into public.site_copy (key, value) values\n${copyValues}\non conflict (key) do update\nset value = excluded.value, updated_at = now();\n`);
+const copyValues = copy.map((row) => `  (${sqlLiteral(row.key)}, ${sqlLiteral(row.value)})`).join(",\n");
+seedParts.push(
+  `insert into public.site_copy (key, value) values\n${copyValues}\non conflict (key) do update\nset value = excluded.value, updated_at = now();\n`,
+);
 
 const pageValues = pages
-  .map(
-    (p) =>
-      `  (${sqlLiteral(p.slug)}, ${sqlLiteral(p.path)}, ${sqlLiteral(p.kind)}, ${sqlLiteral(p.visibility)})`,
-  )
+  .map((p) => `  (${sqlLiteral(p.slug)}, ${sqlLiteral(p.path)}, ${sqlLiteral(p.kind)}, ${sqlLiteral(p.visibility)})`)
   .join(",\n");
-seedParts.push(`insert into public.pages (slug, path, kind, visibility) values\n${pageValues}\non conflict (slug) do update\nset path = excluded.path, kind = excluded.kind, visibility = excluded.visibility;\n`);
+seedParts.push(
+  `insert into public.pages (slug, path, kind, visibility) values\n${pageValues}\non conflict (slug) do update\nset path = excluded.path, kind = excluded.kind, visibility = excluded.visibility;\n`,
+);
 
 const navValues = navSlots
   .map(
@@ -441,7 +545,9 @@ const navValues = navSlots
       `  (${sqlLiteral(s.id)}, ${s.parent_id ? sqlLiteral(s.parent_id) : "null"}, ${sqlLiteral(s.placement)}, ${s.sort_order}, ${sqlLiteral(s.label_key)}, ${sqlLiteral(s.href_key)})`,
   )
   .join(",\n");
-seedParts.push(`insert into public.nav_slots (id, parent_id, placement, sort_order, label_key, href_key) values\n${navValues}\non conflict (id) do update\nset parent_id = excluded.parent_id, placement = excluded.placement, sort_order = excluded.sort_order, label_key = excluded.label_key, href_key = excluded.href_key;\n`);
+seedParts.push(
+  `insert into public.nav_slots (id, parent_id, placement, sort_order, label_key, href_key) values\n${navValues}\non conflict (id) do update\nset parent_id = excluded.parent_id, placement = excluded.placement, sort_order = excluded.sort_order, label_key = excluded.label_key, href_key = excluded.href_key;\n`,
+);
 
 const articleValues = articles
   .map(
@@ -449,7 +555,9 @@ const articleValues = articles
       `  (${sqlLiteral(a.slug)}, ${sqlLiteral(a.visibility)}, ${sqlLiteral(a.published_at)}::timestamptz, ${a.sort_order}, ${sqlLiteral(a.title_key)}, ${sqlLiteral(a.summary_key)}, ${sqlLiteral(a.body_key)})`,
   )
   .join(",\n");
-seedParts.push(`insert into public.articles (slug, visibility, published_at, sort_order, title_key, summary_key, body_key) values\n${articleValues}\non conflict (slug) do update\nset visibility = excluded.visibility, published_at = excluded.published_at, sort_order = excluded.sort_order, title_key = excluded.title_key, summary_key = excluded.summary_key, body_key = excluded.body_key;\n`);
+seedParts.push(
+  `insert into public.articles (slug, visibility, published_at, sort_order, title_key, summary_key, body_key) values\n${articleValues}\non conflict (slug) do update\nset visibility = excluded.visibility, published_at = excluded.published_at, sort_order = excluded.sort_order, title_key = excluded.title_key, summary_key = excluded.summary_key, body_key = excluded.body_key;\n`,
+);
 
 const mediaValues = media
   .map(
@@ -457,8 +565,12 @@ const mediaValues = media
       `  (${sqlLiteral(m.id)}, ${sqlLiteral(m.kind)}, ${m.page_slug ? sqlLiteral(m.page_slug) : "null"}, ${m.article_slug ? sqlLiteral(m.article_slug) : "null"}, ${m.sort_order}, ${sqlLiteral(m.url)}, ${sqlLiteral(m.alt_key)})`,
   )
   .join(",\n");
-seedParts.push(`insert into public.media (id, kind, page_slug, article_slug, sort_order, url, alt_key) values\n${mediaValues}\non conflict (id) do update\nset kind = excluded.kind, page_slug = excluded.page_slug, article_slug = excluded.article_slug, sort_order = excluded.sort_order, url = excluded.url, alt_key = excluded.alt_key;\n`);
+seedParts.push(
+  `insert into public.media (id, kind, page_slug, article_slug, sort_order, url, alt_key) values\n${mediaValues}\non conflict (id) do update\nset kind = excluded.kind, page_slug = excluded.page_slug, article_slug = excluded.article_slug, sort_order = excluded.sort_order, url = excluded.url, alt_key = excluded.alt_key;\n`,
+);
 
 writeFileSync(join(root, "supabase/seed.sql"), seedParts.join("\n"), "utf8");
 
-console.log(`Wrote ${copy.length} copy keys, ${pages.length} pages, ${navSlots.length} nav slots, ${articles.length} articles, ${media.length} media rows.`);
+console.log(
+  `Wrote ${copy.length} copy keys, ${pages.length} pages, ${navSlots.length} nav slots, ${articles.length} articles, ${media.length} media rows.`,
+);

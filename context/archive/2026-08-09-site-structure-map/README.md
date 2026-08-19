@@ -10,25 +10,25 @@ This change is documentation only — no Astro routes or `src/` UI.
 
 ## Source
 
-| Field | Value |
-| ----- | ----- |
-| Live site | https://www.autojuszczak.com.pl/ |
-| Crawl method | HTML primary nav + footer “Mapa strony” + Strefa hub + in-page offer siblings |
-| Sitemap XML | Do not treat as seed source (historically HTTP 500; see `crawl-inventory.md` for crawl-time status) |
-| Identity | `change.md` (`change_id: site-structure-map`) |
+| Field        | Value                                                                                               |
+| ------------ | --------------------------------------------------------------------------------------------------- |
+| Live site    | https://www.autojuszczak.com.pl/                                                                    |
+| Crawl method | HTML primary nav + footer “Mapa strony” + Strefa hub + in-page offer siblings                       |
+| Sitemap XML  | Do not treat as seed source (historically HTTP 500; see `crawl-inventory.md` for crawl-time status) |
+| Identity     | `change.md` (`change_id: site-structure-map`)                                                       |
 
 ## Documents
 
-| File | Role | Status |
-| ---- | ---- | ------ |
-| `change.md` | Change identity + planning notes | Present |
-| `README.md` | Pack index, language rule, FR-001 checklist, downstream consumers | Present (this file) |
-| `sitemap.md` | Primary/footer/Strefa menus & hierarchy | Present |
-| `sections.md` | Homepage sections + repeated components | Present |
-| `forms-integrations.md` | Forms, interactive features, integrations, backend-needed | Present |
-| `mvp-scope.md` | MVP-in / stubs / MVP-out + recommendations | Present — start here for scope |
-| `crawl-inventory.md` | Raw crawl log (superseded for IA) | Present — appendix; see note in file |
-| `plan.md` / `plan-brief.md` | Implementation plan (not pack deliverables) | Planning artifacts |
+| File                        | Role                                                              | Status                               |
+| --------------------------- | ----------------------------------------------------------------- | ------------------------------------ |
+| `change.md`                 | Change identity + planning notes                                  | Present                              |
+| `README.md`                 | Pack index, language rule, FR-001 checklist, downstream consumers | Present (this file)                  |
+| `sitemap.md`                | Primary/footer/Strefa menus & hierarchy                           | Present                              |
+| `sections.md`               | Homepage sections + repeated components                           | Present                              |
+| `forms-integrations.md`     | Forms, interactive features, integrations, backend-needed         | Present                              |
+| `mvp-scope.md`              | MVP-in / stubs / MVP-out + recommendations                        | Present — start here for scope       |
+| `crawl-inventory.md`        | Raw crawl log (superseded for IA)                                 | Present — appendix; see note in file |
+| `plan.md` / `plan-brief.md` | Implementation plan (not pack deliverables)                       | Planning artifacts                   |
 
 Pack deliverables (five): `README.md`, `sitemap.md`, `sections.md`, `forms-integrations.md`, `mvp-scope.md`.
 
@@ -54,9 +54,9 @@ Supporting seed (not a FR-001 topic by itself):
 
 ## Downstream consumers
 
-| Slice | Consumes | How |
-| ----- | -------- | --- |
-| **S-01** (nav / stubs) | `sitemap.md`, `crawl-inventory.md`, `mvp-scope.md` | Mirror primary/footer/Strefa trees; stub unreachable/asset-only honestly |
-| **S-02** (top-level content) | `mvp-scope.md` (copy targets), `sections.md`, `sitemap.md` | Copy source-faithful content for listed top-level destinations |
-| **S-04** (deep path) | `mvp-scope.md` recommendation, `sitemap.md` | Implement one recommended (unlocked) deep path — confirm before locking |
-| **S-05** (inert forms) | `forms-integrations.md`, `mvp-scope.md` | Build visible forms with submit disabled per documented list |
+| Slice                        | Consumes                                                   | How                                                                      |
+| ---------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **S-01** (nav / stubs)       | `sitemap.md`, `crawl-inventory.md`, `mvp-scope.md`         | Mirror primary/footer/Strefa trees; stub unreachable/asset-only honestly |
+| **S-02** (top-level content) | `mvp-scope.md` (copy targets), `sections.md`, `sitemap.md` | Copy source-faithful content for listed top-level destinations           |
+| **S-04** (deep path)         | `mvp-scope.md` recommendation, `sitemap.md`                | Implement one recommended (unlocked) deep path — confirm before locking  |
+| **S-05** (inert forms)       | `forms-integrations.md`, `mvp-scope.md`                    | Build visible forms with submit disabled per documented list             |

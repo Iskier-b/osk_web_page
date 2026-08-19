@@ -159,13 +159,14 @@ Prove the public URL is ready for market-feedback: top-level S-02 routes work on
 **Intent**: Verify owner-facing routes at the live URL match the S-02 deliverable surface.
 
 **Contract**: On the recorded public URL, open at ~375px width and at desktop width:
-  - `/` (home)
-  - `/nasza-auto-szkola`
-  - `/kursy`
-  - `/cennik`
-  - `/porady-dla-kursanta`
-  - `/galeria`
-  - `/artykuly`
+
+- `/` (home)
+- `/nasza-auto-szkola`
+- `/kursy`
+- `/cennik`
+- `/porady-dla-kursanta`
+- `/galeria`
+- `/artykuly`
   Spot-check that primary nav is usable and there is no horizontal scroll on filled top-level pages at 375px. Stubs linked from nav may remain title-only; they must not 500.
   Confirm footer/header have no Demo/konto or other auth entry points.
 

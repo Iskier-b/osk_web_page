@@ -24,15 +24,15 @@ Pierwszym etapem projektu jest analiza wskazanej strony klienta.
 
 Należy:
 
-* przeanalizować strukturę strony,
-* stworzyć mapę strony (sitemap),
-* zidentyfikować menu główne i dodatkowe,
-* zidentyfikować wszystkie istotne podstrony i kategorie,
-* zidentyfikować najważniejsze sekcje oraz powtarzalne komponenty,
-* zidentyfikować formularze i funkcjonalności interaktywne,
-* zidentyfikować integracje zewnętrzne,
-* zidentyfikować funkcjonalności wymagające backendu lub innych usług serwerowych,
-* określić, które elementy zostaną odtworzone w MVP, a które pozostaną jedynie elementem dokumentacji.
+- przeanalizować strukturę strony,
+- stworzyć mapę strony (sitemap),
+- zidentyfikować menu główne i dodatkowe,
+- zidentyfikować wszystkie istotne podstrony i kategorie,
+- zidentyfikować najważniejsze sekcje oraz powtarzalne komponenty,
+- zidentyfikować formularze i funkcjonalności interaktywne,
+- zidentyfikować integracje zewnętrzne,
+- zidentyfikować funkcjonalności wymagające backendu lub innych usług serwerowych,
+- określić, które elementy zostaną odtworzone w MVP, a które pozostaną jedynie elementem dokumentacji.
 
 ### Dokumentacja analizy
 
@@ -40,14 +40,14 @@ Wyniki analizy powinny zostać zapisane w dokumentacji projektu zgodnie z mechan
 
 W szczególności analiza powinna dostarczyć dokumenty zawierające:
 
-* mapę strony źródłowej,
-* listę podstron i kategorii,
-* opis istotnych sekcji strony,
-* listę zidentyfikowanych funkcjonalności,
-* listę integracji zewnętrznych,
-* listę funkcjonalności wymagających backendu lub innych usług,
-* wskazanie elementów przeznaczonych do odwzorowania w MVP,
-* wskazanie elementów pozostających poza zakresem MVP.
+- mapę strony źródłowej,
+- listę podstron i kategorii,
+- opis istotnych sekcji strony,
+- listę zidentyfikowanych funkcjonalności,
+- listę integracji zewnętrznych,
+- listę funkcjonalności wymagających backendu lub innych usług,
+- wskazanie elementów przeznaczonych do odwzorowania w MVP,
+- wskazanie elementów pozostających poza zakresem MVP.
 
 Dokumentacja powinna być podstawą dla kolejnych etapów projektu.
 
@@ -59,19 +59,19 @@ Nowa strona powinna zachować **pełną strukturę informacyjną istniejącej st
 
 Oznacza to, że:
 
-* wszystkie istotne strony, kategorie i podstrony powinny zostać uwzględnione w nowej strukturze,
-* nawigacja powinna odzwierciedlać zidentyfikowaną strukturę,
-* strony znajdujące się niżej w hierarchii mogą zawierać jedynie reprezentacyjną strukturę lub placeholdery,
-* pełne, rzeczywiste treści należy przenieść tylko dla najważniejszych stron oraz jednej wybranej ścieżki tematycznej.
+- wszystkie istotne strony, kategorie i podstrony powinny zostać uwzględnione w nowej strukturze,
+- nawigacja powinna odzwierciedlać zidentyfikowaną strukturę,
+- strony znajdujące się niżej w hierarchii mogą zawierać jedynie reprezentacyjną strukturę lub placeholdery,
+- pełne, rzeczywiste treści należy przenieść tylko dla najważniejszych stron oraz jednej wybranej ścieżki tematycznej.
 
 Przykładowo:
 
-* strona główna — pełna treść,
-* oferta — pełna lub reprezentacyjna treść,
-* kontakt — pełna treść,
-* informacje o firmie — pełna treść,
-* wybrana ścieżka oferty — pełna treść,
-* pozostałe podstrony — struktura + reprezentacyjna zawartość/placeholder.
+- strona główna — pełna treść,
+- oferta — pełna lub reprezentacyjna treść,
+- kontakt — pełna treść,
+- informacje o firmie — pełna treść,
+- wybrana ścieżka oferty — pełna treść,
+- pozostałe podstrony — struktura + reprezentacyjna zawartość/placeholder.
 
 ---
 
@@ -93,9 +93,9 @@ Przed rozpoczęciem właściwego projektowania należy określić grupę docelow
 
 Przykładowo:
 
-* młodzi kierowcy — dynamiczny, nowoczesny i energetyczny styl,
-* klienci biznesowi — elegancki, minimalistyczny i profesjonalny styl,
-* szeroka grupa odbiorców — przyjazny, przejrzysty i uniwersalny styl.
+- młodzi kierowcy — dynamiczny, nowoczesny i energetyczny styl,
+- klienci biznesowi — elegancki, minimalistyczny i profesjonalny styl,
+- szeroka grupa odbiorców — przyjazny, przejrzysty i uniwersalny styl.
 
 Agent powinien przed rozpoczęciem implementacji:
 
@@ -113,9 +113,9 @@ Wybrany kierunek powinien następnie zostać zastosowany konsekwentnie w całym 
 
 Strona musi działać poprawnie na:
 
-* urządzeniach mobilnych,
-* tabletach,
-* komputerach desktopowych.
+- urządzeniach mobilnych,
+- tabletach,
+- komputerach desktopowych.
 
 Projektowanie powinno odbywać się zgodnie z podejściem **mobile-first**.
 
@@ -129,12 +129,12 @@ MVP powinno być możliwie **proste pod względem architektury i zależności**.
 
 Nie zakłada się potrzeby:
 
-* backendu,
-* bazy danych,
-* systemu uwierzytelniania,
-* systemu kont użytkowników,
-* skomplikowanych procesów biznesowych,
-* rozbudowanych integracji z systemami zewnętrznymi.
+- backendu,
+- bazy danych,
+- systemu uwierzytelniania,
+- systemu kont użytkowników,
+- skomplikowanych procesów biznesowych,
+- rozbudowanych integracji z systemami zewnętrznymi.
 
 Funkcjonalności wymagające takich mechanizmów nie są częścią MVP. Funkcjonalności poza podstawową prezentacją treści nie powinny być dodawane do MVP bez uzasadnienia i potwierdzenia przez użytkownika.
 
@@ -146,15 +146,15 @@ Decyzje dotyczące technologii, frameworków i stacku technicznego pozostają po
 
 Poza zakresem MVP znajdują się w szczególności:
 
-* kompletne odtworzenie całej istniejącej strony pod względem funkcjonalnym,
-* pełna migracja wszystkich treści,
-* backend,
-* baza danych,
-* systemy logowania i kont użytkowników,
-* skomplikowane formularze,
-* złożone procesy biznesowe,
-* rozbudowane integracje z systemami zewnętrznymi,
-* inne funkcjonalności wymagające istotnej infrastruktury lub złożoności.
+- kompletne odtworzenie całej istniejącej strony pod względem funkcjonalnym,
+- pełna migracja wszystkich treści,
+- backend,
+- baza danych,
+- systemy logowania i kont użytkowników,
+- skomplikowane formularze,
+- złożone procesy biznesowe,
+- rozbudowane integracje z systemami zewnętrznymi,
+- inne funkcjonalności wymagające istotnej infrastruktury lub złożoności.
 
 Jeżeli istniejąca strona posiada takie funkcjonalności, powinny zostać **zidentyfikowane i opisane podczas analizy**, nawet jeżeli nie zostaną zaimplementowane.
 

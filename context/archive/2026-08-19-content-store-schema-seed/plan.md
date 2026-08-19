@@ -69,13 +69,13 @@ Create the hybrid content-store contract in SQL (and matching DTOs in `src/types
 
 Tables (all in `public`, RLS enabled):
 
-| Table | Role |
-| ----- | ---- |
-| `site_copy` | `key text` PK, `value text not null`, `updated_at timestamptz not null default now()` |
-| `pages` | `slug text` PK, `path text not null unique`, `kind text not null`, `visibility text not null` |
-| `nav_slots` | `id text` PK, `parent_id text` null FK → `nav_slots`, `placement text not null`, `sort_order int not null`, `label_key text not null` FK → `site_copy`, `href_key text not null` FK → `site_copy` |
-| `articles` | `slug text` PK, `visibility text not null`, `published_at timestamptz not null`, `sort_order int not null`, `title_key` / `summary_key` / `body_key` each FK → `site_copy` |
-| `media` | `id text` PK, `kind text not null`, `page_slug text` null FK → `pages`, `article_slug text` null FK → `articles`, `sort_order int not null`, `url text not null`, `alt_key text not null` FK → `site_copy` |
+| Table       | Role                                                                                                                                                                                                       |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `site_copy` | `key text` PK, `value text not null`, `updated_at timestamptz not null default now()`                                                                                                                      |
+| `pages`     | `slug text` PK, `path text not null unique`, `kind text not null`, `visibility text not null`                                                                                                              |
+| `nav_slots` | `id text` PK, `parent_id text` null FK → `nav_slots`, `placement text not null`, `sort_order int not null`, `label_key text not null` FK → `site_copy`, `href_key text not null` FK → `site_copy`          |
+| `articles`  | `slug text` PK, `visibility text not null`, `published_at timestamptz not null`, `sort_order int not null`, `title_key` / `summary_key` / `body_key` each FK → `site_copy`                                 |
+| `media`     | `id text` PK, `kind text not null`, `page_slug text` null FK → `pages`, `article_slug text` null FK → `articles`, `sort_order int not null`, `url text not null`, `alt_key text not null` FK → `site_copy` |
 
 Checks:
 

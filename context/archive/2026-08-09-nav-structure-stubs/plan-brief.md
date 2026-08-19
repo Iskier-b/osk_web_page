@@ -16,13 +16,13 @@ Every F-01 MVP-in URL resolves under Broad-styled public chrome. Primary nav inc
 
 ## Key Decisions Made
 
-| Decision | Choice | Why (1 sentence) |
-| -------- | ------ | ---------------- |
-| Visual direction | Lock Broad / universal + apply tokens | Friendly mixed-audience baseline; closes FR-002 choice before chrome ships |
-| Stub body | Title + fixed meta line | Honest placeholder without inventing marketing copy |
-| Structure scope | Full F-01 MVP-in (~25 URLs) | Matches analysis handoff; avoids later nav drift |
-| Depth-2 discovery | Dropdowns (Strefa + Oferta) + hub lists | Faster deep jumps while hubs remain authoritative |
-| Auth residue | Footer Demo / konto only | Keeps starter routes reachable without polluting primary chrome |
+| Decision          | Choice                                  | Why (1 sentence)                                                           |
+| ----------------- | --------------------------------------- | -------------------------------------------------------------------------- |
+| Visual direction  | Lock Broad / universal + apply tokens   | Friendly mixed-audience baseline; closes FR-002 choice before chrome ships |
+| Stub body         | Title + fixed meta line                 | Honest placeholder without inventing marketing copy                        |
+| Structure scope   | Full F-01 MVP-in (~25 URLs)             | Matches analysis handoff; avoids later nav drift                           |
+| Depth-2 discovery | Dropdowns (Strefa + Oferta) + hub lists | Faster deep jumps while hubs remain authoritative                          |
+| Auth residue      | Footer Demo / konto only                | Keeps starter routes reachable without polluting primary chrome            |
 
 ## Scope
 
@@ -36,11 +36,11 @@ Single `site-nav` data module feeds Header, Footer, and stub/hub pages. `Layout`
 
 ## Phases at a Glance
 
-| Phase | What it delivers | Key risk |
-| ----- | ---------------- | -------- |
-| 1. Style lock + tokens | Broad recorded; tokens/fonts/`lang=pl` | Wrong palette cues if Broad card skimmed |
-| 2. Public chrome | Header/footer + dropdowns in Layout | Mobile nav usability / IA drift |
-| 3. Stub routes + hubs | All MVP-in pages; Welcome replaced on `/` | Missing path vs mvp-scope checklist |
+| Phase                  | What it delivers                          | Key risk                                 |
+| ---------------------- | ----------------------------------------- | ---------------------------------------- |
+| 1. Style lock + tokens | Broad recorded; tokens/fonts/`lang=pl`    | Wrong palette cues if Broad card skimmed |
+| 2. Public chrome       | Header/footer + dropdowns in Layout       | Mobile nav usability / IA drift          |
+| 3. Stub routes + hubs  | All MVP-in pages; Welcome replaced on `/` | Missing path vs mvp-scope checklist      |
 
 **Prerequisites:** F-01 pack readable; Broad choice confirmed (this plan).  
 **Estimated effort:** ~2–3 sessions across 3 phases.

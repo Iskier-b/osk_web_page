@@ -6,15 +6,15 @@ Target route: `/prawo-jazdy-automat`
 
 ## Kept (condensed body)
 
-| Source element | Used as |
-| -------------- | ------- |
-| H1 „Prawo jazdy w automacie” | `title` / `heroTitle` |
-| Heading „Kurs kategorii B na automat” | `heroSubtitle` + body `###` |
-| Invite to kat. B automatic course; practical training on Honda Jazz (modern, small, agile) | Opening body paragraph |
-| Benefits: no clutch/gear stress; car won’t stall at intersection; smooth start; more attention for road observation | Bullet list under the course heading |
-| Price **3950 zł** for basic kat. B automatic course | Body price sentence |
-| Phone **510-285-635** for more info | Body contact line (spacing normalized — see clarity edits) |
-| Closing „POLECAMY I ZAPRASZAMY” | Closing sentence (sentence case — see clarity edits) |
+| Source element                                                                                                      | Used as                                                    |
+| ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| H1 „Prawo jazdy w automacie”                                                                                        | `title` / `heroTitle`                                      |
+| Heading „Kurs kategorii B na automat”                                                                               | `heroSubtitle` + body `###`                                |
+| Invite to kat. B automatic course; practical training on Honda Jazz (modern, small, agile)                          | Opening body paragraph                                     |
+| Benefits: no clutch/gear stress; car won’t stall at intersection; smooth start; more attention for road observation | Bullet list under the course heading                       |
+| Price **3950 zł** for basic kat. B automatic course                                                                 | Body price sentence                                        |
+| Phone **510-285-635** for more info                                                                                 | Body contact line (spacing normalized — see clarity edits) |
+| Closing „POLECAMY I ZAPRASZAMY”                                                                                     | Closing sentence (sentence case — see clarity edits)       |
 
 ## Intentionally omitted (condensed scope)
 
@@ -46,16 +46,16 @@ Target route: `/kontakt`
 
 ## Kept (contact prose + details)
 
-| Source element | Used as |
-| -------------- | ------- |
-| Invite „Zapraszamy do kontaktu” / „Masz pytania?” | `heroTitle` / `heroSubtitle` |
-| School name Autoszkoła / Auto Szkoła Juszczak | Opening body line (brand spelling aligned to site — see clarity edits) |
-| Address `91-211 Łódź, ul. Rydzowa 2` | Body address (order normalized — see clarity edits) |
-| Hours Pon. – Pt. 10:00 – 18:00 | Body hours line |
-| Transit: autobusy 76, 78, 78A, 83, 96; tramwaje 2, 8, 13, 16 | Body dojazd lines |
-| Mobile **510 285 635** | Body phone |
-| Landline **42 236 61 90** | Body phone |
-| Właściciel Jacek Juszczak | Body owner line |
+| Source element                                               | Used as                                                                |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| Invite „Zapraszamy do kontaktu” / „Masz pytania?”            | `heroTitle` / `heroSubtitle`                                           |
+| School name Autoszkoła / Auto Szkoła Juszczak                | Opening body line (brand spelling aligned to site — see clarity edits) |
+| Address `91-211 Łódź, ul. Rydzowa 2`                         | Body address (order normalized — see clarity edits)                    |
+| Hours Pon. – Pt. 10:00 – 18:00                               | Body hours line                                                        |
+| Transit: autobusy 76, 78, 78A, 83, 96; tramwaje 2, 8, 13, 16 | Body dojazd lines                                                      |
+| Mobile **510 285 635**                                       | Body phone                                                             |
+| Landline **42 236 61 90**                                    | Body phone                                                             |
+| Właściciel Jacek Juszczak                                    | Body owner line                                                        |
 
 ## Intentionally omitted (out of this slice)
 

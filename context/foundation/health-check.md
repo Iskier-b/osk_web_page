@@ -108,13 +108,13 @@ Provider: GitHub Actions
 Configuration: .github/workflows/ci.yml
 ```
 
-| Stage      | Status | Notes                                      |
-|------------|--------|--------------------------------------------|
-| Lint       | ✓      | `npm run lint` (ESLint 9, type-checked rules) |
-| Test       | ✗      | not configured — no test runner            |
-| Build      | ✓      | `npx astro sync` then `npm run build`      |
+| Stage      | Status | Notes                                                                       |
+| ---------- | ------ | --------------------------------------------------------------------------- |
+| Lint       | ✓      | `npm run lint` (ESLint 9, type-checked rules)                               |
+| Test       | ✗      | not configured — no test runner                                             |
+| Build      | ✓      | `npx astro sync` then `npm run build`                                       |
 | Type check | ✗      | no dedicated `astro check` / `tsc --noEmit`; type-aware ESLint runs in lint |
-| Security   | ✗      | no `npm audit`, CodeQL, Dependabot, or Snyk |
+| Security   | ✗      | no `npm audit`, CodeQL, Dependabot, or Snyk                                 |
 
 Workflow triggers only on branch `master`. The local git branch observed at check time was `main`. If GitHub’s default branch is `main`, this workflow never runs.
 
@@ -143,15 +143,15 @@ Stack assessment: context/foundation/stack-assessment.md
 Agent readiness (from stack-assess): ready
 ```
 
-Stack-assess scored the *choice* of TypeScript + Astro + Vite/Cloudflare as agent-friendly. Health-check scores *operational* state. No quality-gate failures to reinforce.
+Stack-assess scored the _choice_ of TypeScript + Astro + Vite/Cloudflare as agent-friendly. Health-check scores _operational_ state. No quality-gate failures to reinforce.
 
-| Quality Gate Gap | Health-Check Finding | Status |
-|------------------|----------------------|--------|
-| (none — all scored gates passed) | — | — |
-| Non-gate: no test runner | Confirmed: no runner, no test CI stage. AGENTS.md already says do not invent tests. | Reinforced (operational, not a stack-choice fail) |
-| Non-gate: Zod instruction/code drift | Confirmed: Zod not in package.json; auth API routes unvalidated. | Reinforced |
-| Typed: pass | `tsconfig` strict; ESLint `strictTypeChecked` in the lint CI job. No dedicated `astro check` step. | Mitigated locally; CI type-check still incomplete |
-| Compensation entries | Stack-assess recommended none. AGENTS.md / CLAUDE.md already present with routing, secrets, and lint/build gates. | Mitigated |
+| Quality Gate Gap                     | Health-Check Finding                                                                                              | Status                                            |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| (none — all scored gates passed)     | —                                                                                                                 | —                                                 |
+| Non-gate: no test runner             | Confirmed: no runner, no test CI stage. AGENTS.md already says do not invent tests.                               | Reinforced (operational, not a stack-choice fail) |
+| Non-gate: Zod instruction/code drift | Confirmed: Zod not in package.json; auth API routes unvalidated.                                                  | Reinforced                                        |
+| Typed: pass                          | `tsconfig` strict; ESLint `strictTypeChecked` in the lint CI job. No dedicated `astro check` step.                | Mitigated locally; CI type-check still incomplete |
+| Compensation entries                 | Stack-assess recommended none. AGENTS.md / CLAUDE.md already present with routing, secrets, and lint/build gates. | Mitigated                                         |
 
 ## Recommended Fixes
 

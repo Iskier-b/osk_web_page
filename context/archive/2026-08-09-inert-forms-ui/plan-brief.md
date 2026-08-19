@@ -16,25 +16,27 @@ All four surfaces show inert forms: compact home strip, full Zapisy enrollment, 
 
 ## Key Decisions Made
 
-| Decision | Choice | Why (1 sentence) |
-| -------- | ------ | ---------------- |
-| Surfaces | All four (home, Zapisy, Kontakt, Referencje) | Matches F-01 recommendation for full FR-006 coverage |
-| Home UX | Compact strip (name + phone) → full Zapisy | Signals enrollment without restoring a heavy hero form |
-| Demo messaging | Shared notice + disabled submit | Explicit trust signal without page-level alert noise |
-| Captcha | Omit | Avoids dead third-party widgets and false “verify” cues |
-| Zapisy body | Form-only | Fastest enrollment page without inventing copy |
-| Referencje | Title + optional harvested lead + form | Enough chrome for the form; no invented Opinie body |
-| Term select | Single disabled “niedostępne w demo” option | Honest empty demo vs stale dated CMS options |
-| Kontakt label | Fix to **Wiadomość** | Light clarity; same meaning as source |
+| Decision       | Choice                                       | Why (1 sentence)                                        |
+| -------------- | -------------------------------------------- | ------------------------------------------------------- |
+| Surfaces       | All four (home, Zapisy, Kontakt, Referencje) | Matches F-01 recommendation for full FR-006 coverage    |
+| Home UX        | Compact strip (name + phone) → full Zapisy   | Signals enrollment without restoring a heavy hero form  |
+| Demo messaging | Shared notice + disabled submit              | Explicit trust signal without page-level alert noise    |
+| Captcha        | Omit                                         | Avoids dead third-party widgets and false “verify” cues |
+| Zapisy body    | Form-only                                    | Fastest enrollment page without inventing copy          |
+| Referencje     | Title + optional harvested lead + form       | Enough chrome for the form; no invented Opinie body     |
+| Term select    | Single disabled “niedostępne w demo” option  | Honest empty demo vs stale dated CMS options            |
+| Kontakt label  | Fix to **Wiadomość**                         | Light clarity; same meaning as source                   |
 
 ## Scope
 
 **In scope:**
+
 - Shared Astro form kit + demo notice
 - Four inert surfaces wired into existing layouts
 - Manual FR-006 no-send verification stamp in Notes
 
 **Out of scope:**
+
 - Live POST / email / CRM / reCAPTCHA / maps
 - Login or payment forms
 - Invented Zapisy/Opinie marketing copy
@@ -46,12 +48,12 @@ Astro-native components under `src/components/forms/`: shared notice + enrollmen
 
 ## Phases at a Glance
 
-| Phase | What it delivers | Key risk |
-| ----- | ---------------- | -------- |
-| 1. Shared inert form kit | Reusable forms + notice | Inert contract gaps (Enter still navigates) |
-| 2. Home strip + Zapisy | Enrollment surfaces live | Strip overcrowds home hierarchy |
-| 3. Kontakt + Referencje | Contact + opinion forms | Inventing Referencje lead if harvest empty |
-| 4. Polish & verify | FR-006 acceptance stamp | Missed surface or inconsistent notice |
+| Phase                    | What it delivers         | Key risk                                    |
+| ------------------------ | ------------------------ | ------------------------------------------- |
+| 1. Shared inert form kit | Reusable forms + notice  | Inert contract gaps (Enter still navigates) |
+| 2. Home strip + Zapisy   | Enrollment surfaces live | Strip overcrowds home hierarchy             |
+| 3. Kontakt + Referencje  | Contact + opinion forms  | Inventing Referencje lead if harvest empty  |
+| 4. Polish & verify       | FR-006 acceptance stamp  | Missed surface or inconsistent notice       |
 
 **Prerequisites:** S-02 done; Kontakt prose available (S-04 path filled or equivalent)
 **Estimated effort:** ~2 sessions across 4 phases

@@ -34,8 +34,8 @@ checkpoint:
 
 # Seed (verbatim input)
 
-od klienta powstała nowa funkcjonalność która wymaga aby treści na stronie były w łatwy sposób edytowalne, mozna by to zrealizować prostym widokiem w którym może on edytować treści w bazie na dedytkowanej stronie, nie robimy wersjonowania, podglądu, i innych funkcji CMSa tylko dajemy live edit na bazie, to do wszystkich linków, treści artykułów na stronach, dodatkowo w sekcji blog, prezentujemy listę artykułów z odpowiedniej tabeli, zasada wprowadzenia artykułów taka sama, prosta strona z edytowalnymi polami formularza plus upload obrazków. Właściciel może zaznaczyć artykuł jako niewyświetlany, zawsze na wieżchu, prezentowany. 
-Dostęp do tej sekcji z edycją albo w osobnej alikacji (będziemy tworzyli aplikację zarządzania OSK więc może tam - będą dostępy do aplikacji dla użytkowników z odpowiednimi rolami) jedynie dla użytkownika w roli administratora/edutora strony po zalogowaniu się. 
+od klienta powstała nowa funkcjonalność która wymaga aby treści na stronie były w łatwy sposób edytowalne, mozna by to zrealizować prostym widokiem w którym może on edytować treści w bazie na dedytkowanej stronie, nie robimy wersjonowania, podglądu, i innych funkcji CMSa tylko dajemy live edit na bazie, to do wszystkich linków, treści artykułów na stronach, dodatkowo w sekcji blog, prezentujemy listę artykułów z odpowiedniej tabeli, zasada wprowadzenia artykułów taka sama, prosta strona z edytowalnymi polami formularza plus upload obrazków. Właściciel może zaznaczyć artykuł jako niewyświetlany, zawsze na wieżchu, prezentowany.
+Dostęp do tej sekcji z edycją albo w osobnej alikacji (będziemy tworzyli aplikację zarządzania OSK więc może tam - będą dostępy do aplikacji dla użytkowników z odpowiednimi rolami) jedynie dla użytkownika w roli administratora/edutora strony po zalogowaniu się.
 Strona powinna być już dostosowana do działania w trybie takiego prostego CMS niezależnie od wybranego wariantu dostarczania treści.
 
 # Addendum (verbatim, 2026-08-19)
@@ -66,6 +66,7 @@ uwzględnij nowe wymagania odkryte przez shape, uwzględnij że w tym zadaniu ni
 **Product:** OSK Juszczak redesign — public informational website (Astro 6 SSR, React islands, Tailwind 4, Cloudflare Workers). Originally scoped as a demo/proof-of-concept for the owner to approve a modernized layout.
 
 **Content today:**
+
 - 9 Markdown pages via Astro Content Collections (`src/content/pages/*.md`) with typed Zod frontmatter (hero, CTAs, prices, teasers, images).
 - Navigation, footer links, phone, and CTA hardcoded in `src/lib/site-nav.ts`.
 - 13 stub routes with title-only placeholders.
@@ -80,6 +81,7 @@ uwzględnij nowe wymagania odkryte przez shape, uwzględnij że w tym zadaniu ni
 **Users today:** Public visitors (course candidates); OSK owner reviews the demo like any visitor (no edit access).
 
 **Must preserve:**
+
 - Existing navigation information architecture (menu labels, hierarchy, destinations) unless the owner explicitly edits links via CMS.
 - Public page routes and section component kit (Hero, ProseSection, CtaBand, PriceTable, etc.).
 - Mobile usability bar (375px, no horizontal scroll on top-level pages).
@@ -113,14 +115,17 @@ Insight: the site must be **CMS-ready at the rendering layer** regardless of whe
 ## Success Criteria
 
 ### Primary
+
 - Public site renders all CMS-managed content (pages, nav links, blog list, article detail) from Supabase at SSR time; an edit in Supabase Studio is visible on the live public site without redeploy.
 - Blog section lists articles from DB; individual article pages exist; visibility flags work (hidden not shown, pinned always on top of list, displayed normal).
 - Image references use Supabase Storage URLs after upload via Studio.
 
 ### Secondary
+
 - Existing Markdown content migrated/seeded into DB so the public site matches current demo content on day one.
 
 ### Guardrails
+
 - Navigation information architecture (menu structure, hierarchy) preserved — only link targets/labels become DB-editable, not a restructure via CMS.
 - Mobile bar unchanged: 375px top-level pages without horizontal scroll.
 - No versioning, preview, or draft/publish workflow — live edit only.
@@ -144,6 +149,7 @@ Target: ~3 weeks after-hours for DB layer + public SSR render + blog + nav migra
 ## Functional Requirements
 
 ### Content editing (interim — Supabase Studio)
+
 - FR-001: Site editor can edit page content fields (hero, body sections, structured blocks matching existing page schema) directly in Supabase Studio. Priority: must-have. Change: new
   > Socrates: Counter-argument considered: Studio is too technical for a driving-school owner. Resolution: kept for MVP — interim only; form UI ships in future OSK management app.
 - FR-002: Site editor can edit navigation links (primary nav, dropdowns, footer, phone, CTA) in Supabase Studio. Priority: must-have. Change: new
@@ -154,6 +160,7 @@ Target: ~3 weeks after-hours for DB layer + public SSR render + blog + nav migra
   > Socrates: Counter-argument considered: Storage URLs vs static `/public/` paths adds complexity. Resolution (updated 2026-08-19): only gallery and article images come from the store in this change; remaining images stay files with a later retarget path.
 
 ### Public site (this repo)
+
 - FR-003: Visitor can view all site pages with content loaded from Supabase at SSR time (replacing Markdown/hardcoded sources). Priority: must-have. Change: modified
   > Socrates: Counter-argument considered: SSR DB reads add latency vs prerendered Markdown. Resolution: kept — scale is low (local OSK); live edit outweighs build-time perf.
 - FR-004: Visitor can browse the blog article list at `/artykuly` sourced from DB, with pinned articles always listed first. Priority: must-have. Change: new
@@ -162,6 +169,7 @@ Target: ~3 weeks after-hours for DB layer + public SSR render + blog + nav migra
   > Socrates: Counter-argument considered: individual article routes were explicitly out of MVP scope before. Resolution: kept — client requirement supersedes prior demo scope.
 
 ### Migration & infrastructure
+
 - FR-008: Developer can write a keyed seed of existing Markdown pages, stub titles, nav copy, articles, and gallery/article images so the owner can fill the content store to match current site copy on launch. Priority: must-have. Change: new
   > Socrates: Counter-argument considered: one-time seed script may drift from Markdown if both coexist. Resolution: kept — Markdown deprecated after seed; DB is sole source post-migration.
 - FR-009: Visitor (and owner reviewing the public site) can see the lookup key in place of missing stored text — never an error page and never invented copy — so the owner can find and correct the key. Priority: must-have. Change: new
@@ -176,6 +184,7 @@ Target: ~3 weeks after-hours for DB layer + public SSR render + blog + nav migra
 - **Then** the public page at the corresponding URL shows the updated content on next request without redeploy
 
 #### Acceptance Criteria
+
 - Edit in Studio → visible on public URL within one SSR request
 - Hidden page states are not shown to visitors
 - Mobile layout unchanged at 375px
@@ -187,6 +196,7 @@ Target: ~3 weeks after-hours for DB layer + public SSR render + blog + nav migra
 - **Then** they see displayed and pinned articles only (hidden omitted), pinned first, then by date; clicking an article opens `/artykul/[slug]`
 
 #### Acceptance Criteria
+
 - Hidden articles absent from list and direct slug access returns 404
 - Pinned articles appear above non-pinned regardless of date
 - Article body and hero image render from DB fields
@@ -248,13 +258,13 @@ Future **OSK management app** (separate repo): form-based editors for pages/arti
 
 Status: **accepted** (2026-08-18).
 
-| Element | Status |
-|---------|--------|
-| Access Control | present — site_editor role, RLS, Studio interim |
-| Business Logic | present — visibility/ordering rule |
-| Project artifacts | present |
-| Timeline-cost ack | present — 3 weeks after-hours |
-| Non-Goals | present — 6 entries |
+| Element            | Status                                             |
+| ------------------ | -------------------------------------------------- |
+| Access Control     | present — site_editor role, RLS, Studio interim    |
+| Business Logic     | present — visibility/ordering rule                 |
+| Project artifacts  | present                                            |
+| Timeline-cost ack  | present — 3 weeks after-hours                      |
+| Non-Goals          | present — 6 entries                                |
 | Preserved behavior | present — Constraints & Preserved Behavior section |
 
 No gaps recorded.

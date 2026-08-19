@@ -5,23 +5,23 @@ Also cross-checked against F-01 pack: `context/archive/2026-08-09-site-structure
 
 ## Source URL → target route
 
-| Source URL | Target route | Content used |
-| ---------- | ------------ | ------------ |
-| https://www.autojuszczak.com.pl/ | `/` | Hero pitches; dashboard (najbliższe kursy, 3900,00 PLN → cennik, ul. Rydzowa 2 + hours); mid-page Zapisy CTA; about teaser (#about); news titles; review excerpts; gallery image refs |
-| https://www.autojuszczak.com.pl/nasza-auto-szkola | `/nasza-auto-szkola` | About body (**Poznaj nas…**), blockquotes, location/transit notes, Precyzja kierowania close |
-| https://www.autojuszczak.com.pl/kursy | `/kursy` | Oferta hub body (teoria, I pomoc, pierwsze jazdy, ruch drogowy, egzamin wewnętrzny) + `ofertaChildren` links from nav |
-| https://www.autojuszczak.com.pl/cennik | `/cennik` | All listed prices, ratalny schedule, mBank account, plac/kurs hour notes |
+| Source URL                                        | Target route         | Content used                                                                                                                                                                          |
+| ------------------------------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| https://www.autojuszczak.com.pl/                  | `/`                  | Hero pitches; dashboard (najbliższe kursy, 3900,00 PLN → cennik, ul. Rydzowa 2 + hours); mid-page Zapisy CTA; about teaser (#about); news titles; review excerpts; gallery image refs |
+| https://www.autojuszczak.com.pl/nasza-auto-szkola | `/nasza-auto-szkola` | About body (**Poznaj nas…**), blockquotes, location/transit notes, Precyzja kierowania close                                                                                          |
+| https://www.autojuszczak.com.pl/kursy             | `/kursy`             | Oferta hub body (teoria, I pomoc, pierwsze jazdy, ruch drogowy, egzamin wewnętrzny) + `ofertaChildren` links from nav                                                                 |
+| https://www.autojuszczak.com.pl/cennik            | `/cennik`            | All listed prices, ratalny schedule, mBank account, plac/kurs hour notes                                                                                                              |
 
 ## Images downloaded → `public/images/osk/`
 
-| Local file | Source path | Used on | Alt (PL) |
-| ---------- | ----------- | ------- | -------- |
-| `fleet-01.webp` | `/simply/images/dynamic/gallery-images/1.webp` | Home hero | Samochód szkoleniowy Auto Szkoły Juszczak |
-| `fleet-02.webp` | `/simply/images/dynamic/gallery-images/2.webp` | Home gallery teaser; O nas hero | Flota / pojazdy szkoleniowe |
-| `fleet-03.webp` | `/simply/images/dynamic/gallery-images/5.webp` | Home gallery; O nas figure | Samochód nauki jazdy |
-| `fleet-04.webp` | `/simply/images/dynamic/gallery-images/8.webp` | Home gallery teaser | Pojazd szkoleniowy przed zajęciami |
-| `logo-osk.webp` | `/images/logos/auto-szkola-lodz.webp` | Reserved (chrome already has brand text) | — |
-| `news-teaser-01.jpg` | `/simply/images/dynamic/articles/95.jpg` | Reserved for Phase 3 Aktualności | — |
+| Local file           | Source path                                    | Used on                                  | Alt (PL)                                  |
+| -------------------- | ---------------------------------------------- | ---------------------------------------- | ----------------------------------------- |
+| `fleet-01.webp`      | `/simply/images/dynamic/gallery-images/1.webp` | Home hero                                | Samochód szkoleniowy Auto Szkoły Juszczak |
+| `fleet-02.webp`      | `/simply/images/dynamic/gallery-images/2.webp` | Home gallery teaser; O nas hero          | Flota / pojazdy szkoleniowe               |
+| `fleet-03.webp`      | `/simply/images/dynamic/gallery-images/5.webp` | Home gallery; O nas figure               | Samochód nauki jazdy                      |
+| `fleet-04.webp`      | `/simply/images/dynamic/gallery-images/8.webp` | Home gallery teaser                      | Pojazd szkoleniowy przed zajęciami        |
+| `logo-osk.webp`      | `/images/logos/auto-szkola-lodz.webp`          | Reserved (chrome already has brand text) | —                                         |
+| `news-teaser-01.jpg` | `/simply/images/dynamic/articles/95.jpg`       | Reserved for Phase 3 Aktualności         | —                                         |
 
 ## Clarity / hierarchy rewrites (no new facts)
 
@@ -51,18 +51,18 @@ Cross-checked against F-01: `sections.md` (Strefa hub tile grid), `sitemap.md` /
 
 ## Source URL → target route
 
-| Source URL | Target route | Content used |
-| ---------- | ------------ | ------------ |
+| Source URL                                          | Target route           | Content used                                                                                                                   |
+| --------------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | https://www.autojuszczak.com.pl/porady-dla-kursanta | `/porady-dla-kursanta` | Hub landing: Strefa tile titles → `strefaChildren`; „Doświadczenie poparte faktami!” blurb (1999, Łódź / Aleksandrów, Hyundai) |
-| https://www.autojuszczak.com.pl/galeria | `/galeria` | Headline „Zobacz naszą galerię firmową”; 1–3 fleet images from Phase 2 download (not full Lightbox album) |
-| https://www.autojuszczak.com.pl/artykuly | `/artykuly` | Listing shell: first-page article titles + short summaries only; no `/artykul-*` routes |
+| https://www.autojuszczak.com.pl/galeria             | `/galeria`             | Headline „Zobacz naszą galerię firmową”; 1–3 fleet images from Phase 2 download (not full Lightbox album)                      |
+| https://www.autojuszczak.com.pl/artykuly            | `/artykuly`            | Listing shell: first-page article titles + short summaries only; no `/artykul-*` routes                                        |
 
 ## Images reused (Phase 2 assets)
 
-| Local file | Used on Phase 3 | Notes |
-| ---------- | --------------- | ----- |
-| `fleet-02.webp` … `fleet-04.webp` | `/galeria` preview strip | Same gallery-images sources as Phase 2; no new album download |
-| `news-teaser-01.jpg` | `/artykuly` teaser figure | Reserved in Phase 2 harvest; source `/simply/images/dynamic/articles/95.jpg` |
+| Local file                        | Used on Phase 3           | Notes                                                                        |
+| --------------------------------- | ------------------------- | ---------------------------------------------------------------------------- |
+| `fleet-02.webp` … `fleet-04.webp` | `/galeria` preview strip  | Same gallery-images sources as Phase 2; no new album download                |
+| `news-teaser-01.jpg`              | `/artykuly` teaser figure | Reserved in Phase 2 harvest; source `/simply/images/dynamic/articles/95.jpg` |
 
 ## Clarity / hierarchy rewrites (no new facts)
 
@@ -84,14 +84,14 @@ Cross-checked against F-01: `sections.md` (Strefa hub tile grid), `sitemap.md` /
 
 Cross-check against live https://www.autojuszczak.com.pl/ (home, `/nasza-auto-szkola`, `/kursy`, `/cennik`, `/porady-dla-kursanta`, `/galeria`, `/artykuly`). No content invention in this pass.
 
-| Claim type | Result | Notes |
-| ---------- | ------ | ----- |
-| Prices | OK | Cennik rows match source: 3900 / 3950 / 4900 / 135 / 1300 / 490 / 150 / 1450; intro **1350 zł** kept; dashboard **3900,00 PLN** kept. Ambiguous homepage **3550 zł** still omitted (Phase 2 gap). |
-| Phones | OK | Filled pages surface **510 285 635** (nav + O nas). Landline **42 236 61 90** still only in source footer — not added. |
-| Addresses / hours | OK | **ul. Rydzowa 2, 91-211 Łódź**; **Pon. – Pt. 10:00 – 18:00**; plac **ul. Maratońskiej (Retkinia)**; transit lines 78 / 6 on O nas. |
-| Ranking claims | OK | Home pitch „W rankingu zdawalności WORD Łódź zawsze na czołowych miejscach” is source text. Homepage „2. miejsce… 2018” not added to filled stack (still deferred). |
-| Course / offer names | OK | Kat. B, automat (kod 78 / Honda Jazz), ekspresowy, jazdy doszkalające, weekendowy / popołudniowy schedule cues match source. |
-| Review / news blurbs | OK | Authors + shortened quotes from live review list; article titles/summaries from listing — no invented post bodies. |
+| Claim type           | Result | Notes                                                                                                                                                                                             |
+| -------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Prices               | OK     | Cennik rows match source: 3900 / 3950 / 4900 / 135 / 1300 / 490 / 150 / 1450; intro **1350 zł** kept; dashboard **3900,00 PLN** kept. Ambiguous homepage **3550 zł** still omitted (Phase 2 gap). |
+| Phones               | OK     | Filled pages surface **510 285 635** (nav + O nas). Landline **42 236 61 90** still only in source footer — not added.                                                                            |
+| Addresses / hours    | OK     | **ul. Rydzowa 2, 91-211 Łódź**; **Pon. – Pt. 10:00 – 18:00**; plac **ul. Maratońskiej (Retkinia)**; transit lines 78 / 6 on O nas.                                                                |
+| Ranking claims       | OK     | Home pitch „W rankingu zdawalności WORD Łódź zawsze na czołowych miejscach” is source text. Homepage „2. miejsce… 2018” not added to filled stack (still deferred).                               |
+| Course / offer names | OK     | Kat. B, automat (kod 78 / Honda Jazz), ekspresowy, jazdy doszkalające, weekendowy / popołudniowy schedule cues match source.                                                                      |
+| Review / news blurbs | OK     | Authors + shortened quotes from live review list; article titles/summaries from listing — no invented post bodies.                                                                                |
 
 ## Clarity rewrites confirmed (no new facts)
 

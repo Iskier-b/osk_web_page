@@ -21,10 +21,10 @@ Locked date: `2026-08-09`
 
 ## Apply targets
 
-| Target | Role |
-| --- | --- |
-| `src/styles/global.css` | Semantic design tokens (palette) + approachable sans for brand/UI |
-| Public chrome | Header / footer / nav inherit Broad daylight look from tokens (Phase 2+) |
+| Target                  | Role                                                                     |
+| ----------------------- | ------------------------------------------------------------------------ |
+| `src/styles/global.css` | Semantic design tokens (palette) + approachable sans for brand/UI        |
+| Public chrome           | Header / footer / nav inherit Broad daylight look from tokens (Phase 2+) |
 
 ## Apply note for implementers
 

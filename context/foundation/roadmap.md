@@ -28,12 +28,12 @@ After the owner approved the redesign direction, a new requirement landed: they 
 
 ## At a glance
 
-| ID | Change ID | Outcome (user can …) | Prerequisites | PRD refs | Status |
-|---|---|---|---|---|---|
-| F-01 | content-store-schema-seed | (foundation) schema and keyed seed scripts exist for every current page slot, nav item, and article field | — | US-01, US-02, US-03 | done |
-| S-01 | live-keyed-page-copy | user can read public page copy and gallery images from the content store; a stored-text change appears on the next request without rebuild; missing text shows the lookup key | F-01 | US-01, US-03 | proposed |
-| S-02 | live-nav-from-store | user can browse primary nav, dropdowns, footer, phone, and CTA whose labels and destinations come from the content store | F-01, S-01 | US-01 | proposed |
-| S-03 | live-blog-visibility | user can read the blog list with pinned articles first and open a full article; hidden articles are omitted; article images come from the content store | F-01, S-01 | US-02 | proposed |
+| ID   | Change ID                 | Outcome (user can …)                                                                                                                                                          | Prerequisites | PRD refs            | Status   |
+| ---- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------- | -------- |
+| F-01 | content-store-schema-seed | (foundation) schema and keyed seed scripts exist for every current page slot, nav item, and article field                                                                     | —             | US-01, US-02, US-03 | done     |
+| S-01 | live-keyed-page-copy      | user can read public page copy and gallery images from the content store; a stored-text change appears on the next request without rebuild; missing text shows the lookup key | F-01          | US-01, US-03        | proposed |
+| S-02 | live-nav-from-store       | user can browse primary nav, dropdowns, footer, phone, and CTA whose labels and destinations come from the content store                                                      | F-01, S-01    | US-01               | proposed |
+| S-03 | live-blog-visibility      | user can read the blog list with pinned articles first and open a full article; hidden articles are omitted; article images come from the content store                       | F-01, S-01    | US-02               | proposed |
 
 ## Baseline
 
@@ -102,12 +102,12 @@ Foundations below assume these are present and do NOT re-scaffold them.
 
 ## Backlog Handoff
 
-| Roadmap ID | Change ID | Suggested issue title | Ready for `/10x-plan` | Notes |
-|---|---|---|---|---|
-| F-01 | content-store-schema-seed | Write content-store schema and keyed seed artifacts | yes | Run `/10x-plan content-store-schema-seed` — unlocks north star S-01 |
-| S-01 | live-keyed-page-copy | Render public pages from keyed store with missing-key fallback | no | North star — becomes ready after F-01 |
-| S-02 | live-nav-from-store | Load navigation chrome from the content store | no | Parallel with S-03 after S-01 |
-| S-03 | live-blog-visibility | List and show blog articles with visibility flags | no | Parallel with S-02 after S-01 |
+| Roadmap ID | Change ID                 | Suggested issue title                                          | Ready for `/10x-plan` | Notes                                                               |
+| ---------- | ------------------------- | -------------------------------------------------------------- | --------------------- | ------------------------------------------------------------------- |
+| F-01       | content-store-schema-seed | Write content-store schema and keyed seed artifacts            | yes                   | Run `/10x-plan content-store-schema-seed` — unlocks north star S-01 |
+| S-01       | live-keyed-page-copy      | Render public pages from keyed store with missing-key fallback | no                    | North star — becomes ready after F-01                               |
+| S-02       | live-nav-from-store       | Load navigation chrome from the content store                  | no                    | Parallel with S-03 after S-01                                       |
+| S-03       | live-blog-visibility      | List and show blog articles with visibility flags              | no                    | Parallel with S-02 after S-01                                       |
 
 This table is the clean handoff to Jira/Linear or any MCP-backed backlog. Include one row for every `F-NN` and `S-NN`. It should be compact enough to copy into issues, but it must not duplicate the detailed roadmap body.
 

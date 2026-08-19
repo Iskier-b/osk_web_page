@@ -16,26 +16,28 @@ SQL artifacts exist for a hybrid store (copy keys, pages, frozen nav slots, arti
 
 ## Key Decisions Made
 
-| Decision | Choice | Why (1 sentence) |
-| -------- | ------ | ---------------- |
-| Schema shape | Hybrid tables | Keyed lookup plus pinning/order/images cannot live in one EAV grid |
-| Structured lists | Flatten each cell to a key | Missing copy must show that exact `osk.*` key (US-03) |
-| Seed surface | Pages, bodies, stubs, nav, 6 articles, gallery records | Unlocks S-01–S-03; form labels stay in components |
-| Articles | 6 teasers, empty body, displayed, no images | Matches current copy and the “bez obrazków” addendum |
-| Gallery files | Media rows with today’s `/images/osk/…` URLs | Owner can apply SQL without uploading binaries |
-| Access | Anon SELECT published; `site_editor` writes | Hidden articles stay off the anon key; Studio owner still bypasses RLS |
-| Stub placeholder | Per-page title + body keys | Filling one stub does not rewrite every placeholder |
-| Verification | Catalog + seed + sync script | Implementer can finish without touching the live project |
+| Decision         | Choice                                                 | Why (1 sentence)                                                       |
+| ---------------- | ------------------------------------------------------ | ---------------------------------------------------------------------- |
+| Schema shape     | Hybrid tables                                          | Keyed lookup plus pinning/order/images cannot live in one EAV grid     |
+| Structured lists | Flatten each cell to a key                             | Missing copy must show that exact `osk.*` key (US-03)                  |
+| Seed surface     | Pages, bodies, stubs, nav, 6 articles, gallery records | Unlocks S-01–S-03; form labels stay in components                      |
+| Articles         | 6 teasers, empty body, displayed, no images            | Matches current copy and the “bez obrazków” addendum                   |
+| Gallery files    | Media rows with today’s `/images/osk/…` URLs           | Owner can apply SQL without uploading binaries                         |
+| Access           | Anon SELECT published; `site_editor` writes            | Hidden articles stay off the anon key; Studio owner still bypasses RLS |
+| Stub placeholder | Per-page title + body keys                             | Filling one stub does not rewrite every placeholder                    |
+| Verification     | Catalog + seed + sync script                           | Implementer can finish without touching the live project               |
 
 ## Scope
 
 **In scope:**
+
 - Migration: `site_copy`, `pages`, `nav_slots`, `articles`, `media`, RLS, `is_site_editor()`, empty `osk-media` bucket
 - `src/types.ts` row/enum contract
 - `supabase/key-catalog.json` from current copy
 - Idempotent `supabase/seed.sql` + `scripts/verify-content-seed.mjs` + `supabase/APPLY.md`
 
 **Out of scope:**
+
 - Public-site data-source swap (S-01–S-03)
 - Implementer running SQL against the hosted project
 - CMS UI, form-label keys, hardcoded section headings
@@ -48,10 +50,10 @@ SQL artifacts exist for a hybrid store (copy keys, pages, frozen nav slots, arti
 
 ## Phases at a Glance
 
-| Phase | What it delivers | Key risk |
-| ----- | ---------------- | -------- |
-| 1. Schema | Tables, RLS, empty bucket, DTOs | A thin contract forces S-01–S-03 rework |
-| 2. Catalog | Every key + registry rows traced to source | Missed slot or invented form/heading keys |
+| Phase            | What it delivers                             | Key risk                                                                            |
+| ---------------- | -------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 1. Schema        | Tables, RLS, empty bucket, DTOs              | A thin contract forces S-01–S-03 rework                                             |
+| 2. Catalog       | Every key + registry rows traced to source   | Missed slot or invented form/heading keys                                           |
 | 3. Seed + verify | Idempotent SQL, sync check, owner apply note | Seed drifts from catalog; hosted apply skipped because `db push` does not load seed |
 
 **Prerequisites:** PRD v2 + F-01 ready; current Markdown/`site-nav.ts` as seed input; Docker optional for local `db reset`

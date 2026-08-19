@@ -11,6 +11,7 @@ updated: 2026-08-09
 Roadmap: S-06 / FR-010 (north star under market-feedback).
 
 Planning decisions (2026-08-09):
+
 - Dynamic: 2–3 purposeful motion/scroll reveals (not heavy interactivity)
 - Broad tokens stay as base; youth via composition + motion (no second FR-002 lock)
 - Scope: homepage + top-level + deep path (oferta→kontakt) + shared chrome; stubs inherit

@@ -31,12 +31,12 @@ gates_failed: 0
 
 ## Quality Gate Assessment
 
-| Component  | Typed | Convention | Training Data | Documented | Verdict    |
-|------------|-------|------------|---------------|------------|------------|
-| Language   | ✓     | —          | —             | —          | pass       |
-| Framework  | —     | ✓          | ✓             | ✓          | pass       |
-| Build tool | —     | ✓          | ✓             | ✓          | pass       |
-| Test runner| —     | —          | —             | —          | n/a        |
+| Component   | Typed | Convention | Training Data | Documented | Verdict |
+| ----------- | ----- | ---------- | ------------- | ---------- | ------- |
+| Language    | ✓     | —          | —             | —          | pass    |
+| Framework   | —     | ✓          | ✓             | ✓          | pass    |
+| Build tool  | —     | ✓          | ✓             | ✓          | pass    |
+| Test runner | —     | —          | —             | —          | n/a     |
 
 Legend: ✓ = pass, ✗ = fail, ~ = partial, — = not applicable
 

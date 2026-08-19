@@ -11,8 +11,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const catalogPath = join(root, "supabase/key-catalog.json");
 const seedPath = join(root, "supabase/seed.sql");
 
-const KEY_REGEX =
-  /^osk\.[a-z0-9]+(_[a-z0-9]+)*(\.[a-z0-9]+(_[a-z0-9]+)*)+$/;
+const KEY_REGEX = /^osk\.[a-z0-9]+(_[a-z0-9]+)*(\.[a-z0-9]+(_[a-z0-9]+)*)+$/;
 
 const catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
 const seedSql = readFileSync(seedPath, "utf8");
@@ -21,9 +20,7 @@ const errors = [];
 
 /** Parse site_copy INSERT tuples from seed.sql */
 function parseSiteCopyInserts(sql) {
-  const match = sql.match(
-    /insert into public\.site_copy \(key, value\) values\s*([\s\S]*?)\s*on conflict \(key\)/i,
-  );
+  const match = sql.match(/insert into public\.site_copy \(key, value\) values\s*([\s\S]*?)\s*on conflict \(key\)/i);
   if (!match) {
     errors.push("seed.sql: missing site_copy INSERT block");
     return new Map();
@@ -41,10 +38,7 @@ function parseSiteCopyInserts(sql) {
 
 /** Extract quoted first-column values from a table INSERT block */
 function parseInsertBlock(sql, table) {
-  const re = new RegExp(
-    `insert into public\\.${table} \\([^)]+\\) values\\s*([\\s\\S]*?)\\s*on conflict`,
-    "i",
-  );
+  const re = new RegExp(`insert into public\\.${table} \\([^)]+\\) values\\s*([\\s\\S]*?)\\s*on conflict`, "i");
   const match = sql.match(re);
   if (!match) {
     errors.push(`seed.sql: missing ${table} INSERT block`);
@@ -151,16 +145,14 @@ function parsePagesSeed(sql) {
 }
 
 function parseNavSlotsSeed(sql) {
-  return parseInsertTuples(sql, "nav_slots").map(
-    ([id, parent_id, placement, sort_order, label_key, href_key]) => ({
-      id,
-      parent_id,
-      placement,
-      sort_order,
-      label_key,
-      href_key,
-    }),
-  );
+  return parseInsertTuples(sql, "nav_slots").map(([id, parent_id, placement, sort_order, label_key, href_key]) => ({
+    id,
+    parent_id,
+    placement,
+    sort_order,
+    label_key,
+    href_key,
+  }));
 }
 
 function parseArticlesSeed(sql) {
@@ -178,17 +170,15 @@ function parseArticlesSeed(sql) {
 }
 
 function parseMediaSeed(sql) {
-  return parseInsertTuples(sql, "media").map(
-    ([id, kind, page_slug, article_slug, sort_order, url, alt_key]) => ({
-      id,
-      kind,
-      page_slug,
-      article_slug,
-      sort_order,
-      url,
-      alt_key,
-    }),
-  );
+  return parseInsertTuples(sql, "media").map(([id, kind, page_slug, article_slug, sort_order, url, alt_key]) => ({
+    id,
+    kind,
+    page_slug,
+    article_slug,
+    sort_order,
+    url,
+    alt_key,
+  }));
 }
 
 function rowSignature(row) {
@@ -298,9 +288,7 @@ assertChromeKeyParity();
 
 /** Coverage group sanity checks */
 const bodyKeys = catalog.copy.filter((r) => r.key.endsWith(".body"));
-const stubBodies = catalog.copy.filter(
-  (r) => r.key.endsWith(".body") && r.value === "Treść w przygotowaniu",
-);
+const stubBodies = catalog.copy.filter((r) => r.key.endsWith(".body") && r.value === "Treść w przygotowaniu");
 const articleBodies = catalog.copy.filter((r) => r.key.startsWith("osk.article.") && r.key.endsWith(".body"));
 const galleryAlts = catalog.copy.filter((r) => r.key.includes(".gallery_") && r.key.endsWith("_alt"));
 const newsPageKeys = catalog.copy.filter((r) => /osk\.(home|artykuly)\.news_/.test(r.key));

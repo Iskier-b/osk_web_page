@@ -157,10 +157,11 @@ Document forms, interactive behaviors, external integrations, and anything that 
 **Intent**: Give S-05 and Non-Goals documentation a single source for interactive/integration scope.
 
 **Contract**: Four subsections minimum:
-  1. **Forms** — location URL, fields summary, submit target/method if visible, captcha
-  2. **Interactive features** — accordions, carousels, lightbox, cookie banner, etc. (non-form)
-  3. **External integrations** — social, maps embed, analytics, reCAPTCHA, third-party profile links, etc.
-  4. **Backend / server-needed** — anything that requires server processing, email send, CMS admin, auth, payments, student portal, etc. (include “not observed but implied by form POST” where relevant)
+
+1. **Forms** — location URL, fields summary, submit target/method if visible, captcha
+2. **Interactive features** — accordions, carousels, lightbox, cookie banner, etc. (non-form)
+3. **External integrations** — social, maps embed, analytics, reCAPTCHA, third-party profile links, etc.
+4. **Backend / server-needed** — anything that requires server processing, email send, CMS admin, auth, payments, student portal, etc. (include “not observed but implied by form POST” where relevant)
 
 Each item: short description + source URL evidence + note whether live behavior was verified or inferred from HTML.
 
@@ -203,13 +204,14 @@ Classify MVP-in vs MVP-out, record recommendations for deep path and inert forms
 **Intent**: Make build decisions explicit so later slices do not re-litigate capacity vs recognition.
 
 **Contract**: Required sections:
-  - **MVP-in (structure)** — URLs that must appear in nav/stubs
-  - **MVP-in (copy targets)** — all primary nav destinations (+ Zapisy if included as primary enrollment entry); list paths explicitly
-  - **MVP-out / document-only** — blog archive posts, PDFs as content bodies, live integrations, form POST backends, starter auth, etc.
-  - **Stub policy reminder** — title-only placeholders; no invented body; no empty dead links
-  - **Recommendations (not locked)** — one FR-005 deep path (representative journey, with rationale) and which forms get inert UI in S-05
-  - **Unreachable / asset-only registry** — consolidated from crawl (URL, status, reason)
-  - **Open items for later slices** — e.g. confirm deep path at S-04 plan time
+
+- **MVP-in (structure)** — URLs that must appear in nav/stubs
+- **MVP-in (copy targets)** — all primary nav destinations (+ Zapisy if included as primary enrollment entry); list paths explicitly
+- **MVP-out / document-only** — blog archive posts, PDFs as content bodies, live integrations, form POST backends, starter auth, etc.
+- **Stub policy reminder** — title-only placeholders; no invented body; no empty dead links
+- **Recommendations (not locked)** — one FR-005 deep path (representative journey, with rationale) and which forms get inert UI in S-05
+- **Unreachable / asset-only registry** — consolidated from crawl (URL, status, reason)
+- **Open items for later slices** — e.g. confirm deep path at S-04 plan time
 
 #### 2. README completion
 

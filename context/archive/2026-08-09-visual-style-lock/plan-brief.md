@@ -16,13 +16,13 @@ Change folder holds `README.md`, `audience-brief.md`, and three direction cards.
 
 ## Key Decisions Made
 
-| Decision | Choice | Why |
-| -------- | ------ | --- |
-| Deliverable depth | Doc proposals only (no `src/`) | Matches narrowed done bar; keeps F-02 parallel with F-01 |
-| Proposal format | Markdown cards | Fastest FR-002-compatible format |
-| Audiences | page_mvp trio (young / business / broad) | Zero new persona inventing |
-| Source brand | Clean redesign | Escapes outdated Bootstrap feel |
-| Done bar | Proposals exist; choice deferred | Explicit planning pick; lock is S-01 gate |
+| Decision          | Choice                                   | Why                                                      |
+| ----------------- | ---------------------------------------- | -------------------------------------------------------- |
+| Deliverable depth | Doc proposals only (no `src/`)           | Matches narrowed done bar; keeps F-02 parallel with F-01 |
+| Proposal format   | Markdown cards                           | Fastest FR-002-compatible format                         |
+| Audiences         | page_mvp trio (young / business / broad) | Zero new persona inventing                               |
+| Source brand      | Clean redesign                           | Escapes outdated Bootstrap feel                          |
+| Done bar          | Proposals exist; choice deferred         | Explicit planning pick; lock is S-01 gate                |
 
 ## Scope
 
@@ -36,11 +36,11 @@ Docs-only under `context/changes/visual-style-lock/`. Shared card schema → thr
 
 ## Phases at a Glance
 
-| Phase | What it delivers | Key risk |
-| ----- | ---------------- | -------- |
-| 1. Scaffold & audience brief | README + audience-brief.md | Brief invents a fourth audience frame |
-| 2. Direction cards | Three comparable markdown cards | Cards too similar to choose |
-| 3. Handoff | Checklist + S-01 gate note | Readers think FR-002 is fully done |
+| Phase                        | What it delivers                | Key risk                              |
+| ---------------------------- | ------------------------------- | ------------------------------------- |
+| 1. Scaffold & audience brief | README + audience-brief.md      | Brief invents a fourth audience frame |
+| 2. Direction cards           | Three comparable markdown cards | Cards too similar to choose           |
+| 3. Handoff                   | Checklist + S-01 gate note      | Readers think FR-002 is fully done    |
 
 **Prerequisites:** None beyond product docs (`page_mvp` §5, FR-002).  
 **Estimated effort:** ~1 short session across 3 doc phases.
