@@ -439,9 +439,9 @@ Per-page batched `site_copy` fetch (one `IN` query per page plus one `pages` loo
 
 #### Automated
 
-- [x] 4.1 Lint passes: `npm run lint`
-- [x] 4.2 Build passes: `npm run build`
-- [x] 4.3 `npm run verify:content-seed` passes
+- [x] 4.1 Lint passes: `npm run lint` — 5d66e22
+- [x] 4.2 Build passes: `npm run build` — 5d66e22
+- [x] 4.3 `npm run verify:content-seed` passes — 5d66e22
 
 #### Manual
 
