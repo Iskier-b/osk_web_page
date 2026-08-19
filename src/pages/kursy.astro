@@ -1,28 +1,32 @@
 ---
-export const prerender = true;
-
 import CtaBand from "@/components/sections/CtaBand.astro";
 import Hero from "@/components/sections/Hero.astro";
 import HubChildLinks from "@/components/sections/HubChildLinks.astro";
 import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
-import { getPageEntry } from "@/lib/content/pages";
+import { setPageNotFound } from "@/lib/content/not-found";
+import { isContentPage, loadPublicPage } from "@/lib/content/load-page";
 import { brandName, ofertaChildren } from "@/lib/site-nav";
 
-const { entry, Content } = await getPageEntry("kursy");
-const { title, heroTitle, heroSubtitle, cta } = entry.data;
+const page = await loadPublicPage("kursy", Astro);
+if ("notFound" in page) setPageNotFound(Astro);
 ---
 
-<Layout title={`${title} | ${brandName}`}>
-  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} />
-  <ProseSection>
-    <Content />
-  </ProseSection>
-  <section class="mx-auto w-full max-w-6xl px-4 sm:px-6" aria-labelledby="oferta-links-heading">
-    <h2 id="oferta-links-heading" class="text-foreground mb-4 text-xl font-bold tracking-tight break-words sm:text-2xl">
-      Więcej z oferty
-    </h2>
-  </section>
-  <HubChildLinks links={ofertaChildren} ariaLabel="Oferta — podstrony" />
-  {cta && <CtaBand label={cta.label} href={cta.href} />}
-</Layout>
+{
+  isContentPage(page) && (
+    <Layout title={`${page.view.title} | ${brandName}`}>
+      <Hero title={page.view.heroTitle} subtitle={page.view.heroSubtitle} />
+      <ProseSection>{page.view.bodyHtml && <div set:html={page.view.bodyHtml} />}</ProseSection>
+      <section class="mx-auto w-full max-w-6xl px-4 sm:px-6" aria-labelledby="oferta-links-heading">
+        <h2
+          id="oferta-links-heading"
+          class="text-foreground mb-4 text-xl font-bold tracking-tight break-words sm:text-2xl"
+        >
+          Więcej z oferty
+        </h2>
+      </section>
+      <HubChildLinks links={ofertaChildren} ariaLabel="Oferta — podstrony" />
+      {page.view.cta && <CtaBand label={page.view.cta.label} href={page.view.cta.href} />}
+    </Layout>
+  )
+}

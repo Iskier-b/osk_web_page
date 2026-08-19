@@ -1,4 +1,4 @@
-import { getEntry, render, type CollectionEntry } from "astro:content";
+import { getEntry, type CollectionEntry } from "astro:content";
 
 export type PageId =
   | "home"
@@ -13,14 +13,16 @@ export type PageId =
 
 export type PageEntry = CollectionEntry<"pages">;
 
-export async function getPageEntry(id: PageId) {
+export interface NewsTeaser {
+  title: string;
+  summary?: string;
+}
+
+/** S-03-parked: Markdown news teasers only — not live page copy. */
+export async function getNewsTeasers(id: "home" | "artykuly"): Promise<NewsTeaser[] | undefined> {
   const entry = await getEntry("pages", id);
-
   if (!entry) {
-    throw new Error(`Missing content entry: pages/${id}`);
+    return undefined;
   }
-
-  const { Content } = await render(entry);
-
-  return { entry, Content };
+  return entry.data.newsTeasers;
 }

@@ -410,8 +410,8 @@ Per-page batched `site_copy` fetch (one `IN` query per page plus one `pages` loo
 
 #### Automated
 
-- [x] 2.1 Lint passes: `npm run lint`
-- [x] 2.2 Build passes: `npm run build`
+- [x] 2.1 Lint passes: `npm run lint` — bc31df1
+- [x] 2.2 Build passes: `npm run build` — bc31df1
 
 #### Manual
 

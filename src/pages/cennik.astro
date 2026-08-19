@@ -1,23 +1,26 @@
 ---
-export const prerender = true;
-
 import CtaBand from "@/components/sections/CtaBand.astro";
 import Hero from "@/components/sections/Hero.astro";
 import PriceTable from "@/components/sections/PriceTable.astro";
 import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
-import { getPageEntry } from "@/lib/content/pages";
+import { setPageNotFound } from "@/lib/content/not-found";
+import { isContentPage, loadPublicPage } from "@/lib/content/load-page";
 import { brandName } from "@/lib/site-nav";
 
-const { entry, Content } = await getPageEntry("cennik");
-const { title, heroTitle, heroSubtitle, cta, priceRows } = entry.data;
+const page = await loadPublicPage("cennik", Astro);
+if ("notFound" in page) setPageNotFound(Astro);
 ---
 
-<Layout title={`${title} | ${brandName}`}>
-  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} />
-  {priceRows && priceRows.length > 0 && <PriceTable rows={priceRows} caption="Ceny kursów i jazd" />}
-  <ProseSection>
-    <Content />
-  </ProseSection>
-  {cta && <CtaBand label={cta.label} href={cta.href} />}
-</Layout>
+{
+  isContentPage(page) && (
+    <Layout title={`${page.view.title} | ${brandName}`}>
+      <Hero title={page.view.heroTitle} subtitle={page.view.heroSubtitle} />
+      {page.view.priceRows && page.view.priceRows.length > 0 && (
+        <PriceTable rows={page.view.priceRows} caption="Ceny kursów i jazd" />
+      )}
+      <ProseSection>{page.view.bodyHtml && <div set:html={page.view.bodyHtml} />}</ProseSection>
+      {page.view.cta && <CtaBand label={page.view.cta.label} href={page.view.cta.href} />}
+    </Layout>
+  )
+}

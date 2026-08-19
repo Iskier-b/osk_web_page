@@ -1,6 +1,4 @@
 ---
-export const prerender = true;
-
 import EnrollmentStrip from "@/components/forms/EnrollmentStrip.astro";
 import CtaBand from "@/components/sections/CtaBand.astro";
 import DashboardStrip from "@/components/sections/DashboardStrip.astro";
@@ -8,133 +6,129 @@ import Hero from "@/components/sections/Hero.astro";
 import MediaFigure from "@/components/sections/MediaFigure.astro";
 import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
-import { getPageEntry } from "@/lib/content/pages";
+import { setPageNotFound } from "@/lib/content/not-found";
+import { isContentPage, heroImageForPage, loadPublicPage } from "@/lib/content/load-page";
+import { getNewsTeasers } from "@/lib/content/pages";
 import { brandName } from "@/lib/site-nav";
 
-const { entry, Content } = await getPageEntry("home");
-const {
-  title,
-  heroTitle,
-  heroSubtitle,
-  heroImage,
-  heroPitches,
-  cta,
-  secondaryCta,
-  dashboardItems,
-  newsTeasers,
-  teaserImages,
-  reviewQuotes,
-} = entry.data;
+const page = await loadPublicPage("home", Astro);
+if ("notFound" in page) setPageNotFound(Astro);
+
+const newsTeasers = await getNewsTeasers("home");
+const heroImage = isContentPage(page) ? heroImageForPage("home", page.view.heroImageAlt) : undefined;
 ---
 
-<Layout title={title || brandName}>
-  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} pitches={heroPitches} image={heroImage} />
+{
+  isContentPage(page) && (
+    <Layout title={page.view.title || brandName}>
+      <Hero
+        title={page.view.heroTitle}
+        subtitle={page.view.heroSubtitle}
+        pitches={page.view.heroPitches}
+        image={heroImage}
+      />
 
-  <EnrollmentStrip />
+      <EnrollmentStrip />
 
-  {dashboardItems && dashboardItems.length > 0 && <DashboardStrip items={dashboardItems} />}
+      {page.view.dashboardItems && page.view.dashboardItems.length > 0 && (
+        <DashboardStrip items={page.view.dashboardItems} />
+      )}
 
-  {cta && <CtaBand label={cta.label} href={cta.href} />}
+      {page.view.cta && <CtaBand label={page.view.cta.label} href={page.view.cta.href} />}
 
-  <ProseSection>
-    <Content />
-    {
-      secondaryCta && (
-        <p class="mt-6">
-          <a href={secondaryCta.href}>{secondaryCta.label}</a>
-          {" · "}
-          <a href="/artykuly">Aktualności</a>
-        </p>
-      )
-    }
-  </ProseSection>
-
-  {
-    newsTeasers && newsTeasers.length > 0 && (
-      <section data-reveal class="border-border/60 border-t" aria-labelledby="home-news-heading">
-        <div class="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-20">
-          <h2
-            id="home-news-heading"
-            class="text-foreground text-2xl font-extrabold tracking-tight break-words sm:text-3xl"
-          >
-            Z życia Auto Szkoły Juszczak
-          </h2>
-          <p class="text-muted-foreground mt-3 max-w-2xl text-base break-words sm:text-lg">
-            Wybrane aktualności ze strony szkoły — pełna lista w dziale Aktualności.
+      <ProseSection>
+        {page.view.bodyHtml && <div set:html={page.view.bodyHtml} />}
+        {page.view.secondaryCta && (
+          <p class="mt-6">
+            <a href={page.view.secondaryCta.href}>{page.view.secondaryCta.label}</a>
+            {" · "}
+            <a href="/artykuly">Aktualności</a>
           </p>
-          <ul class="mt-10 max-w-3xl space-y-7">
-            {newsTeasers.map((item) => (
-              <li class="min-w-0">
-                <h3 class="text-foreground text-lg font-bold break-words sm:text-xl">{item.title}</h3>
-                {item.summary && <p class="text-muted-foreground mt-1.5 text-base break-words">{item.summary}</p>}
-              </li>
-            ))}
-          </ul>
-          <p class="mt-10">
-            <a href="/artykuly" class="text-primary font-semibold hover:underline">
-              Przejdź do aktualności
-            </a>
-          </p>
-        </div>
-      </section>
-    )
-  }
+        )}
+      </ProseSection>
 
-  {
-    teaserImages && teaserImages.length > 0 && (
-      <section data-reveal class="border-border/60 bg-secondary/30 border-t" aria-labelledby="home-gallery-heading">
-        <div class="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-20">
-          <h2
-            id="home-gallery-heading"
-            class="text-foreground text-2xl font-extrabold tracking-tight break-words sm:text-3xl"
-          >
-            Galeria
-          </h2>
-          <p class="text-muted-foreground mt-3 max-w-2xl text-base break-words sm:text-lg">
-            Fragment floty i szkolenia — więcej zdjęć w galerii.
-          </p>
-          <div class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
-            {teaserImages.map((img) => (
-              <MediaFigure src={img.src} alt={img.alt} />
-            ))}
+      {newsTeasers && newsTeasers.length > 0 && (
+        <section data-reveal class="border-border/60 border-t" aria-labelledby="home-news-heading">
+          <div class="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-20">
+            <h2
+              id="home-news-heading"
+              class="text-foreground text-2xl font-extrabold tracking-tight break-words sm:text-3xl"
+            >
+              Z życia Auto Szkoły Juszczak
+            </h2>
+            <p class="text-muted-foreground mt-3 max-w-2xl text-base break-words sm:text-lg">
+              Wybrane aktualności ze strony szkoły — pełna lista w dziale Aktualności.
+            </p>
+            <ul class="mt-10 max-w-3xl space-y-7">
+              {newsTeasers.map((item) => (
+                <li class="min-w-0">
+                  <h3 class="text-foreground text-lg font-bold break-words sm:text-xl">{item.title}</h3>
+                  {item.summary && <p class="text-muted-foreground mt-1.5 text-base break-words">{item.summary}</p>}
+                </li>
+              ))}
+            </ul>
+            <p class="mt-10">
+              <a href="/artykuly" class="text-primary font-semibold hover:underline">
+                Przejdź do aktualności
+              </a>
+            </p>
           </div>
-          <p class="mt-10">
-            <a href="/galeria" class="text-primary font-semibold hover:underline">
-              Zobacz galerię
-            </a>
-          </p>
-        </div>
-      </section>
-    )
-  }
+        </section>
+      )}
 
-  {
-    reviewQuotes && reviewQuotes.length > 0 && (
-      <section data-reveal class="border-border/60 border-t" aria-labelledby="home-reviews-heading">
-        <div class="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-20">
-          <h2
-            id="home-reviews-heading"
-            class="text-foreground text-2xl font-extrabold tracking-tight break-words sm:text-3xl"
-          >
-            Opinie kursantów
-          </h2>
-          <ul class="mt-10 max-w-3xl space-y-9">
-            {reviewQuotes.map((item) => (
-              <li class="min-w-0">
-                <blockquote class="text-foreground text-base leading-relaxed break-words sm:text-lg">
-                  „{item.quote}”
-                </blockquote>
-                <p class="text-muted-foreground mt-2 text-sm break-words">{item.author}</p>
-              </li>
-            ))}
-          </ul>
-          <p class="mt-10">
-            <a href="/referencje" class="text-primary font-semibold hover:underline">
-              Więcej opinii
-            </a>
-          </p>
-        </div>
-      </section>
-    )
-  }
-</Layout>
+      {page.view.galleryImages && page.view.galleryImages.length > 0 && (
+        <section data-reveal class="border-border/60 bg-secondary/30 border-t" aria-labelledby="home-gallery-heading">
+          <div class="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-20">
+            <h2
+              id="home-gallery-heading"
+              class="text-foreground text-2xl font-extrabold tracking-tight break-words sm:text-3xl"
+            >
+              Galeria
+            </h2>
+            <p class="text-muted-foreground mt-3 max-w-2xl text-base break-words sm:text-lg">
+              Fragment floty i szkolenia — więcej zdjęć w galerii.
+            </p>
+            <div class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
+              {page.view.galleryImages.map((img) => (
+                <MediaFigure src={img.src} alt={img.alt} />
+              ))}
+            </div>
+            <p class="mt-10">
+              <a href="/galeria" class="text-primary font-semibold hover:underline">
+                Zobacz galerię
+              </a>
+            </p>
+          </div>
+        </section>
+      )}
+
+      {page.view.reviewQuotes && page.view.reviewQuotes.length > 0 && (
+        <section data-reveal class="border-border/60 border-t" aria-labelledby="home-reviews-heading">
+          <div class="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-20">
+            <h2
+              id="home-reviews-heading"
+              class="text-foreground text-2xl font-extrabold tracking-tight break-words sm:text-3xl"
+            >
+              Opinie kursantów
+            </h2>
+            <ul class="mt-10 max-w-3xl space-y-9">
+              {page.view.reviewQuotes.map((item) => (
+                <li class="min-w-0">
+                  <blockquote class="text-foreground text-base leading-relaxed break-words sm:text-lg">
+                    „{item.quote}”
+                  </blockquote>
+                  <p class="text-muted-foreground mt-2 text-sm break-words">{item.author}</p>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-10">
+              <a href="/referencje" class="text-primary font-semibold hover:underline">
+                Więcej opinii
+              </a>
+            </p>
+          </div>
+        </section>
+      )}
+    </Layout>
+  )
+}

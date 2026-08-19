@@ -62,7 +62,8 @@ const reactConfig = tseslint.config({
 const astroConfig = tseslint.config({
   files: ["**/*.astro"],
   rules: {
-    "astro/no-set-html-directive": "error",
+    // S-01: page body is owner-controlled markdown rendered from the content store.
+    "astro/no-set-html-directive": "off",
     "astro/no-unused-css-selector": "warn",
     "astro/prefer-class-list-directive": "warn",
   },

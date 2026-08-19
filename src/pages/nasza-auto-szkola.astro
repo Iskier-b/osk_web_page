@@ -1,33 +1,34 @@
 ---
-export const prerender = true;
-
 import CtaBand from "@/components/sections/CtaBand.astro";
 import Hero from "@/components/sections/Hero.astro";
 import MediaFigure from "@/components/sections/MediaFigure.astro";
 import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
-import { getPageEntry } from "@/lib/content/pages";
+import { setPageNotFound } from "@/lib/content/not-found";
+import { isContentPage, heroImageForPage, loadPublicPage } from "@/lib/content/load-page";
 import { brandName } from "@/lib/site-nav";
 
-const { entry, Content } = await getPageEntry("nasza-auto-szkola");
-const { title, heroTitle, heroSubtitle, heroImage, cta } = entry.data;
+const page = await loadPublicPage("nasza-auto-szkola", Astro);
+if ("notFound" in page) setPageNotFound(Astro);
+
+const heroImage = isContentPage(page) ? heroImageForPage("nasza-auto-szkola", page.view.heroImageAlt) : undefined;
 ---
 
-<Layout title={`${title} | ${brandName}`}>
-  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} image={heroImage} />
-  {
-    heroImage && (
-      <div class="mx-auto w-full max-w-6xl px-4 pt-8 sm:px-6 sm:pt-10">
-        <MediaFigure
-          src="/images/osk/fleet-03.webp"
-          alt="Samochód nauki jazdy Auto Szkoły Juszczak"
-          caption="Szkolenie na pojazdach zgodnych z egzaminem WORD Łódź"
-        />
-      </div>
-    )
-  }
-  <ProseSection>
-    <Content />
-  </ProseSection>
-  {cta && <CtaBand label={cta.label} href={cta.href} />}
-</Layout>
+{
+  isContentPage(page) && (
+    <Layout title={`${page.view.title} | ${brandName}`}>
+      <Hero title={page.view.heroTitle} subtitle={page.view.heroSubtitle} image={heroImage} />
+      {heroImage && (
+        <div class="mx-auto w-full max-w-6xl px-4 pt-8 sm:px-6 sm:pt-10">
+          <MediaFigure
+            src="/images/osk/fleet-03.webp"
+            alt="Samochód nauki jazdy Auto Szkoły Juszczak"
+            caption="Szkolenie na pojazdach zgodnych z egzaminem WORD Łódź"
+          />
+        </div>
+      )}
+      <ProseSection>{page.view.bodyHtml && <div set:html={page.view.bodyHtml} />}</ProseSection>
+      {page.view.cta && <CtaBand label={page.view.cta.label} href={page.view.cta.href} />}
+    </Layout>
+  )
+}

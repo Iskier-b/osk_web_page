@@ -1,16 +1,20 @@
 ---
-export const prerender = true;
-
 import OpinionForm from "@/components/forms/OpinionForm.astro";
 import Hero from "@/components/sections/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
+import { setPageNotFound } from "@/lib/content/not-found";
+import { isFormPage, loadPublicPage } from "@/lib/content/load-page";
 import { brandName } from "@/lib/site-nav";
 
-const title = "Opinie";
-const lead = "Zobacz co mówią o nas kursanci";
+const page = await loadPublicPage("referencje", Astro);
+if ("notFound" in page) setPageNotFound(Astro);
 ---
 
-<Layout title={`${title} | ${brandName}`}>
-  <Hero title={title} subtitle={lead} />
-  <OpinionForm />
-</Layout>
+{
+  isFormPage(page) && (
+    <Layout title={`${page.view.title} | ${brandName}`}>
+      <Hero title={page.view.title} subtitle={page.view.heroSubtitle} />
+      <OpinionForm />
+    </Layout>
+  )
+}

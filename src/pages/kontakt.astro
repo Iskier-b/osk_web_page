@@ -1,21 +1,22 @@
 ---
-export const prerender = true;
-
 import ContactForm from "@/components/forms/ContactForm.astro";
 import Hero from "@/components/sections/Hero.astro";
 import ProseSection from "@/components/sections/ProseSection.astro";
 import Layout from "@/layouts/Layout.astro";
-import { getPageEntry } from "@/lib/content/pages";
+import { setPageNotFound } from "@/lib/content/not-found";
+import { isContentPage, loadPublicPage } from "@/lib/content/load-page";
 import { brandName } from "@/lib/site-nav";
 
-const { entry, Content } = await getPageEntry("kontakt");
-const { title, heroTitle, heroSubtitle } = entry.data;
+const page = await loadPublicPage("kontakt", Astro);
+if ("notFound" in page) setPageNotFound(Astro);
 ---
 
-<Layout title={`${title} | ${brandName}`}>
-  <Hero title={heroTitle ?? title} subtitle={heroSubtitle} />
-  <ProseSection>
-    <Content />
-  </ProseSection>
-  <ContactForm />
-</Layout>
+{
+  isContentPage(page) && (
+    <Layout title={`${page.view.title} | ${brandName}`}>
+      <Hero title={page.view.heroTitle} subtitle={page.view.heroSubtitle} />
+      <ProseSection>{page.view.bodyHtml && <div set:html={page.view.bodyHtml} />}</ProseSection>
+      <ContactForm />
+    </Layout>
+  )
+}

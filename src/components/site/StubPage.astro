@@ -6,16 +6,24 @@ interface ChildLink {
 
 interface Props {
   title: string;
+  bodyHtml?: string;
   childrenLinks?: ChildLink[];
 }
 
-const { title, childrenLinks } = Astro.props;
+const { title, bodyHtml, childrenLinks } = Astro.props;
 ---
 
 <section data-reveal class="from-secondary/50 via-background to-accent/20 bg-gradient-to-b">
   <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
     <h1 class="text-foreground text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">{title}</h1>
-    <p class="text-muted-foreground mt-4 max-w-xl text-base sm:text-lg">Treść w przygotowaniu</p>
+    {
+      bodyHtml ? (
+        <div
+          class="text-muted-foreground prose-muted [&_a]:text-primary mt-4 max-w-xl text-base sm:text-lg [&_p]:mt-4"
+          set:html={bodyHtml}
+        />
+      ) : null
+    }
 
     {
       childrenLinks && childrenLinks.length > 0 && (

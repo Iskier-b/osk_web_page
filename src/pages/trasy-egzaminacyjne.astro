@@ -1,11 +1,18 @@
 ---
 import StubPage from "@/components/site/StubPage.astro";
 import Layout from "@/layouts/Layout.astro";
+import { setPageNotFound } from "@/lib/content/not-found";
+import { isStubPage, loadPublicPage } from "@/lib/content/load-page";
 import { brandName } from "@/lib/site-nav";
 
-const title = "Trasy egzaminacyjne";
+const page = await loadPublicPage("trasy-egzaminacyjne", Astro);
+if ("notFound" in page) setPageNotFound(Astro);
 ---
 
-<Layout title={`${title} | ${brandName}`}>
-  <StubPage title={title} />
-</Layout>
+{
+  isStubPage(page) && (
+    <Layout title={`${page.view.title} | ${brandName}`}>
+      <StubPage title={page.view.title} bodyHtml={page.view.bodyHtml} />
+    </Layout>
+  )
+}
