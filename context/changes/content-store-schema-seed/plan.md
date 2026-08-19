@@ -327,10 +327,10 @@ Seed size is small (tens to low hundreds of keys, local OSK copy). No indexes be
 
 #### Automated
 
-- [x] 2.1 `supabase/key-catalog.json` parses as JSON
-- [x] 2.2 Copy keys are unique and match the `site_copy.key` regex
-- [x] 2.3 Every coverage group listed above is present (9 content bodies, 14 stub bodies, 6 articles, 6 gallery alts, full nav+footer+chrome)
-- [x] 2.4 No keys whose `source` is a form component or `index.astro` section heading
+- [x] 2.1 `supabase/key-catalog.json` parses as JSON — 69f21fd
+- [x] 2.2 Copy keys are unique and match the `site_copy.key` regex — 69f21fd
+- [x] 2.3 Every coverage group listed above is present (9 content bodies, 14 stub bodies, 6 articles, 6 gallery alts, full nav+footer+chrome) — 69f21fd
+- [x] 2.4 No keys whose `source` is a form component or `index.astro` section heading — 69f21fd
 
 #### Manual
 
@@ -342,9 +342,9 @@ Seed size is small (tens to low hundreds of keys, local OSK copy). No indexes be
 
 #### Automated
 
-- [ ] 3.1 `node scripts/verify-content-seed.mjs` exits 0
-- [ ] 3.2 `npm run lint` passes
-- [ ] 3.3 `npm run build` passes (site still Markdown-backed; no route changes)
+- [x] 3.1 `node scripts/verify-content-seed.mjs` exits 0
+- [x] 3.2 `npm run lint` passes
+- [x] 3.3 `npm run build` passes (site still Markdown-backed; no route changes)
 
 #### Manual
 

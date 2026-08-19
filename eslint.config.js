@@ -69,6 +69,7 @@ const astroConfig = tseslint.config({
 });
 
 export default tseslint.config(
+  { ignores: ["scripts/**/*.mjs"] },
   includeIgnoreFile(gitignorePath),
   baseConfig,
   reactConfig,
